@@ -6,6 +6,7 @@ import BurgerIcon from "./Burger-icon";
 import BurgerMenu from "./Burger-menu";
 import HeaderMenuItem from "./Header-menu-item";
 import HeaderMenuSlideout from "./Header-menu-slideout";
+import Searchbar from "./Searchbar";
 
 import useScreenWidth from "@/hooks/useScreenWidth";
 import navLinks from "@/data/navLinks";
@@ -19,9 +20,7 @@ const HeaderMenu = () => {
   if (screenWidth <= 768) {
     return (
       <>
-        <div className="flex justify-end items-center w-full">
-          <BurgerIcon isOpen={menuOpen} setIsOpen={setMenuOpen} />
-        </div>
+        <BurgerIcon isOpen={menuOpen} setIsOpen={setMenuOpen} />
         {menuOpen ? <BurgerMenu /> : null}
       </>
     );
@@ -32,19 +31,21 @@ const HeaderMenu = () => {
   };
 
   return (
-    <nav className="relative flex space-x-12 items-center justify-center md:mx-[100px] bg-white z-30">
-      {navLinks.map((link) => (
-        <HeaderMenuItem
-          key={link.name}
-          isOpen={selectedItem === link.name}
-          setIsOpen={handleSelectItem}
-          name={link.name}
+    <>
+      <nav className="relative flex space-x-12 items-center justify-center  bg-white z-30">
+        {navLinks.map((link) => (
+          <HeaderMenuItem
+            key={link.name}
+            isOpen={selectedItem === link.name}
+            setIsOpen={handleSelectItem}
+            name={link.name}
+          />
+        ))}
+        <HeaderMenuSlideout
+          activeItem={navLinks.find((item) => item.name === selectedItem)}
         />
-      ))}
-      <HeaderMenuSlideout
-        activeItem={navLinks.find((item) => item.name === selectedItem)}
-      />
-    </nav>
+      </nav>
+    </>
   );
 };
 

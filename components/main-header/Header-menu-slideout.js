@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import rightArrow from "@/public/images/icons/arrow-right-full-white.png";
+import rightArrow from "@/public/images/icons/arrow-right-full.png";
 
 const {
   default: HeaderMenuSublinkItem,
@@ -10,7 +10,7 @@ const {
 const HeaderMenuSlideout = ({ activeItem }) => {
   return (
     <div
-      className={`fixed top-[100px] left-0 w-[100vw] bg-blue text-white transition-height duration-600 z-20 ${
+      className={`fixed top-[100px] left-0 w-[100vw] bg-zinc-100 text-navy transition-height duration-600 z-20 ${
         activeItem ? "p-4 pt-8 max-h-[700px]" : "max-h-0 overflow-hidden"
       }`}
     >
@@ -19,7 +19,7 @@ const HeaderMenuSlideout = ({ activeItem }) => {
           <div className="flex items-center justify-between">
             <h3>{activeItem.description}</h3>
             <Link
-              className="flex cursor-pointer hover:text-blue-300 transition-all duration-300"
+              className="flex cursor-pointer hover:text-blue-400 transition-all duration-300"
               href={activeItem.href}
             >
               <p>Go to {activeItem.name}</p>

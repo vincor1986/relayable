@@ -1,13 +1,25 @@
-import MainHeader from "@/components/main-header/Main-header";
 import "./globals.css";
+
+import { Nunito } from "next/font/google";
+
+import MainHeader from "@/components/main-header/Main-header";
+import PageBanner from "@/components/main-header/Page-banner";
 import Footer from "@/components/footer/Footer";
+
+const nunito = Nunito({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"],
+});
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="relative min-h-[100vh]">
+    <html lang="en" className={nunito.className}>
+      <body className="relative min-h-[100vh] pb-[300px]">
+        <PageBanner />
         <MainHeader />
-        <main>{children}</main>
+        <main className="mx-auto max-w-[1200px] overflow-hidden">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
