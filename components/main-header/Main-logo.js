@@ -25,6 +25,7 @@ const MainLogo = () => {
         alt="Relayable Logo"
         className="h-full w-auto object-contain cursor-pointer"
         {...dimensions}
+        priority
       />
     </Link>
   );

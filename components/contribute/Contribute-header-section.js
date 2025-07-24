@@ -44,7 +44,7 @@ const ContributeHeaderSection = () => {
         <br />
         <p>
           You can also read more about our{" "}
-          <TextLink href="/contribute/terms">
+          <TextLink href="/contribute/guidance">
             contributor guidance and guidelines
           </TextLink>{" "}
           for more information on best practices and preferred approaches.

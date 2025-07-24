@@ -1,21 +1,16 @@
 "use client";
 
-import Image from "next/image";
+import { CreatorCtxProvider } from "@/store/CreatorContext";
 
-import vendors from "@/data/vendors";
+import SectionTitle from "@/components/ui/Section-title";
+import CreatorForm from "@/components/contribute/creator/Creator-form";
 
 const GuideCreator = () => {
   return (
-    <div>
-      {vendors.map((vendor) => {
-        return (
-          <div key={vendor.name} className="flex">
-            <h2 className="text-2xl font-bold text-navy mb-4">{vendor.name}</h2>
-            <Image src={vendor.logo} alt={vendor.name} className="w-22 h-22" />
-          </div>
-        );
-      })}
-    </div>
+    <CreatorCtxProvider>
+      <SectionTitle>Customisable Guide Creator Tool</SectionTitle>
+      <CreatorForm />
+    </CreatorCtxProvider>
   );
 };
 
