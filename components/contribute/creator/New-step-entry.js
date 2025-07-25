@@ -7,13 +7,14 @@ import Textarea from "@/components/ui/Textarea";
 import SmallButton from "@/components/ui/SmallButton";
 
 import useCreatorCtx from "@/store/useCreatorCtx";
+import ErrorMessage from "@/components/ui/Error-message";
 
 const NewStepEntry = ({ index, clear, editContent = "" }) => {
   const [instruction, setInstruction] = useState(editContent);
   const inputRef = useRef(null);
 
   const ctx = useCreatorCtx();
-  const { variables, updateFormData } = ctx;
+  const { steps, variables, errors, updateFormData, addErrorMsg } = ctx;
 
   const insertVariable = (variableName) => {
     setInstruction((prev) => `${prev}<<var:${variableName}>> `);
@@ -21,7 +22,17 @@ const NewStepEntry = ({ index, clear, editContent = "" }) => {
   };
 
   const handleSaveStep = (instruction, index) => {
-    updateFormData("steps", instruction, index, "edit");
+    if (steps.some((step) => step.trim() === instruction.trim())) {
+      addErrorMsg(
+        "stepEntry",
+        "This step already exists. Please enter a unique step or rephrase to avoid duplication, if necessary."
+      );
+      return;
+    } else {
+      updateFormData("steps", instruction, index, "edit");
+      setInstruction("");
+      clear();
+    }
   };
 
   return (
@@ -34,6 +45,8 @@ const NewStepEntry = ({ index, clear, editContent = "" }) => {
         label="New step instruction"
         rows={3}
         ref={inputRef}
+        required={false}
+        autoFocus={true}
       />
       <div className="flex flex-wrap items-center gap-4 my-4">
         <p className="text-dark-grey font-bold">Insert variable:</p>
@@ -41,7 +54,7 @@ const NewStepEntry = ({ index, clear, editContent = "" }) => {
           variables.map((variable) => (
             <div
               key={variable.name}
-              className="bg-light-grey text-dark-grey font-bold px-2 py-1 rounded-sm cursor-pointer hover:bg-zinc-600 transition-colors duration-300"
+              className="bg-zinc-200 text-dark-grey font-bold px-2 py-1 rounded-sm cursor-pointer hover:bg-zinc-300 transition-colors duration-300"
               onClick={() => insertVariable(variable.name)}
             >
               {variable.name}
@@ -57,8 +70,6 @@ const NewStepEntry = ({ index, clear, editContent = "" }) => {
           type="info"
           onClick={() => {
             handleSaveStep(instruction, index);
-            setInstruction("");
-            clear();
           }}
         >
           {editContent ? "Update step" : "Add step"}
@@ -70,6 +81,7 @@ const NewStepEntry = ({ index, clear, editContent = "" }) => {
           Cancel
         </p>
       </div>
+      <ErrorMessage error={errors.stepEntry} />
     </div>
   );
 };

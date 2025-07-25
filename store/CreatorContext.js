@@ -6,12 +6,20 @@ const DEFAULT_STATE = {
   vendor: null,
   title: "",
   author: "",
+  authorEmail: "",
   description: "",
   variables: [],
   steps: [],
-  errors: {},
-  uiState: {
-    query: "",
+  errors: {
+    vendor: null,
+    title: null,
+    author: null,
+    authorEmail: null,
+    description: null,
+    variables: null,
+    steps: null,
+    stepEntry: null,
+    variableEntry: null,
   },
   updateFormData: (key, value, index = false, type = "override") => {},
   addErrorMsg: (field, message) => {},
@@ -66,14 +74,6 @@ export const CreatorCtxProvider = (props) => {
   const ctx = useMemo(
     () => ({
       ...formData,
-      errors: {
-        vendor: null,
-        title: null,
-        author: null,
-        description: null,
-        variables: null,
-        steps: null,
-      },
       updateFormData,
       addErrorMsg,
     }),

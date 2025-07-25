@@ -5,12 +5,18 @@ import Textarea from "@/components/ui/Textarea";
 import TickBox from "./Tick-box";
 import SmallButton from "@/components/ui/SmallButton";
 
+import useCreatorCtx from "@/store/useCreatorCtx";
+import ErrorMessage from "@/components/ui/Error-message";
+
 const NewVariableForm = ({
   handleSaveVariable,
   variableData,
   setVariableData,
   clearForm,
 }) => {
+  const ctx = useCreatorCtx();
+  const { errors } = ctx;
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setVariableData((prev) => ({ ...prev, [name]: value }));
@@ -31,6 +37,7 @@ const NewVariableForm = ({
         value={variableData.name}
         onChange={handleInputChange}
         placeholder="Variable name such as 'username' or 'IP_address'"
+        autoFocus={true}
       />
       <Textarea
         label="Description"
@@ -46,7 +53,7 @@ const NewVariableForm = ({
       </div>
       {variableData.enum ? (
         <TextInput
-          label="Permitted Enum values (comma-separated)"
+          label="Permitted Enum Values (comma-separated)"
           name="variations"
           value={variableData.variations}
           onChange={handleInputChange}
@@ -54,7 +61,7 @@ const NewVariableForm = ({
         />
       ) : null}
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 my-2">
         <SmallButton type="info" onClick={handleSaveVariable}>
           Save
         </SmallButton>
@@ -62,6 +69,7 @@ const NewVariableForm = ({
           Clear
         </p>
       </div>
+      <ErrorMessage error={errors.variableEntry} />
     </div>
   );
 };

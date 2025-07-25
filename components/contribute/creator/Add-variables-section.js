@@ -14,7 +14,7 @@ import useCreatorCtx from "@/store/useCreatorCtx";
 const DEFAULT_VARIABLE = {
   name: "",
   enum: false,
-  variations: [],
+  variations: "",
   options: [],
   description: "",
 };
@@ -24,9 +24,45 @@ const AddVariablesSection = () => {
   const [variableData, setVariableData] = useState(DEFAULT_VARIABLE);
 
   const ctx = useCreatorCtx();
-  const { variables, updateFormData } = ctx;
+  const { variables, updateFormData, addErrorMsg } = ctx;
 
   const handleSaveVariable = () => {
+    const formattedEnumValues = variableData.variations
+      .trim()
+      .split(",")
+      .map((v) => v.trim())
+      .filter((v) => v !== "");
+
+    console.log("Formatted Enum Values:", formattedEnumValues);
+
+    if (!variableData.name) {
+      addErrorMsg("variableEntry", "Variable name is required.");
+      return;
+    }
+
+    if (!variableData.description) {
+      addErrorMsg("variableEntry", "Variable description is required.");
+      return;
+    }
+
+    if (variableData.enum && formattedEnumValues.length === 0) {
+      addErrorMsg(
+        "variableEntry",
+        "Since this variable has been marked as an enum, at least one permitted enum value is required."
+      );
+      return;
+    }
+
+    if (variables.some((v) => v.name === variableData.name.trim())) {
+      addErrorMsg(
+        "variableEntry",
+        "Each variable name must be unique. One variable already exists with the name '" +
+          variableData.name +
+          "'."
+      );
+      return;
+    }
+
     updateFormData("variables", variableData, false, "add");
     setVariableData(DEFAULT_VARIABLE);
     setShowVariableForm(false);

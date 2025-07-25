@@ -7,7 +7,7 @@ import useCreatorCtx from "@/store/useCreatorCtx";
 
 const SummaryFormSection = () => {
   const ctx = useCreatorCtx();
-  const { title, description, author, updateFormData } = ctx;
+  const { title, description, author, authorEmail, updateFormData } = ctx;
 
   const handleFormInput = (e) => {
     const { name, value } = e.target;
@@ -15,7 +15,7 @@ const SummaryFormSection = () => {
   };
 
   return (
-    <form className="p-4">
+    <div className="p-4">
       <TextInput
         label={"Title"}
         name={"title"}
@@ -30,6 +30,14 @@ const SummaryFormSection = () => {
         onChange={handleFormInput}
         value={author}
       />
+      <TextInput
+        label={"Author Email"}
+        name={"authorEmail"}
+        placeholder="Your email address, e.g. 'your.email@example.com'"
+        onChange={handleFormInput}
+        value={authorEmail}
+        type="email"
+      />
       <Textarea
         label={"Description"}
         name={"description"}
@@ -37,7 +45,7 @@ const SummaryFormSection = () => {
         onChange={handleFormInput}
         value={description}
       />
-    </form>
+    </div>
   );
 };
 

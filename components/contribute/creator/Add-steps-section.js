@@ -10,16 +10,19 @@ import NewStepEntry from "./New-step-entry";
 import SavedStep from "./Saved-step";
 
 import useCreatorCtx from "@/store/useCreatorCtx";
+import ErrorMessage from "@/components/ui/Error-message";
 
 const AddStepsSection = ({}) => {
   const [newStep, setNewStep] = useState(false);
   const [editStep, setEditStep] = useState(false);
 
   const ctx = useCreatorCtx();
-  const { steps, variables } = ctx;
+  const { steps, variables, errors } = ctx;
 
   return (
-    <div className="p-4 mt-6">
+    <div
+      className={`p-4 mt-6 ${errors.steps ? "border-2 border-red-800" : null}`}
+    >
       <div className="flex gap-4 items-center">
         <Image src={stepsImg} alt="Add steps" className="w-16" />
         <div className="w-full">
@@ -69,6 +72,7 @@ const AddStepsSection = ({}) => {
           clear={() => setNewStep(false)}
         />
       )}
+      <ErrorMessage error={errors.steps} />
     </div>
   );
 };

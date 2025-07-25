@@ -6,6 +6,8 @@ const TextInput = ({
   placeholder,
   errorMessage,
   required = true,
+  type = "text",
+  autoFocus = false,
 }) => {
   return (
     <div className="mb-4">
@@ -13,7 +15,7 @@ const TextInput = ({
         {label.toUpperCase()}{" "}
         {required ? <span className="text-blue">*</span> : null}
         <input
-          type="text"
+          type={type}
           id={name}
           name={name}
           value={value}
@@ -21,6 +23,7 @@ const TextInput = ({
           placeholder={placeholder}
           className="w-full px-4 py-2 border border-navy rounded-sm focus:outline-none"
           required={required}
+          autoFocus={autoFocus}
         />
         <p className="text-red-800">{errorMessage}</p>
       </label>
