@@ -1,21 +1,17 @@
 import Image from "next/image";
 
-import SectionTitle from "../ui/Section-title";
-import guideImg from "@/public/images/graphics/sections/guides.png";
-
 import TextLink from "../ui/Text-link";
 
-const ContributeHeaderSection = () => {
-  console.log(guideImg);
+import guideImg from "@/public/images/graphics/sections/guides.png";
 
+const ContributeHeaderSection = () => {
   return (
-    <section>
-      <SectionTitle>Contribute a How-To Guide</SectionTitle>
+    <section className="my-6 mb-12">
       <div className="flex w-full justify-center items-center">
         <Image src={guideImg} alt="How-to Guide" />
       </div>
-      <div className="w-full text-center px-6 md:px-40">
-        <h2 className="font-bold text-xl">
+      <div className="w-full text-center px-6 md:px-8">
+        <h2 className="font-bold text-2xl text-navy">
           Share your knowledge and help others
         </h2>
         <br />

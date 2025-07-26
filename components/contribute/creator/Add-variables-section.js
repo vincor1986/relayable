@@ -33,8 +33,6 @@ const AddVariablesSection = () => {
       .map((v) => v.trim())
       .filter((v) => v !== "");
 
-    console.log("Formatted Enum Values:", formattedEnumValues);
-
     if (!variableData.name) {
       addErrorMsg("variableEntry", "Variable name is required.");
       return;

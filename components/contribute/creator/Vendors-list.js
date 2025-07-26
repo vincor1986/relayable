@@ -9,6 +9,7 @@ import VendorBadge from "./Vendor-badge";
 import TextInput from "@/components/ui/Text-input";
 
 import useCreatorCtx from "@/store/useCreatorCtx";
+import TextLink from "@/components/ui/Text-link";
 
 const createFilteredVendors = (query, updateVendor) => {
   if (!query.trim()) return [];
@@ -71,6 +72,11 @@ const VendorsList = () => {
           </div>
         ) : null}
       </div>
+      <p className="italic text-sm">
+        Can't find the vendor or resource you're looking for? Click{" "}
+        <TextLink href="/contribute/request-vendor">here</TextLink> to request a
+        new vendor.
+      </p>
     </div>
   );
 };
