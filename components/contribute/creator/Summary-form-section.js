@@ -41,7 +41,7 @@ const SummaryFormSection = () => {
       <Textarea
         label={"Description"}
         name={"description"}
-        placeholder='A brief description of what outcome this guide will achieve, e.g. "This guide will help you add a collaborator to your project."'
+        placeholder='A brief description of what outcome this guide will achieve, e.g. "Adding a collaborator to your GitHub repository."'
         onChange={handleFormInput}
         value={description}
       />

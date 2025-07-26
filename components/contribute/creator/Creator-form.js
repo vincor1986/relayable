@@ -1,10 +1,17 @@
 "use client";
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 import VendorsList from "@/components/contribute/creator/Vendors-list";
 import SummaryFormSection from "@/components/contribute/creator/Summary-form-section";
 import AddVariablesSection from "@/components/contribute/creator/Add-variables-section";
 import AddStepsSection from "@/components/contribute/creator/Add-steps-section";
 
+import { submitGuide } from "@/actions/actions";
+import LoadingModal from "@/components/ui/Loading-modal";
+
+import useNotificationCtx from "@/store/useNotificationCtx";
 import useCreatorCtx from "@/store/useCreatorCtx";
 
 const variableCheck = (variable, steps) => {
@@ -12,6 +19,8 @@ const variableCheck = (variable, steps) => {
 };
 
 const CreatorForm = () => {
+  const [sending, setSending] = useState(false);
+
   const ctx = useCreatorCtx();
   const {
     vendor,
@@ -24,7 +33,12 @@ const CreatorForm = () => {
     addErrorMsg,
   } = ctx;
 
-  const handleSubmit = (e) => {
+  const notificationCtx = useNotificationCtx();
+  const { notifyUser } = notificationCtx;
+
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (steps.length === 0) {
@@ -50,6 +64,33 @@ const CreatorForm = () => {
       );
       return;
     }
+
+    const guideData = {
+      vendor,
+      title,
+      author,
+      authorEmail,
+      description,
+      variables,
+      steps,
+      submittedAt: new Date().toISOString(),
+    };
+
+    setSending(true);
+
+    const [outcome, error] = await submitGuide(guideData);
+
+    if (error) {
+      notifyUser("warning", error);
+    } else {
+      notifyUser(
+        "success",
+        "Guide submitted successfully! Thanks for your contribution."
+      );
+    }
+
+    setSending(false);
+    router.push("/contribute/thank-you");
   };
 
   return (
@@ -72,6 +113,7 @@ const CreatorForm = () => {
           Submit for review
         </button>
       </div>
+      <LoadingModal isLoading={sending} message="Submitting your guide..." />
     </form>
   );
 };

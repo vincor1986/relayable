@@ -61,7 +61,15 @@ const AddVariablesSection = () => {
       return;
     }
 
-    updateFormData("variables", variableData, false, "add");
+    const newVariable = {
+      ...variableData,
+      name: variableData.name.trim(),
+      variations: variableData.enum
+        ? formattedEnumValues
+        : variableData.variations.trim(),
+    };
+
+    updateFormData("variables", newVariable, false, "add");
     setVariableData(DEFAULT_VARIABLE);
     setShowVariableForm(false);
   };

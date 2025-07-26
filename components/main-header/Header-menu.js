@@ -6,7 +6,6 @@ import BurgerIcon from "./Burger-icon";
 import BurgerMenu from "./Burger-menu";
 import HeaderMenuItem from "./Header-menu-item";
 import HeaderMenuSlideout from "./Header-menu-slideout";
-import Searchbar from "./Searchbar";
 
 import useScreenWidth from "@/hooks/useScreenWidth";
 import navLinks from "@/data/navLinks";
