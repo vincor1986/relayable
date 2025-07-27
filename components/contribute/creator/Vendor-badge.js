@@ -15,13 +15,15 @@ const VendorBadge = ({ vendor, resetSelectedVendor }) => {
         />
       </div>
       <h3 className="font-bold">{vendor.name}</h3>
-      <SmallButton
-        className="absolute -right-4 bottom-0 translate-x-full"
-        onClick={resetSelectedVendor}
-        type="warning"
-      >
-        Remove
-      </SmallButton>
+      {resetSelectedVendor ? (
+        <SmallButton
+          className="absolute -right-4 bottom-0 translate-x-full"
+          onClick={resetSelectedVendor}
+          type="warning"
+        >
+          Remove
+        </SmallButton>
+      ) : null}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import logo from "@/public/images/logo/logo-small.png";
 
 const SectionTitle = ({ children }) => {
   return (
-    <div className="relative flex items-center justify-center py-8 px-4 bg-navy text-white text-center mt-4 mb-16 rounded-sm shadow-lg overflow-hidden">
+    <div className="relative flex items-center justify-center py-8 px-4 bg-navy text-white text-center mt-4 mb-8 rounded-sm shadow-lg overflow-hidden">
       <Image
         src={logo}
         alt="Relayable logo"
