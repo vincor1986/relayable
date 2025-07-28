@@ -11,9 +11,10 @@ const GuideStep = ({ step, index, variables }) => {
   useLayoutEffect(() => {
     if (itemRef.current) {
       itemRef.current.innerHTML = detail
-        .replaceAll(VARIABLE_REGEX, (_, variableName) => {
-          return `<span class="text-navy font-bold">${
-            `"${variables[variableName]}"` || "_________"
+        .replaceAll(VARIABLE_REGEX, (_, varName) => {
+          const v = variables[varName];
+          return `<span class="font-bold">${
+            v ? `${v}` : `&lt;${varName}&gt;`
           }</span>`;
         })
         .replaceAll(URL_REGEX, (url) => {
@@ -25,14 +26,14 @@ const GuideStep = ({ step, index, variables }) => {
 
   return (
     <div className="py-2">
-      <p key={index} className="text-navy text-lg my-4">
+      <div key={index} className="text-navy text-lg my-4">
         <p className="bg-blue/80 text-white px-2 py-1 rounded-lg font-bold uppercase text-xs mb-2 w-16 text-center">
           Step {index + 1}
         </p>
         <p className="text-md" ref={itemRef}>
           {detail}
         </p>
-      </p>
+      </div>
     </div>
   );
 };
