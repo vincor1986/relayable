@@ -299,3 +299,26 @@ export const rejectPendingGuide = async (id, authCode) => {
     }
   }
 };
+
+export const queryGuides = async (queryStr) => {
+  const client = initClient();
+
+  try {
+    const db = client.db("guides");
+    const collection = db.collection("approved");
+
+    const regex = new RegExp(queryStr, "i");
+    const guides = await collection
+      .find({
+        $or: [{ title: regex }, { description: regex }, { vendor: regex }],
+      })
+      .toArray();
+
+    client.close();
+    return [guides.map(formatGuide), null];
+  } catch (error) {
+    console.error("Error querying guides:", error);
+    client.close();
+    return [false, "Failed to query guides"];
+  }
+};

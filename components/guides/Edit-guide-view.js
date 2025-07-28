@@ -19,6 +19,21 @@ import {
   rejectPendingGuide,
 } from "@/actions/actions";
 
+const processVariations = (variables) => {
+  return variables.map((v) => {
+    if (v.enum && typeof v.variations === "string") {
+      return {
+        ...v,
+        variations: v.variations
+          .split(",")
+          .map((item) => item.trim())
+          .filter((item) => item !== ""),
+      };
+    }
+    return v;
+  });
+};
+
 const EditGuideView = ({ guide, type = "edit" }) => {
   const [formData, setFormData] = useState(guide);
   const [loading, setLoading] = useState(false);
@@ -30,10 +45,16 @@ const EditGuideView = ({ guide, type = "edit" }) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
+    const newVariables = processVariations(formData.variables);
+    const updatedFormData = {
+      ...formData,
+      variables: newVariables,
+    };
+
     switch (type) {
       case "edit":
         setLoading(true);
-        const [_, editError] = await editGuide(formData, authCode);
+        const [_, editError] = await editGuide(updatedFormData, authCode);
         if (editError) {
           notifyUser("warning", editError);
           setLoading(false);
@@ -44,7 +65,10 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         return;
       case "review":
         setLoading(true);
-        const [__, error] = await approvePendingGuide(formData, authCode);
+        const [__, error] = await approvePendingGuide(
+          updatedFormData,
+          authCode
+        );
         if (error) {
           setLoading(false);
           notifyUser("warning", error);

@@ -16,7 +16,7 @@ const EditGuidePage = async ({ params }) => {
 
   return (
     <>
-      {guide.reviewRequests.length ? (
+      {guide.reviewRequests?.length ? (
         <>
           <SectionHeading>User Review Requests</SectionHeading>
           <div className="p-4 grid grid-cols-1 md:grid-cols-3 gap-4">
