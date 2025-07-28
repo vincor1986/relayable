@@ -1,35 +1,56 @@
 "use client";
 
 import { useState } from "react";
+
+import { useRouter } from "next/navigation";
+
 import SectionTitle from "../ui/Section-title";
 import TextInput from "../ui/Text-input";
 import Textarea from "../ui/Textarea";
 import EditVariable from "./Edit-variable";
 import EditStep from "./Edit-step";
 import SmallButton from "../ui/SmallButton";
-import { approvePendingGuide } from "@/actions/actions";
+import LoadingModal from "../ui/Loading-modal";
 
 import useNotificationCtx from "@/store/useNotificationCtx";
-import LoadingModal from "../ui/Loading-modal";
+import {
+  approvePendingGuide,
+  editGuide,
+  rejectPendingGuide,
+} from "@/actions/actions";
 
 const EditGuideView = ({ guide, type = "edit" }) => {
   const [formData, setFormData] = useState(guide);
   const [loading, setLoading] = useState(false);
+  const [authCode, setAuthCode] = useState("");
 
   const { notifyUser } = useNotificationCtx();
+  const router = useRouter();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     switch (type) {
       case "edit":
+        setLoading(true);
+        const [_, editError] = await editGuide(formData, authCode);
+        if (editError) {
+          notifyUser("warning", editError);
+          setLoading(false);
+        } else {
+          notifyUser("success", "Guide edited successfully!");
+          router.push(`/guides/${guide.vendorSlug}/${guide.slug}`);
+        }
         return;
       case "review":
-        const [success, error] = await approvePendingGuide(formData);
+        setLoading(true);
+        const [__, error] = await approvePendingGuide(formData, authCode);
         if (error) {
+          setLoading(false);
           notifyUser("warning", error);
         } else {
           notifyUser("success", "Guide approved successfully!");
+          router.push(`/guides/${guide.vendorSlug}/${guide.slug}`);
         }
         return;
       default:
@@ -97,8 +118,17 @@ const EditGuideView = ({ guide, type = "edit" }) => {
   const handleReject = async () => {
     switch (type) {
       case "edit":
+        router.push(`/guides/${guide.vendorSlug}/${guide.slug}`);
+        notifyUser("info", "Edit cancelled.");
         return;
       case "review":
+        const [_, error] = await rejectPendingGuide(guide.id, authCode);
+        if (error) {
+          notifyUser("warning", error);
+        } else {
+          notifyUser("success", "Guide rejected successfully!");
+          router.push("/guides/review-pending");
+        }
         return;
       default:
         console.error("Unknown type provided to EditGuideView");
@@ -169,12 +199,20 @@ const EditGuideView = ({ guide, type = "edit" }) => {
             />
           ))}
         </div>
+        <div className="mt-16">
+          <TextInput
+            name="authCode"
+            value={authCode}
+            onChange={(e) => setAuthCode(e.target.value)}
+            label="Authorization Code"
+          />
+        </div>
         <div className="flex items-center py-10 gap-4">
           <button
             type="submit"
             className="bg-dark-green py-2 px-4 text-white font-bold rounded-md cursor-pointer hover:bg-green-700 transition-colors outline-none"
           >
-            Approve
+            {type == "edit" ? "Save Edit" : "Approve"}
           </button>
           <SmallButton type="warning" onClick={handleReject}>
             {type == "edit" ? "Cancel" : "Reject"}

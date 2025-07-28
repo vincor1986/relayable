@@ -7,53 +7,86 @@ import LoadingModal from "@/components/ui/Loading-modal";
 
 import ALL_VENDORS from "@/data/vendors";
 
-import { fetchAllGuides } from "@/actions/actions";
+import { getPendingGuides } from "@/actions/actions";
 import useNotificationCtx from "@/store/useNotificationCtx";
 import VendorBadge from "@/components/contribute/creator/Vendor-badge";
 import GuideBadge from "@/components/guides/Guide-badge";
+import SectionHeading from "@/components/guides/Section-heading";
 
 const ReviewPendingGuidesPage = () => {
-  const [guides, setGuides] = useState([]);
+  const [pendingGuides, setPendingGuides] = useState([]);
+  const [reviewGuides, setReviewGuides] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const notificationCtx = useNotificationCtx();
   const { notifyUser } = notificationCtx;
 
   useEffect(() => {
-    fetchAllGuides("pending").then(([data, error]) => {
+    getPendingGuides("pending").then(([pending, review, error]) => {
       if (error) {
         notifyUser("warning", error);
       } else {
-        setGuides(data);
+        setPendingGuides(pending);
+        setReviewGuides(review);
       }
 
       setLoading(false);
     });
   }, []);
 
-  const activeVendors = useMemo(() => {
-    const vendorNames = new Set(guides.map((guide) => guide.vendor));
+  const activePendingVendors = useMemo(() => {
+    const vendorNames = new Set(pendingGuides.map((guide) => guide.vendor));
     return ALL_VENDORS.filter((vendor) => vendorNames.has(vendor.name));
-  }, [guides]);
+  }, [pendingGuides]);
+
+  const activeReviewVendors = useMemo(() => {
+    const vendorNames = new Set(reviewGuides.map((guide) => guide.vendor));
+    return ALL_VENDORS.filter((vendor) => vendorNames.has(vendor.name));
+  }, [reviewGuides]);
 
   return (
     <section className="p-4">
       <SectionTitle>Review Pending Guides</SectionTitle>
-      {guides.length === 0 ? (
+      <SectionHeading>PENDING GUIDES</SectionHeading>
+      {pendingGuides.length === 0 ? (
         <p>No pending guides to review.</p>
       ) : (
         <>
-          {activeVendors.map((vendor) => (
+          {activePendingVendors.map((vendor) => (
             <div key={vendor.name} className="">
               <VendorBadge vendor={vendor} updateVendor={() => null} />
               <ul className="mt-2 md:grid md:grid-cols-3 md:gap-4">
-                {guides
+                {pendingGuides
                   .filter((guide) => guide.vendor === vendor.name)
                   .map((filteredGuide) => (
                     <GuideBadge
                       key={filteredGuide.id}
                       guide={filteredGuide}
                       href={`/guides/approve/${filteredGuide.vendorSlug}/${filteredGuide.slug}`}
+                    />
+                  ))}
+              </ul>
+            </div>
+          ))}
+        </>
+      )}
+
+      <SectionHeading>REVIEW GUIDES</SectionHeading>
+      {reviewGuides.length === 0 ? (
+        <p>No published guides to review.</p>
+      ) : (
+        <>
+          {activeReviewVendors.map((vendor) => (
+            <div key={vendor.name} className="">
+              <VendorBadge vendor={vendor} updateVendor={() => null} />
+              <ul className="mt-2 md:grid md:grid-cols-3 md:gap-4">
+                {reviewGuides
+                  .filter((guide) => guide.vendor === vendor.name)
+                  .map((filteredGuide) => (
+                    <GuideBadge
+                      key={filteredGuide.id}
+                      guide={filteredGuide}
+                      href={`/guides/edit/${filteredGuide.vendorSlug}/${filteredGuide.slug}`}
                     />
                   ))}
               </ul>
