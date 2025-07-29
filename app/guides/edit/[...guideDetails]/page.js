@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getIndividualGuide } from "@/actions/actions";
 import EditGuideView from "@/components/guides/Edit-guide-view";
 import RRBadge from "@/components/guides/RR-badge";
-import SectionHeading from "@/components/guides/Section-heading";
+import SectionHeading from "@/components/ui/Section-heading";
 
 const EditGuidePage = async ({ params }) => {
   const [vendorSlug, slug] = params.guideDetails;

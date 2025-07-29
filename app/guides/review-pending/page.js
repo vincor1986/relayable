@@ -12,7 +12,7 @@ import useNotificationCtx from "@/store/useNotificationCtx";
 
 import VendorBadge from "@/components/ui/Vendor-badge";
 import GuideBadge from "@/components/guides/Guide-badge";
-import SectionHeading from "@/components/guides/Section-heading";
+import SectionHeading from "@/components/ui/Section-heading";
 import VendorHeader from "@/components/ui/Vendor-header";
 
 const ReviewPendingGuidesPage = () => {

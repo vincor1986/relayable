@@ -6,3 +6,11 @@ export const contributeQuicklinks = [
   { href: "/contribute/request-vendor", text: "Request a new vendor" },
   { href: "/", text: "Home" },
 ];
+
+export const whyRelayableQuicklinks = [
+  { href: "/benefits/#interactive-guides", text: "Interactive Guides" },
+  { href: "/benefits/#time-saving", text: "Time-saving Resources" },
+  { href: "/benefits/#trust", text: "Establish Trust and Security" },
+  { href: "/benefits/#tracking", text: "Access-tracking" },
+  { href: "/guides/search", text: "Search Exisiting Guides" },
+];

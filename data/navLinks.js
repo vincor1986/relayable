@@ -64,27 +64,27 @@ const navLinks = [
       },
       {
         name: "Time-saving Resources",
-        href: "/benefits/time",
+        href: "/benefits/#time-saving",
         description:
           "Spend more time building and less time worrying about instructions or credentials",
         icon: timeIcon,
       },
       {
         name: "Keep on track",
-        href: "/benefits/tracking",
+        href: "/benefits/#tracking",
         description: "Meet deadlines and surpass client expectations",
         icon: trackingIcon,
       },
       {
         name: "Establish Trust and Security",
-        href: "/benefits/trust",
+        href: "/benefits/#trust",
         description:
           "Demonstrate exemplary security-focused practices and attitudes to reassure clients",
         icon: trustIcon,
       },
       {
         name: "Customisable Detailed Guides",
-        href: "/guides",
+        href: "/benefits/#interactive-guides",
         description:
           "Our interactive guide-builder can save you time and ensure a smooth process for your client(s)",
         icon: customiseIcon,
