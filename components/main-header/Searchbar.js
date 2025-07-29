@@ -18,7 +18,7 @@ const Searchbar = ({ mobile = true }) => {
   return (
     <div
       className={`flex h-full w-70 md:w-100 items-center justify-center ${
-        mobile ? "md:hidden" : "hidden md:flex"
+        mobile ? "lg:hidden" : "hidden lg:flex"
       }`}
     >
       <input

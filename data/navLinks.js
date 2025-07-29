@@ -38,7 +38,7 @@ const navLinks = [
       },
       {
         name: "Shortcuts",
-        href: "/dashboard/shortcuts",
+        href: "/shortcuts",
         description: "View shortlisted and favourited resources",
         icon: shortcutIcon,
       },

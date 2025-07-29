@@ -6,7 +6,7 @@ import BurgerMenuItem from "./Burger-menu-item";
 
 import navLinks from "@/data/navLinks";
 
-const BurgerMenu = () => {
+const BurgerMenu = ({ setClose }) => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const handleItemSelect = (itemName) => {
@@ -14,17 +14,27 @@ const BurgerMenu = () => {
   };
 
   return (
-    <div className="fixed right-0 top-0 w-[350px] h-[100vh] pt-20 p-4 bg-navy text-white animate-slide-in z-20 overflow-y-scroll">
-      <h2 className="text-xl ">MENU</h2>
-      <hr className="my-4 border-white" />
-      {navLinks.map((item) => (
-        <BurgerMenuItem
-          key={item.name}
-          item={item}
-          isOpen={selectedItem === item.name}
-          setIsOpen={handleItemSelect}
-        />
-      ))}
+    <div
+      className={`fixed w-full h-[3000px] top-0 left-0 bg-black/80 z-40 cursor-pointer`}
+      onClick={setClose}
+    >
+      <div className="relative h-full w-full" id="close-ok">
+        <div
+          className={`absolute right-0 top-0 w-[400px] pt-20 p-4 pb-12 bg-navy text-white animate-slide-in z-20`}
+          onClick={() => {}}
+        >
+          <h2 className="text-xl ">MENU</h2>
+          <hr className="my-4 border-white" />
+          {navLinks.map((item) => (
+            <BurgerMenuItem
+              key={item.name}
+              item={item}
+              isOpen={selectedItem === item.name}
+              setIsOpen={handleItemSelect}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

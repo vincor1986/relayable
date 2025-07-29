@@ -1,37 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState, use } from "react";
+import { usePathname } from "next/navigation";
 
-import BurgerIcon from "./Burger-icon";
-import BurgerMenu from "./Burger-menu";
 import HeaderMenuItem from "./Header-menu-item";
 import HeaderMenuSlideout from "./Header-menu-slideout";
 
-import useScreenWidth from "@/hooks/useScreenWidth";
 import navLinks from "@/data/navLinks";
 
 const HeaderMenu = () => {
-  const screenWidth = useScreenWidth();
-
-  const [menuOpen, setMenuOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
-  if (screenWidth <= 768) {
-    return (
-      <>
-        <BurgerIcon isOpen={menuOpen} setIsOpen={setMenuOpen} />
-        {menuOpen ? <BurgerMenu /> : null}
-      </>
-    );
-  }
+  const pathname = usePathname();
 
   const handleSelectItem = (itemName) => {
     setSelectedItem((prev) => (prev === itemName ? null : itemName));
   };
 
+  useEffect(() => {
+    setSelectedItem(null);
+  }, [pathname]);
+
   return (
     <>
-      <nav className="relative flex space-x-12 items-center justify-center  bg-white z-30">
+      <nav className="relative flex items-center justify-between gap-6 bg-white z-30">
         {navLinks.map((link) => (
           <HeaderMenuItem
             key={link.name}
