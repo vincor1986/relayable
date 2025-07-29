@@ -26,6 +26,13 @@ const NewVariableForm = ({
     setVariableData((prev) => ({ ...prev, enum: !prev.enum }));
   };
 
+  const toggleMultiple = () => {
+    setVariableData((prev) => ({
+      ...prev,
+      multipleValues: !prev.multipleValues,
+    }));
+  };
+
   return (
     <div className="mt-8 px-4 py-8 relative border border-light-grey">
       <h4 className="absolute top-0 -translate-y-full my-4 px-4 text-dark-grey font-bold text-lg bg-white">
@@ -47,17 +54,29 @@ const NewVariableForm = ({
         placeholder="A short description of the variable, e.g. 'The username to be approved'"
         rows={2}
       />
-      <div className="flex items-center gap-4 mb-4">
-        <TickBox checked={variableData.enum} toggle={toggleEnum} />
-        <p>Is this variable an enum?</p>
+      <div className="flex items-center gap-6 mb-4">
+        <div className="flex items-center gap-4">
+          <TickBox checked={variableData.enum} toggle={toggleEnum} />
+          <p>Is this variable an enum?</p>
+        </div>
+        {variableData.enum ? (
+          <div className="flex items-center gap-4">
+            <TickBox
+              checked={variableData.multipleValues}
+              toggle={toggleMultiple}
+            />
+            <p>Allow multiple values?</p>
+          </div>
+        ) : null}
       </div>
       {variableData.enum ? (
-        <TextInput
+        <Textarea
           label="Permitted Enum Values (comma-separated)"
           name="variations"
           value={variableData.variations}
           onChange={handleInputChange}
           placeholder="e.g. 'admin, user, guest'"
+          rows={2}
         />
       ) : null}
 

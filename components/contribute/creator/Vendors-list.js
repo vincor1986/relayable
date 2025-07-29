@@ -5,7 +5,7 @@ import { useState } from "react";
 import VendorSearchBadge from "./Vendor-search-badge";
 
 import vendors from "@/data/vendors";
-import VendorBadge from "./Vendor-badge";
+import VendorBadge from "@/components/ui/Vendor-badge";
 import TextInput from "@/components/ui/Text-input";
 
 import useCreatorCtx from "@/store/useCreatorCtx";

@@ -14,6 +14,7 @@ import useCreatorCtx from "@/store/useCreatorCtx";
 const DEFAULT_VARIABLE = {
   name: "",
   enum: false,
+  multipleValues: false,
   variations: "",
   options: [],
   description: "",

@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import VendorBadge from "../contribute/creator/Vendor-badge";
+import VendorBadge from "../ui/Vendor-badge";
 import TextVariable from "./Text-variable";
 import SelectVariable from "./Select-variable";
 import GuideStep from "./Guide-step";
@@ -20,11 +20,18 @@ import logoSmall from "@/public/images/logo/logo-small.png";
 import shieldImg from "@/public/images/icons/trust.png";
 import copyImg from "@/public/images/icons/copy.png";
 import useFavourites from "@/hooks/useFavourites";
+import MultipleVariable from "./Multiple-variable";
 
 const formatVariableObject = (guide) => {
+  console.log(guide.variables);
+
   let variables = {};
   for (const variable of guide.variables) {
-    variables[variable.name] = "";
+    if (!variables.enum || !variable.multipleValues) {
+      variables[variable.name] = "";
+    } else {
+      variables[variable.name] = [];
+    }
   }
 
   return variables;
@@ -63,7 +70,19 @@ const GuideView = ({ guide }) => {
     }));
   };
 
-  const copyValid = Object.values(variables).every((v) => v.trim() !== "");
+  const handleMultipleVariableUpdate = (name, value) => {
+    const present = variables[name].includes(value);
+    setVariables((prev) => ({
+      ...prev,
+      [name]: present
+        ? prev[name].filter((v) => v !== value)
+        : [...prev[name], value],
+    }));
+  };
+
+  const copyValid = Object.values(variables).every((v) =>
+    typeof v === "string" ? v.trim() !== "" : v.length > 0
+  );
 
   const handleCopyToClipboard = () => {
     const copyText = clipboardText
@@ -128,7 +147,7 @@ const GuideView = ({ guide }) => {
           steps:
         </p>
         {guide.variables.map((variable) =>
-          variable.enum ? (
+          variable.enum && !variable.multipleValues ? (
             <SelectVariable
               key={variable.name}
               name={variable.name}
@@ -138,6 +157,15 @@ const GuideView = ({ guide }) => {
               onChange={(e) =>
                 handleVariableUpdate(variable.name, e.target.value)
               }
+              variations={variable.variations}
+            />
+          ) : variable.enum && variable.multipleValues ? (
+            <MultipleVariable
+              key={variable.name}
+              name={variable.name}
+              label={variable.name}
+              value={variables[variable.name]}
+              handleMultipleVariableUpdate={handleMultipleVariableUpdate}
               variations={variable.variations}
             />
           ) : (

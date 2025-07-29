@@ -4,13 +4,13 @@ import { useState, useEffect, useMemo } from "react";
 
 import SectionTitle from "@/components/ui/Section-title";
 import GuideBadge from "@/components/guides/Guide-badge";
-import VendorBadge from "@/components/contribute/creator/Vendor-badge";
 import LoadingModal from "@/components/ui/Loading-modal";
 
 import useFavourites from "@/hooks/useFavourites";
 import { getGuidesByIds } from "@/actions/actions";
 
 import ALL_VENDORS from "@/data/vendors";
+import VendorHeader from "@/components/ui/Vendor-header";
 
 const ShortcutsPage = () => {
   const [guides, setGuides] = useState([]);
@@ -52,8 +52,8 @@ const ShortcutsPage = () => {
       {guides.length > 0 && (
         <>
           {activeVendors.map((vendor) => (
-            <div key={vendor.name} className="">
-              <VendorBadge vendor={vendor} updateVendor={() => null} />
+            <div key={vendor.name} className="mb-12">
+              <VendorHeader vendor={vendor} updateVendor={() => null} />
               <ul className="mt-2 md:grid md:grid-cols-3 md:gap-4">
                 {guides
                   .filter((guide) => guide.vendor === vendor.name)

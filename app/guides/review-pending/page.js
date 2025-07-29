@@ -9,9 +9,11 @@ import ALL_VENDORS from "@/data/vendors";
 
 import { getPendingGuides } from "@/actions/actions";
 import useNotificationCtx from "@/store/useNotificationCtx";
-import VendorBadge from "@/components/contribute/creator/Vendor-badge";
+
+import VendorBadge from "@/components/ui/Vendor-badge";
 import GuideBadge from "@/components/guides/Guide-badge";
 import SectionHeading from "@/components/guides/Section-heading";
+import VendorHeader from "@/components/ui/Vendor-header";
 
 const ReviewPendingGuidesPage = () => {
   const [pendingGuides, setPendingGuides] = useState([]);
@@ -54,7 +56,7 @@ const ReviewPendingGuidesPage = () => {
         <>
           {activePendingVendors.map((vendor) => (
             <div key={vendor.name} className="">
-              <VendorBadge vendor={vendor} updateVendor={() => null} />
+              <VendorHeader vendor={vendor} />
               <ul className="mt-2 md:grid md:grid-cols-3 md:gap-4">
                 {pendingGuides
                   .filter((guide) => guide.vendor === vendor.name)

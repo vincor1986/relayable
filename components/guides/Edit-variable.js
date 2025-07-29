@@ -9,6 +9,7 @@ const EditVariable = ({
   index,
   updateField,
   toggleEnum,
+  toggleMultiple,
   handleRemove,
 }) => {
   return (
@@ -26,8 +27,23 @@ const EditVariable = ({
         label="Variable Description"
       />
       <div className="flex items-center gap-2 mb-4">
-        <TickBox checked={variable.enum} toggle={toggleEnum} />
-        <p className="text-navy font-bold text-sm">Is this variable an enum?</p>
+        <div className="flex items-center gap-2">
+          <TickBox checked={variable.enum} toggle={toggleEnum} />
+          <p className="text-navy font-bold text-sm">
+            Is this variable an enum?
+          </p>
+        </div>
+        {variable.enum ? (
+          <div className="flex items-center gap-2">
+            <TickBox
+              checked={variable.multipleValues}
+              toggle={toggleMultiple}
+            />
+            <p className="text-navy font-bold text-sm">
+              Allow multiple values?
+            </p>
+          </div>
+        ) : null}
       </div>
       <TextInput
         name="variations"

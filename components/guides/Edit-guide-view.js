@@ -128,6 +128,21 @@ const EditGuideView = ({ guide, type = "edit" }) => {
     });
   };
 
+  const toggleMultiple = (index) => {
+    setFormData((prevData) => {
+      const updatedVariable = {
+        ...prevData.variables[index],
+        multipleValues: !prevData.variables[index].multipleValues,
+      };
+      const updatedVariables = [...prevData.variables];
+      updatedVariables[index] = updatedVariable;
+      return {
+        ...prevData,
+        variables: updatedVariables,
+      };
+    });
+  };
+
   const handleEditStep = (index, value) => {
     setFormData((prevData) => {
       const updatedSteps = [...prevData.steps];
@@ -207,6 +222,7 @@ const EditGuideView = ({ guide, type = "edit" }) => {
               variable={variable}
               updateField={updateVariableField}
               toggleEnum={() => toggleEnum(index)}
+              toggleMultiple={() => toggleMultiple(index)}
               handleRemove={() => handleRemoveVariable(index)}
             />
           ))}

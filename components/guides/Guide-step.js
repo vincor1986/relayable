@@ -1,5 +1,6 @@
 "use client";
 
+import formatListString from "@/util/formatListString";
 import { URL_REGEX, VARIABLE_REGEX } from "@/util/regex";
 import { useState, useLayoutEffect, useRef } from "react";
 
@@ -13,9 +14,20 @@ const GuideStep = ({ step, index, variables }) => {
       itemRef.current.innerHTML = detail
         .replaceAll(VARIABLE_REGEX, (_, varName) => {
           const v = variables[varName];
-          return `<span class="font-bold">${
-            v ? `${v}` : `&lt;${varName}&gt;`
-          }</span>`;
+          // check type of v to determine if it's a string or an array
+          const str = typeof v === "string";
+
+          console.log("v", v, "varName", varName, "str", str);
+
+          return str
+            ? `<span class="font-bold">${
+                v ? `${v}` : `&lt;${varName}&gt;`
+              }</span>`
+            : `<span class="font-bold">${
+                v.length && v.length > 0
+                  ? `${formatListString(v)}`
+                  : `&lt;${varName}&gt;`
+              }</span>`;
         })
         .replaceAll(URL_REGEX, (url) => {
           const formattedURL = url.startsWith("https") ? url : `https://${url}`;

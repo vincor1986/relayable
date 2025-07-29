@@ -8,9 +8,9 @@ import LoadingModal from "@/components/ui/Loading-modal";
 import { queryGuides } from "@/actions/actions";
 
 import ALL_VENDORS from "@/data/vendors";
-import VendorBadge from "@/components/contribute/creator/Vendor-badge";
 import GuideBadge from "@/components/guides/Guide-badge";
 import SectionTitle from "@/components/ui/Section-title";
+import VendorHeader from "@/components/ui/Vendor-header";
 
 const GuideSearch = () => {
   const searchParams = useSearchParams();
@@ -54,6 +54,18 @@ const GuideSearch = () => {
     return ALL_VENDORS.filter((vendor) => vendorNames.has(vendor.name));
   }, [results]);
 
+  const resultCount = <span className="font-bold">{results.length}</span>;
+  const sTElement = <span className="font-bold">{searchedTerm}</span>;
+
+  const summary = (
+    <p className="text-navy text-2xl">
+      {resultCount}
+      {results.length === 1 ? " result " : " results "}
+      {searchedTerm !== "" ? "for " : null}
+      {searchedTerm !== "" ? sTElement : null}
+    </p>
+  );
+
   return (
     <section className="p-4">
       <SectionTitle>Search our guides</SectionTitle>
@@ -62,16 +74,11 @@ const GuideSearch = () => {
           className="border border-zinc-300 h-12 w-full rounded-md p-2 px-4"
           onChange={(e) => setSearchQuery(e.target.value)}
           value={searchQuery}
-          placeholder="Search our guides here..."
+          placeholder="Search by title, vendor or description..."
           type="text"
         />
       </div>
-      <div className="my-8">
-        <h3 className="text-navy text-2xl">
-          <span className="font-bold">{results.length}</span> results for{" "}
-          <span className="font-bold">{searchedTerm}</span>
-        </h3>
-      </div>
+      <div className="my-8">{summary}</div>
       {results.length === 0 ? (
         <p className="mt-12 text-center">
           No results to show. Please alter your search term and try again.
@@ -80,8 +87,8 @@ const GuideSearch = () => {
       {results.length > 0 && (
         <>
           {activeVendors.map((vendor) => (
-            <div key={vendor.name} className="">
-              <VendorBadge vendor={vendor} updateVendor={() => null} />
+            <div key={vendor.name} className="mb-8">
+              <VendorHeader vendor={vendor} updateVendor={() => null} />
               <ul className="mt-2 md:grid md:grid-cols-3 md:gap-4">
                 {results
                   .filter((guide) => guide.vendor === vendor.name)
