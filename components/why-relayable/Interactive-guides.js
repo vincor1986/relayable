@@ -11,7 +11,7 @@ const InteractiveGuidesSection = () => {
       <div id="interactive-guides">
         <WhyHeading image={guideImg} name="Interactive Guides" />
       </div>
-      <div className="pt-4 px-4 mt-3 mb-6 border border-zinc-200 rounded-sm">
+      <div className="bg-dark-green/5 pt-4 px-4 mt-3 mb-6 border border-zinc-200 rounded-sm">
         <P>
           Save time, eliminate guesswork, and impress your clients with
           beautifully structured interactive guides — automatically generated

@@ -12,5 +12,6 @@ export const whyRelayableQuicklinks = [
   { href: "/benefits/#time-saving", text: "Time-saving Resources" },
   { href: "/benefits/#trust", text: "Establish Trust and Security" },
   { href: "/benefits/#tracking", text: "Access-tracking" },
+  { href: "/faq", text: "Frequently Asked Questions" },
   { href: "/guides/search", text: "Search Exisiting Guides" },
 ];

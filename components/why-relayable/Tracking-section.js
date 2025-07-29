@@ -9,7 +9,7 @@ const TrackingSection = () => {
       <div id="tracking">
         <WhyHeading image={trackingImg} name="Keep on Track" />
       </div>
-      <div className="pt-4 px-4 mt-3 mb-6 border border-zinc-200 rounded-sm">
+      <div className="bg-zinc-400/5 pt-4 px-4 mt-3 mb-6 border border-zinc-200 rounded-sm">
         <P>
           Keeping tabs on who has access to what — and for how long —
           shouldn&apos;t be a guessing game. Our built-in access tracking gives

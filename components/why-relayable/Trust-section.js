@@ -9,7 +9,7 @@ const TrustSection = () => {
       <div id="trust">
         <WhyHeading image={trustImg} name="Establish Trust and Security" />
       </div>
-      <div className="pt-4 px-4 mt-3 mb-6 border border-zinc-200 rounded-sm">
+      <div className="bg-amber-200/5 pt-4 px-4 mt-3 mb-6 border border-zinc-200 rounded-sm">
         <P>
           Trust is the foundation of every great client relationship — and it
           starts long before the first line of code. Our platform helps

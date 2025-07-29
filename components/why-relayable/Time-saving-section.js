@@ -9,7 +9,7 @@ const TimeSavingSection = () => {
       <div id="time-saving">
         <WhyHeading image={timeImg} name="Time-saving Resources" />
       </div>
-      <div className="pt-4 px-4 mt-3 mb-6 border border-zinc-200 rounded-sm">
+      <div className="bg-blue/5 pt-4 px-4 mt-3 mb-6 border border-zinc-200 rounded-sm">
         <P>
           Requesting access from clients shouldn&apos;t eat into your day. With
           ready-to-go, interactive guides, you can eliminate hours of writing
