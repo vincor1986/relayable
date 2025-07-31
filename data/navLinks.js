@@ -99,20 +99,20 @@ const navLinks = [
   },
   {
     name: "How-To Guides",
-    href: "/guides",
+    href: "/guides/search",
     description:
       "Our easy to follow guides will make life easier for you and your clients",
     sublinks: [
       {
         name: "Access-granting",
-        href: "/guides/grant-access",
+        href: "/guides/search?query=granting%20access",
         description:
           "Our guides will make daunting and confusing access-granting procedures as easy as 1,2,3.",
         icon: grantIcon,
       },
       {
         name: "Access-revocation",
-        href: "/guides/revoke-access",
+        href: "/guides/search?query=revoking%20access",
         description:
           "Our simple access-revocation guides will make removing developer access straight-forward and easy.",
         icon: revokeIcon,
@@ -126,9 +126,9 @@ const navLinks = [
       },
       {
         name: "Browse by Resource or Vendor",
-        href: "/guides",
+        href: "/guides/search",
         description:
-          "Browse our how-to guides by company, resource name or web address",
+          "Browse or search our interactive guides by company, resource name or description",
         icon: searchIcon,
       },
     ],

@@ -7,7 +7,7 @@ import GuideBadge from "@/components/guides/Guide-badge";
 import LoadingModal from "@/components/ui/Loading-modal";
 
 import useFavourites from "@/hooks/useFavourites";
-import { getGuidesByIds } from "@/actions/actions";
+import { getGuidesByIds } from "@/actions/guides";
 
 import ALL_VENDORS from "@/data/vendors";
 import VendorHeader from "@/components/ui/Vendor-header";

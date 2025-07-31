@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { getIndividualGuide } from "@/actions/actions";
+import { getIndividualGuide } from "@/actions/guides";
 import EditGuideView from "@/components/guides/Edit-guide-view";
 import RRBadge from "@/components/guides/RR-badge";
 import SectionHeading from "@/components/ui/Section-heading";

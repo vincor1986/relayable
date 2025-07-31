@@ -1,30 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState } from "react";
 
 import rightArrowImage from "@/public/images/icons/arrow-right.png";
 
-const QuestionHeading = ({ question, answer }) => {
+const QuestionHeading = ({ index, question, answer }) => {
   const [showAnswer, setShowAnswer] = useState(false);
-
-  const answerRef = useRef(null);
-
-  useLayoutEffect(() => {
-    if (!answerRef.current) return;
-
-    if (showAnswer) {
-      answerRef.current.style.height = "auto";
-    } else {
-      answerRef.current.style.height = "0px";
-    }
-  }, [showAnswer]);
 
   return (
     <div className="my-10 border border-zinc-200 rounded-md p-4">
       <div className="relative py-2 pr-12 w-full">
         <p className="absolute px-4 top-0 left-0 -translate-y-full text-blue/30 text-4xl font-bold bg-white">
-          Q
+          Q<span className="text-2xl">{index + 1}</span>
         </p>
         <Image
           src={rightArrowImage}
@@ -39,8 +27,9 @@ const QuestionHeading = ({ question, answer }) => {
         <h3 className="text-lg font-semibold text-navy">{question}</h3>
       </div>
       <div
-        className="h-0 overflow-hidden transition-height duration-500"
-        ref={answerRef}
+        className={`overflow-hidden transition-all duration-300 ${
+          showAnswer ? "max-h-screen" : "max-h-0"
+        }`}
       >
         <p className="mt-2 text-gray-600">{answer}</p>
       </div>

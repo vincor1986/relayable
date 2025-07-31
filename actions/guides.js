@@ -1,17 +1,64 @@
 "use server";
 
 import slugify from "slugify";
-import { hash, compare, genSalt } from "bcryptjs";
+import { compare } from "bcryptjs";
 
 import initClient from "@/db/init";
 import formatGuide from "@/util/formatGuide";
 
 import { ObjectId } from "mongodb";
 
-export const submitGuide = async (formData) => {
-  const { vendor, title, author, authorEmail, description } = formData;
+const SEARCH_FILTER = {
+  projection: {
+    _id: true,
+    id: true,
+    vendorSlug: true,
+    title: true,
+    vendor: true,
+    slug: true,
+    description: true,
+    author: true,
+    category: true,
+  },
+};
 
-  if (!vendor || !title || !author || !authorEmail || !description) {
+const FULL_GUIDE_FILTER = {
+  projection: {
+    _id: true,
+    id: true,
+    vendor: true,
+    title: true,
+    slug: true,
+    vendorSlug: true,
+    author: true,
+    description: true,
+    variables: true,
+    steps: true,
+    lastUpdated: true,
+    submittedAt: true,
+    category: true,
+  },
+};
+
+const EDIT_FILTER = {
+  projection: {
+    ...FULL_GUIDE_FILTER.projection,
+    reviewRequests: true,
+    approved: true,
+  },
+};
+
+export const submitGuide = async (formData) => {
+  const { vendor, title, author, authorEmail, description, steps } = formData;
+
+  if (
+    !vendor ||
+    !title ||
+    !author ||
+    !authorEmail ||
+    !description ||
+    steps.length === 0
+  ) {
     return [false, "Missing required fields for guide submission"];
   }
 
@@ -47,7 +94,7 @@ export const fetchAllGuides = async (type = "approved") => {
   try {
     const db = client.db("guides");
     const collection = db.collection(type);
-    const guides = await collection.find({}).toArray();
+    const guides = await collection.find({}, SEARCH_FILTER).toArray();
 
     const formattedGuides = guides.map(formatGuide);
 
@@ -72,7 +119,10 @@ export const getIndividualGuide = async (
     const db = client.db("guides");
     const collection = db.collection(type);
 
-    const guide = await collection.findOne({ vendorSlug, slug });
+    const guide = await collection.findOne(
+      { vendorSlug, slug },
+      FULL_GUIDE_FILTER
+    );
 
     client.close();
     return [formatGuide(guide), null];
@@ -129,7 +179,10 @@ export const getGuideById = async (id) => {
     const db = client.db("guides");
     const collection = db.collection("approved");
 
-    const guide = await collection.findOne({ _id: new ObjectId(id) });
+    const guide = await collection.findOne(
+      { _id: new ObjectId(id) },
+      FULL_GUIDE_FILTER
+    );
 
     if (!guide) {
       return [false, "Guide not found"];
@@ -151,8 +204,9 @@ export const getGuidesByIds = async (idsArr) => {
     const db = client.db("guides");
     const collection = db.collection("approved");
 
-    const objectIds = idsArr.map((id) => new ObjectId(id));
-    const guides = await collection.find({ id: { $in: idsArr } }).toArray();
+    const guides = await collection
+      .find({ id: { $in: idsArr } }, SEARCH_FILTER)
+      .toArray();
 
     if (!guides || guides.length === 0) {
       return [false, "No guides found for the provided IDs"];
@@ -204,13 +258,16 @@ export const getPendingGuides = async () => {
     const db = client.db("guides");
     const collection = db.collection("pending");
 
-    const pendingGuides = await collection.find({}).toArray();
+    const pendingGuides = await collection.find({}, SEARCH_FILTER).toArray();
 
     const approvedCollection = db.collection("approved");
     const approvedGuides = await approvedCollection
-      .find({
-        reviewRequests: { $exists: true, $not: { $size: 0 } },
-      })
+      .find(
+        {
+          reviewRequests: { $exists: true, $not: { $size: 0 } },
+        },
+        SEARCH_FILTER
+      )
       .toArray();
 
     if (!pendingGuides.length && !approvedGuides.length) {
@@ -256,6 +313,10 @@ export const editGuide = async (updatedGuide, authCode) => {
         lastUpdated: new Date().toISOString(),
         _id: mongoId,
         reviewRequests: [],
+        authorEmail:
+          updatedGuide.author === "Relayable"
+            ? process.env.RELAYABLE_EMAIL
+            : existingGuide.authorEmail,
       };
 
       await collection.deleteOne({ _id: mongoId });
@@ -309,9 +370,17 @@ export const queryGuides = async (queryStr) => {
 
     const regex = new RegExp(queryStr, "i");
     const guides = await collection
-      .find({
-        $or: [{ title: regex }, { description: regex }, { vendor: regex }],
-      })
+      .find(
+        {
+          $or: [
+            { title: regex },
+            { description: regex },
+            { vendor: regex },
+            { category: regex },
+          ],
+        },
+        SEARCH_FILTER
+      )
       .toArray();
 
     client.close();

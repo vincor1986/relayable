@@ -7,7 +7,7 @@ import LoadingModal from "@/components/ui/Loading-modal";
 
 import ALL_VENDORS from "@/data/vendors";
 
-import { getPendingGuides } from "@/actions/actions";
+import { getPendingGuides } from "@/actions/guides";
 import useNotificationCtx from "@/store/useNotificationCtx";
 
 import VendorBadge from "@/components/ui/Vendor-badge";

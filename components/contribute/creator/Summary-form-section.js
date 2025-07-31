@@ -1,5 +1,6 @@
 "use client";
 
+import SelectVariable from "@/components/guides/Select-variable";
 import TextInput from "@/components/ui/Text-input";
 import Textarea from "@/components/ui/Textarea";
 
@@ -7,7 +8,8 @@ import useCreatorCtx from "@/store/useCreatorCtx";
 
 const SummaryFormSection = () => {
   const ctx = useCreatorCtx();
-  const { title, description, author, authorEmail, updateFormData } = ctx;
+  const { title, description, author, authorEmail, category, updateFormData } =
+    ctx;
 
   const handleFormInput = (e) => {
     const { name, value } = e.target;
@@ -37,6 +39,14 @@ const SummaryFormSection = () => {
         onChange={handleFormInput}
         value={authorEmail}
         type="email"
+      />
+      <SelectVariable
+        label="Category"
+        name="category"
+        onChange={handleFormInput}
+        value={category}
+        type="text"
+        variations={["Granting access", "Revoking access", "Other"]}
       />
       <Textarea
         label={"Description"}

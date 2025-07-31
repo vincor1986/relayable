@@ -8,6 +8,7 @@ const DEFAULT_STATE = {
   author: "",
   authorEmail: "",
   description: "",
+  category: "",
   variables: [],
   steps: [],
   errors: {

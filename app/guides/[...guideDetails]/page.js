@@ -6,7 +6,7 @@ import GuideView from "@/components/guides/Guide-view";
 import LoadingModal from "@/components/ui/Loading-modal";
 import { notFound } from "next/navigation";
 
-import { getIndividualGuide } from "@/actions/actions";
+import { getIndividualGuide } from "@/actions/guides";
 import useNotificationCtx from "@/store/useNotificationCtx";
 
 const ViewGuidePage = ({ params }) => {

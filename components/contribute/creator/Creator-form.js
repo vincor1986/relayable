@@ -8,7 +8,7 @@ import SummaryFormSection from "@/components/contribute/creator/Summary-form-sec
 import AddVariablesSection from "@/components/contribute/creator/Add-variables-section";
 import AddStepsSection from "@/components/contribute/creator/Add-steps-section";
 
-import { submitGuide } from "@/actions/actions";
+import { submitGuide } from "@/actions/guides";
 import LoadingModal from "@/components/ui/Loading-modal";
 
 import useNotificationCtx from "@/store/useNotificationCtx";

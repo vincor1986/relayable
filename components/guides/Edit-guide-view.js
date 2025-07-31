@@ -17,7 +17,8 @@ import {
   approvePendingGuide,
   editGuide,
   rejectPendingGuide,
-} from "@/actions/actions";
+} from "@/actions/guides";
+import SelectVariable from "./Select-variable";
 
 const processVariations = (variables) => {
   return variables.map((v) => {
@@ -193,6 +194,13 @@ const EditGuideView = ({ guide, type = "edit" }) => {
           onChange={handleUpdateField}
           label="Title"
         />
+        <SelectVariable
+          name="category"
+          value={formData.category}
+          onChange={handleUpdateField}
+          label="Category"
+          variations={["Granting access", "Revoking access", "Other"]}
+        />
         <Textarea
           name="description"
           value={formData.description}
@@ -205,12 +213,6 @@ const EditGuideView = ({ guide, type = "edit" }) => {
           value={formData.author}
           onChange={handleUpdateField}
           label="Author"
-        />
-        <TextInput
-          name="authorEmail"
-          value={formData.authorEmail}
-          onChange={handleUpdateField}
-          label="Author Email"
         />
         <h2 className="mt-6 font-bold text-navy text-lg">Variables:</h2>
         <hr className="border-2 border-navy/40 mb-8" />

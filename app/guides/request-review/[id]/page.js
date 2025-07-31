@@ -8,7 +8,7 @@ import SectionTitle from "@/components/ui/Section-title";
 import LoadingModal from "@/components/ui/Loading-modal";
 import RequestReviewForm from "@/components/guides/Request-review-form";
 
-import { getGuideById, markGuideForReview } from "@/actions/actions";
+import { getGuideById, markGuideForReview } from "@/actions/guides";
 import useNotificationCtx from "@/store/useNotificationCtx";
 
 const DEFAULT_FORM_DATA = {

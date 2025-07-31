@@ -6,7 +6,7 @@ const LoadingModal = ({ isLoading, message = "Loading..." }) => {
   if (!isLoading) return null;
 
   return (
-    <div className="fixed top-0 left-0 h-full w-full inset-0 flex items-center justify-center bg-black/80">
+    <div className="fixed top-0 left-0 min-h-screen w-full inset-0 flex items-center justify-center bg-black/80">
       <div className="p-4 rounded shadow-md">
         <Image
           src={logoSmall}

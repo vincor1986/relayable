@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 
 import LoadingModal from "@/components/ui/Loading-modal";
 
-import { queryGuides } from "@/actions/actions";
+import { queryGuides } from "@/actions/guides";
 
 import ALL_VENDORS from "@/data/vendors";
 import GuideBadge from "@/components/guides/Guide-badge";
