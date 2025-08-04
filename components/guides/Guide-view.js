@@ -21,6 +21,7 @@ import shieldImg from "@/public/images/icons/trust.png";
 import copyImg from "@/public/images/icons/copy.png";
 import useFavourites from "@/hooks/useFavourites";
 import MultipleVariable from "./Multiple-variable";
+import GuideVariable from "./Guide-variable";
 
 const formatVariableObject = (guide) => {
   console.log(guide.variables);
@@ -142,42 +143,19 @@ const GuideView = ({ guide }) => {
         <h2 className="px-4 absolute top-0 left-8 -translate-y-1/2 text-navy font-bold bg-white font-lg">
           Dynamic Variables
         </h2>
-        <p className="mt-4 font-bold text-navy">
+        <p className="my-4 font-bold text-navy">
           Complete the below fields to dynamically populate the instruction
           steps:
         </p>
-        {guide.variables.map((variable) =>
-          variable.enum && !variable.multipleValues ? (
-            <SelectVariable
-              key={variable.name}
-              name={variable.name}
-              label={variable.name}
-              value={variables[variable.name]}
-              description={variable.description}
-              onChange={(e) =>
-                handleVariableUpdate(variable.name, e.target.value)
-              }
-              variations={variable.variations}
-            />
-          ) : variable.enum && variable.multipleValues ? (
-            <MultipleVariable
-              key={variable.name}
-              name={variable.name}
-              label={variable.name}
-              value={variables[variable.name]}
-              handleMultipleVariableUpdate={handleMultipleVariableUpdate}
-              variations={variable.variations}
-            />
-          ) : (
-            <TextVariable
-              key={variable.name}
-              name={variable.name}
-              description={variable.description}
-              value={variables[variable.name]}
-              setValue={handleVariableUpdate}
-            />
-          )
-        )}
+        {guide.variables.map((variable) => (
+          <GuideVariable
+            key={variable.name}
+            variable={variable}
+            variables={variables}
+            handleVariableUpdate={handleVariableUpdate}
+            handleMultipleVariableUpdate={handleMultipleVariableUpdate}
+          />
+        ))}
       </div>
       <SmallButton
         className="mt-20 mx-auto"

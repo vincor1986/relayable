@@ -1,11 +1,10 @@
-const TextInput = ({
+const DateVariable = ({
   label,
   name,
   value,
   onChange,
   placeholder,
   errorMessage,
-  type = "text",
   required = true,
   autoFocus = false,
 }) => {
@@ -15,7 +14,7 @@ const TextInput = ({
         {label.toUpperCase()}{" "}
         {required ? <span className="text-blue">*</span> : null}
         <input
-          type={type}
+          type="date"
           id={name}
           name={name}
           value={value}
@@ -31,4 +30,4 @@ const TextInput = ({
   );
 };
 
-export default TextInput;
+export default DateVariable;

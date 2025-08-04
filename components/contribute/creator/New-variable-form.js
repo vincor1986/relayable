@@ -7,6 +7,7 @@ import SmallButton from "@/components/ui/SmallButton";
 
 import useCreatorCtx from "@/store/useCreatorCtx";
 import ErrorMessage from "@/components/ui/Error-message";
+import SelectVariable from "@/components/guides/Select-variable";
 
 const NewVariableForm = ({
   handleSaveVariable,
@@ -24,6 +25,10 @@ const NewVariableForm = ({
 
   const toggleEnum = () => {
     setVariableData((prev) => ({ ...prev, enum: !prev.enum }));
+  };
+
+  const toggleRequired = () => {
+    setVariableData((prev) => ({ ...prev, required: !prev.required }));
   };
 
   const toggleMultiple = () => {
@@ -46,6 +51,13 @@ const NewVariableForm = ({
         placeholder="Variable name such as 'username' or 'IP_address'"
         autoFocus={true}
       />
+      <SelectVariable
+        label="Variable type"
+        name="type"
+        value={variableData.type}
+        onChange={handleInputChange}
+        variations={["text", "number", "email", "boolean", "date", "enum"]}
+      />
       <Textarea
         label="Description"
         name="description"
@@ -54,12 +66,12 @@ const NewVariableForm = ({
         placeholder="A short description of the variable, e.g. 'The username to be approved'"
         rows={2}
       />
-      <div className="flex items-center gap-6 mb-4">
+      <div className="flex flex-col gap-6 mb-4">
         <div className="flex items-center gap-4">
-          <TickBox checked={variableData.enum} toggle={toggleEnum} />
-          <p>Is this variable an enum?</p>
+          <TickBox checked={variableData.required} toggle={toggleRequired} />
+          <p>Is this variable required in all instances?</p>
         </div>
-        {variableData.enum ? (
+        {variableData.type == "enum" ? (
           <div className="flex items-center gap-4">
             <TickBox
               checked={variableData.multipleValues}
@@ -69,7 +81,7 @@ const NewVariableForm = ({
           </div>
         ) : null}
       </div>
-      {variableData.enum ? (
+      {variableData.type === "enum" ? (
         <Textarea
           label="Permitted Enum Values (comma-separated)"
           name="variations"

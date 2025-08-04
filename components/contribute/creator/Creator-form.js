@@ -30,6 +30,7 @@ const CreatorForm = () => {
     description,
     variables,
     steps,
+    category,
     addErrorMsg,
   } = ctx;
 
@@ -73,6 +74,7 @@ const CreatorForm = () => {
       description,
       variables,
       steps,
+      category,
       submittedAt: new Date().toISOString(),
     };
 

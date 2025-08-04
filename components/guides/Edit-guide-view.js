@@ -19,6 +19,7 @@ import {
   rejectPendingGuide,
 } from "@/actions/guides";
 import SelectVariable from "./Select-variable";
+import AddIcon from "../ui/Add-icon";
 
 const processVariations = (variables) => {
   return variables.map((v) => {
@@ -33,6 +34,16 @@ const processVariations = (variables) => {
     }
     return v;
   });
+};
+
+const DEFAULT_VARIABLE = {
+  name: "",
+  multipleValues: false,
+  variations: "",
+  options: [],
+  description: "",
+  type: "text",
+  required: true,
 };
 
 const EditGuideView = ({ guide, type = "edit" }) => {
@@ -114,11 +125,11 @@ const EditGuideView = ({ guide, type = "edit" }) => {
     });
   };
 
-  const toggleEnum = (index) => {
+  const toggleRequired = (index) => {
     setFormData((prevData) => {
       const updatedVariable = {
         ...prevData.variables[index],
-        enum: !prevData.variables[index].enum,
+        required: !prevData.variables[index].required,
       };
       const updatedVariables = [...prevData.variables];
       updatedVariables[index] = updatedVariable;
@@ -153,6 +164,13 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         steps: updatedSteps,
       };
     });
+  };
+
+  const handleAddVariable = () => {
+    setFormData((prevData) => ({
+      ...prevData,
+      variables: [...prevData.variables, DEFAULT_VARIABLE],
+    }));
   };
 
   const handleReject = async () => {
@@ -217,17 +235,30 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         <h2 className="mt-6 font-bold text-navy text-lg">Variables:</h2>
         <hr className="border-2 border-navy/40 mb-8" />
         <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
-          {formData.variables.map((variable, index) => (
-            <EditVariable
-              key={index}
-              index={index}
-              variable={variable}
-              updateField={updateVariableField}
-              toggleEnum={() => toggleEnum(index)}
-              toggleMultiple={() => toggleMultiple(index)}
-              handleRemove={() => handleRemoveVariable(index)}
-            />
-          ))}
+          <>
+            {formData.variables.map((variable, index) => (
+              <EditVariable
+                key={index}
+                index={index}
+                variable={variable}
+                updateField={updateVariableField}
+                toggleRequired={() => toggleRequired(index)}
+                toggleMultiple={() => toggleMultiple(index)}
+                handleRemove={() => handleRemoveVariable(index)}
+              />
+            ))}
+            <div className="h-full w-full border border-light-grey rounded-sm flex items-center justify-center">
+              <div
+                className="flex flex-col gap-4 items-center"
+                onClick={handleAddVariable}
+              >
+                <AddIcon />
+                <span className="text-dark-grey cursor-pointer">
+                  Add New Variable
+                </span>
+              </div>
+            </div>
+          </>
         </div>
         <h2 className="mt-4 mb-2 font-bold text-navy text-lg">Steps:</h2>
         <hr className="border-2 border-navy/40 mb-8" />

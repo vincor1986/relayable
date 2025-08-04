@@ -1,8 +1,11 @@
 "use client";
 
+import { useState, useLayoutEffect, useRef } from "react";
+
+import isURL from "is-url";
+
 import formatListString from "@/util/formatListString";
 import { URL_REGEX, VARIABLE_REGEX } from "@/util/regex";
-import { useState, useLayoutEffect, useRef } from "react";
 
 const GuideStep = ({ step, index, variables }) => {
   const [detail, _] = useState(step);
@@ -30,6 +33,8 @@ const GuideStep = ({ step, index, variables }) => {
               }</span>`;
         })
         .replaceAll(URL_REGEX, (url) => {
+          if (!isURL(url)) return `${url}`;
+
           const formattedURL = url.startsWith("https") ? url : `https://${url}`;
           return `<a href="${formattedURL}" class="text-blue underline" target="_blank" rel="noopener noreferrer">${formattedURL}</a>`;
         });

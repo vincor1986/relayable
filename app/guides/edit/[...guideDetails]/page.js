@@ -6,9 +6,10 @@ import RRBadge from "@/components/guides/RR-badge";
 import SectionHeading from "@/components/ui/Section-heading";
 
 const EditGuidePage = async ({ params }) => {
-  const [vendorSlug, slug] = params.guideDetails;
+  const { guideDetails } = await params;
+  const [vendorSlug, slug] = guideDetails;
 
-  const [guide, error] = await getIndividualGuide(vendorSlug, slug, "approved");
+  const [guide, error] = await getIndividualGuide(vendorSlug, slug);
 
   if (!guide || error) {
     return notFound();

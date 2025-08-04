@@ -7,17 +7,18 @@ import AddIcon from "@/components/ui/Add-icon";
 
 import addVariableImg from "@/public/images/icons/add-variable.png";
 import NewVariableForm from "./New-variable-form";
-import VariableBadge from "./Variable-badge";
+import VariableOverview from "./Variable-overview";
 
 import useCreatorCtx from "@/store/useCreatorCtx";
 
 const DEFAULT_VARIABLE = {
   name: "",
-  enum: false,
   multipleValues: false,
   variations: "",
   options: [],
   description: "",
+  type: "text",
+  required: true,
 };
 
 const AddVariablesSection = () => {
@@ -84,6 +85,16 @@ const AddVariablesSection = () => {
     setShowVariableForm(false);
   };
 
+  const handleEditVariable = (variableName) => {
+    const variable = variables.find((v) => v.name === variableName);
+    const varIndex = variables.findIndex((v) => v.name === variableName);
+    if (varIndex !== -1) {
+      setVariableData(variable);
+      handleDeleteVariable(varIndex);
+      setShowVariableForm(true);
+    }
+  };
+
   return (
     <div className="p-4">
       <div className="flex gap-4 items-center">
@@ -101,17 +112,20 @@ const AddVariablesSection = () => {
       </div>
       <div className="flex w-full flex-wrap my-4 p-4 gap-4 items-center border border-light-grey rounded-md">
         <p>Saved variables:</p>
-        {variables.length === 0 ? (
-          <p className="text-light-grey">NONE</p>
-        ) : (
-          variables.map((variable, index) => (
-            <VariableBadge
-              key={variable.name}
-              variable={variable}
-              handleDeleteVariable={() => handleDeleteVariable(index)}
-            />
-          ))
-        )}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+          {variables.length === 0 ? (
+            <p className="text-light-grey">NONE</p>
+          ) : (
+            variables.map((variable, index) => (
+              <VariableOverview
+                key={variable.name}
+                variable={variable}
+                handleDeleteVariable={() => handleDeleteVariable(index)}
+                handleEditVariable={() => handleEditVariable(variable.name)}
+              />
+            ))
+          )}
+        </div>
       </div>
       {!showVariableForm ? (
         <div
