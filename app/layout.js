@@ -12,6 +12,10 @@ const nunito = Nunito({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"],
 });
 
+export const metadata = {
+  title: "Relayable",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={nunito.className}>
