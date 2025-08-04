@@ -5,18 +5,18 @@ import QuicklinksSection from "@/components/general/Quicklinks-section";
 
 import { contributeQuicklinks } from "@/data/quicklinks";
 
-import DONT1 from "@/public/images/graphics/contribute/Dont(1).png";
-import DONT2 from "@/public/images/graphics/contribute/Dont(2).png";
-import DONT3 from "@/public/images/graphics/contribute/Dont(3).png";
-import DONT4 from "@/public/images/graphics/contribute/Dont(4).png";
-import DONT5 from "@/public/images/graphics/contribute/Dont(5).png";
-import DONT6 from "@/public/images/graphics/contribute/Dont(6).png";
-import DO1 from "@/public/images/graphics/contribute/Do(1).png";
-import DO2 from "@/public/images/graphics/contribute/Do(2).png";
-import DO3 from "@/public/images/graphics/contribute/Do(3).png";
-import DO4 from "@/public/images/graphics/contribute/Do(4).png";
-import DO5 from "@/public/images/graphics/contribute/Do(5).png";
-import DO6 from "@/public/images/graphics/contribute/Do(6).png";
+import DONT1 from "@/public/images/graphics/contribute/Dont-1.png";
+import DONT2 from "@/public/images/graphics/contribute/Dont-2.png";
+import DONT3 from "@/public/images/graphics/contribute/Dont-3.png";
+import DONT4 from "@/public/images/graphics/contribute/Dont-4.png";
+import DONT5 from "@/public/images/graphics/contribute/Dont-5.png";
+import DONT6 from "@/public/images/graphics/contribute/Dont-6.png";
+import DO1 from "@/public/images/graphics/contribute/Do-1.png";
+import DO2 from "@/public/images/graphics/contribute/Do-2.png";
+import DO3 from "@/public/images/graphics/contribute/Do-3.png";
+import DO4 from "@/public/images/graphics/contribute/Do-4.png";
+import DO5 from "@/public/images/graphics/contribute/Do-5.png";
+import DO6 from "@/public/images/graphics/contribute/Do-6.png";
 
 import tickImg from "@/public/images/icons/tick.png";
 import crossImg from "@/public/images/icons/cross-red.png";
