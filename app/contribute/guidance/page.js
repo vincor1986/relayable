@@ -5,18 +5,18 @@ import QuicklinksSection from "@/components/general/Quicklinks-section";
 
 import { contributeQuicklinks } from "@/data/quicklinks";
 
-import DONT1 from "@/public/images/graphics/contribute/Dont-1.png";
-import DONT2 from "@/public/images/graphics/contribute/Dont-2.png";
-import DONT3 from "@/public/images/graphics/contribute/Dont-3.png";
-import DONT4 from "@/public/images/graphics/contribute/Dont-4.png";
-import DONT5 from "@/public/images/graphics/contribute/Dont-5.png";
-import DONT6 from "@/public/images/graphics/contribute/Dont-6.png";
-import DO1 from "@/public/images/graphics/contribute/Do-1.png";
-import DO2 from "@/public/images/graphics/contribute/Do-2.png";
-import DO3 from "@/public/images/graphics/contribute/Do-3.png";
-import DO4 from "@/public/images/graphics/contribute/Do-4.png";
-import DO5 from "@/public/images/graphics/contribute/Do-5.png";
-import DO6 from "@/public/images/graphics/contribute/Do-6.png";
+import dont1 from "@/public/images/graphics/contribute/dont-1.png";
+import dont2 from "@/public/images/graphics/contribute/dont-2.png";
+import dont3 from "@/public/images/graphics/contribute/dont-3.png";
+import dont4 from "@/public/images/graphics/contribute/dont-4.png";
+import dont5 from "@/public/images/graphics/contribute/dont-5.png";
+import dont6 from "@/public/images/graphics/contribute/dont-6.png";
+import do1 from "@/public/images/graphics/contribute/do-1.png";
+import do2 from "@/public/images/graphics/contribute/do-2.png";
+import do3 from "@/public/images/graphics/contribute/do-3.png";
+import do4 from "@/public/images/graphics/contribute/do-4.png";
+import do5 from "@/public/images/graphics/contribute/do-5.png";
+import do6 from "@/public/images/graphics/contribute/do-6.png";
 
 import tickImg from "@/public/images/icons/tick.png";
 import crossImg from "@/public/images/icons/cross-red.png";
@@ -91,22 +91,22 @@ const ContributorGuidancePage = () => {
           {para(
             "Use simple language and avoid jargon. If you need to use technical terms, explain them clearly. Keep your sentences short and to the point."
           )}
-          {DONT(DONT1)}
-          {DO(DO1)}
+          {DONT(dont1)}
+          {DO(do1)}
           <br />
           {rule("2. Ensure steps are easy to follow and comprehensive")}
           {para(
             "Make sure each step is clear and easy to follow. Make sure to only include one action per step to avoid confusion."
           )}
-          {DONT(DONT2)}
-          {DO(DO2)}
+          {DONT(dont2)}
+          {DO(do2)}
           <br />
           {rule("3. Start at the beginning")}
           {para(
             "Begin with the most primitive step involved in the process (for example: 'Visit https://github.com'). Don't assume the user will know where to start the process or what the first steps are. Be thorough."
           )}
-          {DONT(DONT3)}
-          {DO(DO3)}
+          {DONT(dont3)}
+          {DO(do3)}
           <br />
           {rule("4. Set up variables correctly")}
           {para(
@@ -115,22 +115,22 @@ const ContributorGuidancePage = () => {
           {paraBold(
             "Remember, these variables will be available to the developers using your guide, and the values they provide will be inserted into the guide for them to use."
           )}
-          {DONT(DONT4)}
-          {DO(DO4)}
+          {DONT(dont4)}
+          {DO(do4)}
           <br />
           {rule("5. Enter full URLs")}
           {para(
             "When entering URLs, please ensure you include the full URL, including the protocol (e.g., 'https://'). This will help avoid errors when users try to access resources."
           )}
-          {DONT(DONT5)}
-          {DO(DO5)}
+          {DONT(dont5)}
+          {DO(do5)}
           <br />
           {rule("6. Enter named resources correctly")}
           {para(
             `When entering named resources, please ensure you enter them between single quotes (e.g., 'My Account'). Also, please match the casing of the resource exactly as it appears in the vendor application. This will help users to identify the resources they need to interact with. Also, do your best to describe where to find the named resource on the page, (e.g., "Click 'Settings' in the navigation panel.").`
           )}
-          {DONT(DONT6)}
-          {DO(DO6)}
+          {DONT(dont6)}
+          {DO(do6)}
           <br />
           {rule("7. Check over your guide before submitting")}
           {para(
