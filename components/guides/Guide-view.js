@@ -1,34 +1,33 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import VendorBadge from "../ui/Vendor-badge";
-import TextVariable from "./Text-variable";
-import SelectVariable from "./Select-variable";
 import GuideStep from "./Guide-step";
 import SmallButton from "../ui/SmallButton";
-
-import { URL_REGEX, VARIABLE_REGEX } from "@/util/regex";
-
-import ALL_VENDORS from "@/data/vendors";
-import hRDate from "@/util/hRDate";
-
 import { EyeIcon, StarIcon } from "../ui/Icons";
+import GuideVariable from "./Guide-variable";
+
 import logoSmall from "@/public/images/logo/logo-small.png";
 import shieldImg from "@/public/images/icons/trust.png";
 import copyImg from "@/public/images/icons/copy.png";
+
+import { URL_REGEX, VARIABLE_REGEX } from "@/util/regex";
+import ALL_VENDORS from "@/data/vendors";
+import hRDate from "@/util/hRDate";
+
 import useFavourites from "@/hooks/useFavourites";
-import MultipleVariable from "./Multiple-variable";
-import GuideVariable from "./Guide-variable";
+import isUrl from "is-url";
+import formatListString from "@/util/formatListString";
 
 const formatVariableObject = (guide) => {
   console.log(guide.variables);
 
   let variables = {};
   for (const variable of guide.variables) {
-    if (!variables.enum || !variable.multipleValues) {
+    if (variable.type !== "enum" && !variable.multipleValues) {
       variables[variable.name] = "";
     } else {
       variables[variable.name] = [];
@@ -38,11 +37,13 @@ const formatVariableObject = (guide) => {
   return variables;
 };
 
-const formatStepsClipboard = (guide) => {
+const formatStepsClipboard = (steps) => {
   let text = "";
 
-  for (let i = 0; i < guide.steps.length; i++) {
-    const step = guide.steps[i];
+  const textSteps = steps.map((step) => step.text);
+
+  for (let i = 0; i < textSteps.length; i++) {
+    const step = textSteps[i];
     text += `Step ${i + 1}: ${step}\n`;
     text += "\n";
   }
@@ -50,10 +51,40 @@ const formatStepsClipboard = (guide) => {
   return text;
 };
 
+const formatSteps = (steps) => {
+  return steps.map((s) => ({
+    text: s,
+    id: Math.random().toString(36).substr(2, 9),
+  }));
+};
+
 const GuideView = ({ guide }) => {
   const [variables, setVariables] = useState(formatVariableObject(guide));
-  const [clipboardText, setClipboardText] = useState(
-    formatStepsClipboard(guide)
+  const [steps, _] = useState(formatSteps(guide.steps));
+
+  const mandatoryVariables = guide.variables.filter((v) => v.required);
+  const optionalVariables = guide.variables.filter((v) => !v.required);
+
+  const optionalVarArray = useMemo(
+    () =>
+      optionalVariables
+        .map((v) =>
+          !variables[v.name] ||
+          variables[v.name] === "" ||
+          variables[v.name].length === 0
+            ? `<<var:${v.name}>>`
+            : null
+        )
+        .filter((v) => v !== null),
+    [variables, optionalVariables]
+  );
+
+  const guideSteps = useMemo(
+    () =>
+      steps.filter(
+        (step) => !optionalVarArray.some((v) => step.text.includes(v))
+      ),
+    [steps, optionalVarArray]
   );
 
   const { favourites, toggleFavourite } = useFavourites();
@@ -81,16 +112,20 @@ const GuideView = ({ guide }) => {
     }));
   };
 
-  const copyValid = Object.values(variables).every((v) =>
-    typeof v === "string" ? v.trim() !== "" : v.length > 0
-  );
+  const copyValid = Object.values(mandatoryVariables).every(({ name }) => {
+    const v = variables[name];
+    return typeof v === "string" ? v.trim() !== "" : v.length > 0;
+  });
 
   const handleCopyToClipboard = () => {
-    const copyText = clipboardText
+    const textSteps = formatStepsClipboard(guideSteps);
+
+    const copyText = textSteps
       .replaceAll(VARIABLE_REGEX, (_, varName) => {
-        return variables[varName];
+        return formatListString(variables[varName]);
       })
       .replaceAll(URL_REGEX, (url) => {
+        if (!isUrl(url)) return `${url}`;
         const formattedURL = url.startsWith("https") ? url : `https://${url}`;
         return formattedURL;
       });
@@ -147,15 +182,44 @@ const GuideView = ({ guide }) => {
           Complete the below fields to dynamically populate the instruction
           steps:
         </p>
-        {guide.variables.map((variable) => (
-          <GuideVariable
-            key={variable.name}
-            variable={variable}
-            variables={variables}
-            handleVariableUpdate={handleVariableUpdate}
-            handleMultipleVariableUpdate={handleMultipleVariableUpdate}
-          />
-        ))}
+        <div className="relative flex flex-col pt-8 p-4 mt-12 border border-navy rounded-sm">
+          <p className="absolute top-0 left-4 mt-4 mb-2 -translate-y-full bg-navy rounded-sm py-2 px-2 text-white font-bold">
+            Mandatory Variables
+          </p>
+          <p className="text-sm mb-4 text-dark-grey">
+            These variables are mandatory and must be entered to populate the
+            guide instructions.
+          </p>
+          {mandatoryVariables.map((variable) => (
+            <GuideVariable
+              key={variable.name}
+              variable={variable}
+              variables={variables}
+              handleVariableUpdate={handleVariableUpdate}
+              handleMultipleVariableUpdate={handleMultipleVariableUpdate}
+            />
+          ))}
+        </div>
+        {optionalVariables.length > 0 ? (
+          <div className="relative flex flex-col pt-8 p-4 mt-12 border border-navy rounded-sm">
+            <p className="absolute top-0 left-4 mt-4 mb-2 -translate-y-full bg-navy rounded-sm py-2 px-2 text-white font-bold">
+              Optional Variables
+            </p>
+            <p className="text-sm mb-4 text-dark-grey">
+              These variables are optional. Entering values here will create
+              optional steps in the guide instructions.
+            </p>
+            {optionalVariables.map((variable) => (
+              <GuideVariable
+                key={variable.name}
+                variable={variable}
+                variables={variables}
+                handleVariableUpdate={handleVariableUpdate}
+                handleMultipleVariableUpdate={handleMultipleVariableUpdate}
+              />
+            ))}
+          </div>
+        ) : null}
       </div>
       <SmallButton
         className="mt-20 mx-auto"
@@ -170,14 +234,9 @@ const GuideView = ({ guide }) => {
         <h2 className="px-4 absolute top-0 left-8 -translate-y-1/2 text-navy font-bold bg-white font-lg">
           Step-by-step Guide
         </h2>
-        {guide.steps.map((step, index, arr) => (
-          <div key={index}>
-            <GuideStep
-              key={index}
-              index={index}
-              step={step}
-              variables={variables}
-            />
+        {guideSteps.map((step, index, arr) => (
+          <div key={step.id}>
+            <GuideStep index={index} step={step.text} variables={variables} />
             {index < arr.length - 1 ? <hr className="border-navy/30" /> : null}
           </div>
         ))}

@@ -20,8 +20,6 @@ const GuideStep = ({ step, index, variables }) => {
           // check type of v to determine if it's a string or an array
           const str = typeof v === "string";
 
-          console.log("v", v, "varName", varName, "str", str);
-
           return str
             ? `<span class="font-bold">${
                 v ? `${v}` : `&lt;${varName}&gt;`

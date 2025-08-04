@@ -41,10 +41,10 @@ const VariableOverview = ({
       ) : null}
       <div className="flex gap-2 flex-wrap mt-4 mb-2">
         <SmallButton type="info" onClick={handleEditVariable}>
-          Edit Variable
+          Edit
         </SmallButton>
         <SmallButton type="warning" onClick={handleDeleteVariable}>
-          Remove Variable
+          Remove
         </SmallButton>
       </div>
     </div>
