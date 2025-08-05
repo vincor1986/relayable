@@ -44,6 +44,7 @@ jobs:
 
   test-guides-submission:
     runs-on: ubuntu-latest
+    needs: test_search
     timeout-minutes: 30
     env:
       AUTH: ${{ secrets.AUTH }}
