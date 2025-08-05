@@ -46,13 +46,14 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      AUTH: ${{ secrets.AUTH }}
+      AUTH: ${{ secrets.AUTH }}#
+      AUTH_CODE: ${{ secrets.AUTH_CODE }}
       MONGO_CONNECTION_PROTOCOL: mongodb
       MONGO_USER: root
       MONGO_PASSWORD: example
       MONGO_CLUSTER_ADDRESS: 127.0.0.1:27017
       RELAYABLE_EMAIL: ${{ secrets.RELAYABLE_EMAIL }}
-      SERVICE: true
+      SINGLE_PROJECT: true
     services:
       mongodb:
         image: mongo

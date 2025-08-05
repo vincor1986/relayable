@@ -31,7 +31,7 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
-  projects: process.env.CI && !process.env.SERVICE ? browserProjects : browserProjects.slice(0, 1),
+  projects: process.env.CI && !process.env.SINGLE_PROJECT ? browserProjects : browserProjects.slice(0, 1),
 
   outputDir: 'test-results/',
 
