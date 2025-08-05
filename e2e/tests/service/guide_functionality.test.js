@@ -97,7 +97,6 @@ test("Guide functionality test", async ({ page }) => {
 
   await page.getByTestId("auth-code-input").fill(process.env.AUTH_CODE);
   await page.getByTestId("approve-guide-button").click();
-  await wait(10000);
 
   // Go to guide page and test functionality
   await page.goto("/guides/algolia/test-guide-title");

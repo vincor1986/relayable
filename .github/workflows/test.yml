@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      AUTH: ${{ secrets.AUTH }}#
+      AUTH: ${{ secrets.AUTH }}
       AUTH_CODE: ${{ secrets.AUTH_CODE }}
       MONGO_CONNECTION_PROTOCOL: mongodb
       MONGO_USER: root
