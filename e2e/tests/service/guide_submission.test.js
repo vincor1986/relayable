@@ -4,10 +4,13 @@ require("dotenv").config();
 test("Entered guide is uploaded and viewable on pending page", async ({
   page,
 }) => {
+  // Navigate to guide creation page
   await page.goto("/contribute/creator");
+
+  // Complete new guide form and submit
   await page.getByTestId("vendor-search-input").fill("Heroku");
   await page.getByTestId("Heroku-badge").click();
-  await page.getByTestId("new-guide-title-input").fill("Test Guide Title");
+  await page.getByTestId("new-guide-title-input").fill("Test Guide Title 2");
   await page.getByTestId("new-guide-author-input").fill("Test Author");
   await page.getByTestId("new-guide-email-input").fill("test@example.com");
   await page
@@ -32,23 +35,28 @@ test("Entered guide is uploaded and viewable on pending page", async ({
   await page.getByTestId("confirm-new-step-button").click();
   await page.getByTestId("submit-new-guide-button").click();
 
+  // Verify guide appears on pending review page
   await page.goto("/guides/review-pending");
 
   await expect(page.getByTestId("results-container")).toBeVisible();
   await expect(page.getByTestId("vendor-header-Heroku")).toBeAttached();
-  await expect(page.getByTestId("guide-test-guide-title")).toBeAttached();
+  await expect(page.getByTestId("guide-test-guide-title-2")).toBeAttached();
 });
 
 test("Guide can be approved and viewed on guide page", async ({ page }) => {
+  // Navigate to pending guides and enter review mode
   await page.goto("/guides/review-pending");
   await expect(page.getByTestId("results-container")).toBeVisible();
-  await page.getByTestId("guide-test-guide-title").click();
+  await page.getByTestId("guide-test-guide-title-2").click();
 
+  // Approve guide
   await page.getByTestId("auth-code-input").fill(process.env.AUTH_CODE);
   await page.getByTestId("approve-guide-button").click();
 
-  await page.goto("/guides/heroku/test-guide-title");
-
-  await expect(page.getByTestId("guide-title-test-guide-title")).toBeVisible();
+  // Verify guide now has its own page
+  await page.goto("/guides/heroku/test-guide-title-2");
+  await expect(
+    page.getByTestId("guide-title-test-guide-title-2")
+  ).toBeVisible();
   await expect(page.getByTestId("guide-steps-section")).toBeAttached();
 });
