@@ -1,6 +1,8 @@
 const { test, expect } = require("@playwright/test");
 require("dotenv").config();
 
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 test("Entered guide is uploaded and viewable on pending page", async ({
   page,
 }) => {
@@ -52,6 +54,7 @@ test("Guide can be approved and viewed on guide page", async ({ page }) => {
   // Approve guide
   await page.getByTestId("auth-code-input").fill(process.env.AUTH_CODE);
   await page.getByTestId("approve-guide-button").click();
+  await wait(10000); // Wait for approval to process
 
   // Verify guide now has its own page
   await page.goto("/guides/heroku/test-guide-title-2");
