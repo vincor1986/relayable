@@ -6,8 +6,10 @@ jobs:
     timeout-minutes: 30
     env:
       AUTH: ${{ secrets.AUTH }}
-      MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
+      MONGO_CONNECTION_PROTOCOL: ${{ secrets.MONGO_CONNECTION_PROTOCOL }}
       MONGO_USER: ${{ secrets.MONGO_USER }}
+      MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
+      MONGO_CLUSTER_ADDRESS: ${{ secrets.MONGO_CLUSTER_ADDRESS }}
       RELAYABLE_EMAIL: ${{ secrets.RELAYABLE_EMAIL }}
     steps:
       - name: Checkout code
@@ -32,6 +34,60 @@ jobs:
 
       - name: Run tests
         run: npm run test:e2e
+
+      - name: Upload Playwright test results
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Results-report
+          path: test-results/
+
+  test-guides-submission:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      AUTH: ${{ secrets.AUTH }}
+      MONGO_CONNECTION_PROTOCOL: mongodb
+      MONGO_USER: root
+      MONGO_PASSWORD: example
+      MONGO_CLUSTER_ADDRESS: 127.0.0.1:27017
+      RELAYABLE_EMAIL: ${{ secrets.RELAYABLE_EMAIL }}
+      PORT: 8080
+    services:
+      mongodb:
+        image: mongo
+        restart: always
+        ports:
+          - 27017:27017
+        env:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: example
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "21"
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Wait on MongoDB service
+        run: npx wait-on tcp:127.0.0.1:27017
+
+      - name: Run tests
+        run: npm run test:e2e:service
 
       - name: Upload Playwright test results
         if: failure()

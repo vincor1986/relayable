@@ -102,6 +102,13 @@ const GuideView = ({ guide }) => {
     }));
   };
 
+  const handleBoolUpdate = (name) => {
+    setVariables((prev) => ({
+      ...prev,
+      [name]: !prev[name],
+    }));
+  };
+
   const handleMultipleVariableUpdate = (name, value) => {
     const present = variables[name].includes(value);
     setVariables((prev) => ({
@@ -161,7 +168,10 @@ const GuideView = ({ guide }) => {
           <EyeIcon className="cursor-pointer h-8 w-8" />
         </div>
       </div>
-      <h2 className="text-navy text-4xl font-bold mb-2 mr-14 text-wrap max-w-[600px]">
+      <h2
+        className="text-navy text-4xl font-bold mb-2 mr-14 text-wrap max-w-[600px]"
+        data-testid={`guide-title-${guide.slug}`}
+      >
         {guide.title} - {guide.vendor}
       </h2>
       <p className="mb-8 text-navy font-bold italic">{guide.description}</p>
@@ -197,6 +207,7 @@ const GuideView = ({ guide }) => {
               variables={variables}
               handleVariableUpdate={handleVariableUpdate}
               handleMultipleVariableUpdate={handleMultipleVariableUpdate}
+              handleBoolUpdate={handleBoolUpdate}
             />
           ))}
         </div>
@@ -216,6 +227,7 @@ const GuideView = ({ guide }) => {
                 variables={variables}
                 handleVariableUpdate={handleVariableUpdate}
                 handleMultipleVariableUpdate={handleMultipleVariableUpdate}
+                handleBoolUpdate={handleBoolUpdate}
               />
             ))}
           </div>
@@ -230,7 +242,10 @@ const GuideView = ({ guide }) => {
         Copy Instructions to Clipboard
         <Image src={copyImg} alt="copy icon" width={16} height={16} />
       </SmallButton>
-      <div className="relative mt-12 mb-6 border border-navy p-4 max-w-[800px] rounded-md mx-auto">
+      <div
+        className="relative mt-12 mb-6 border border-navy p-4 max-w-[800px] rounded-md mx-auto"
+        data-testid="guide-steps-section"
+      >
         <h2 className="px-4 absolute top-0 left-8 -translate-y-1/2 text-navy font-bold bg-white font-lg">
           Step-by-step Guide
         </h2>

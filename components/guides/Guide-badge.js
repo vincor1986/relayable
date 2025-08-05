@@ -17,16 +17,18 @@ const GuideBadge = ({ guide, href }) => {
       href={href}
       className="relative flex flex-col gap-2 p-4 my-4 bg-white rounded-lg shadow hover:bg-zinc-100 transition-colors duration-300"
     >
-      <h3 data-testid="guide-title" className="text-lg font-bold mr-16">
-        {guide.title}
-      </h3>
-      <p className="text-sm text-gray-600">{guide.description}</p>
-      <span className="text-xs text-gray-500">By {guide.author}</span>
-      <Image
-        src={iconMap[guide.category]}
-        alt={guide.category}
-        className="absolute right-2 top-2 w-10 h-10"
-      />
+      <div data-testid={`guide-${guide.slug}`}>
+        <h3 data-testid="guide-title" className="text-lg font-bold mr-16">
+          {guide.title}
+        </h3>
+        <p className="text-sm text-gray-600">{guide.description}</p>
+        <span className="text-xs text-gray-500">By {guide.author}</span>
+        <Image
+          src={iconMap[guide.category]}
+          alt={guide.category}
+          className="absolute right-2 top-2 w-10 h-10"
+        />
+      </div>
     </Link>
   );
 };

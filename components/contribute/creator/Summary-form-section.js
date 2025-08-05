@@ -24,6 +24,7 @@ const SummaryFormSection = () => {
         placeholder='e.g. "Add Collaborator"'
         onChange={handleFormInput}
         value={title}
+        data_testid="new-guide-title-input"
       />
       <TextInput
         label={"Author"}
@@ -31,6 +32,7 @@ const SummaryFormSection = () => {
         placeholder="Your full name, username or alias"
         onChange={handleFormInput}
         value={author}
+        data_testid="new-guide-author-input"
       />
       <TextInput
         label={"Author Email"}
@@ -39,6 +41,7 @@ const SummaryFormSection = () => {
         onChange={handleFormInput}
         value={authorEmail}
         type="email"
+        data_testid="new-guide-email-input"
       />
       <SelectVariable
         label="Category"
@@ -47,6 +50,7 @@ const SummaryFormSection = () => {
         value={category}
         type="text"
         variations={["Granting access", "Revoking access", "Other"]}
+        data_testid="new-guide-category-select"
       />
       <Textarea
         label={"Description"}
@@ -54,6 +58,7 @@ const SummaryFormSection = () => {
         placeholder='A brief description of what outcome this guide will achieve, e.g. "Adding a collaborator to your GitHub repository."'
         onChange={handleFormInput}
         value={description}
+        data_testid="new-guide-description-textarea"
       />
     </div>
   );

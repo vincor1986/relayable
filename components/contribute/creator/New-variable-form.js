@@ -50,6 +50,7 @@ const NewVariableForm = ({
         onChange={handleInputChange}
         placeholder="Variable name such as 'username' or 'IP_address'"
         autoFocus={true}
+        data_testid="variable-name-input"
       />
       <SelectVariable
         label="Variable type"
@@ -57,6 +58,7 @@ const NewVariableForm = ({
         value={variableData.type}
         onChange={handleInputChange}
         variations={["text", "number", "email", "boolean", "date", "enum"]}
+        data_testid="variable-type-select"
       />
       <Textarea
         label="Description"
@@ -65,10 +67,15 @@ const NewVariableForm = ({
         onChange={handleInputChange}
         placeholder="A short description of the variable, e.g. 'The username to be approved'"
         rows={2}
+        data_testid="variable-description-textarea"
       />
       <div className="flex flex-col gap-6 mb-4">
         <div className="flex items-center gap-4">
-          <TickBox checked={variableData.required} toggle={toggleRequired} />
+          <TickBox
+            checked={variableData.required}
+            toggle={toggleRequired}
+            data_testid="variable-required-checkbox"
+          />
           <p>Is this variable required in all instances?</p>
         </div>
         {variableData.type == "enum" ? (
@@ -76,6 +83,7 @@ const NewVariableForm = ({
             <TickBox
               checked={variableData.multipleValues}
               toggle={toggleMultiple}
+              data_testid="variable-multi-checkbox"
             />
             <p>Allow multiple values?</p>
           </div>
@@ -89,11 +97,16 @@ const NewVariableForm = ({
           onChange={handleInputChange}
           placeholder="e.g. 'admin, user, guest'"
           rows={2}
+          data_testid="variable-variations-textarea"
         />
       ) : null}
 
       <div className="flex items-center gap-4 my-2">
-        <SmallButton type="info" onClick={handleSaveVariable}>
+        <SmallButton
+          type="info"
+          onClick={handleSaveVariable}
+          data_testid="save-variable-button"
+        >
           Save
         </SmallButton>
         <p className="text-red-800 text-md cursor-pointer" onClick={clearForm}>

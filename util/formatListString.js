@@ -1,5 +1,6 @@
 const formatListString = (arr) => {
-  if (["boolean", "string", "date"].includes(typeof arr)) return arr;
+  if (["string", "date"].includes(typeof arr)) return arr;
+  if (typeof arr === "boolean") return arr.toString();
 
   const string = arr
     .map((item) => item.trim())

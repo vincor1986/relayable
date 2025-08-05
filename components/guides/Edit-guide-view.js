@@ -23,7 +23,7 @@ import AddIcon from "../ui/Add-icon";
 
 const processVariations = (variables) => {
   return variables.map((v) => {
-    if (v.enum && typeof v.variations === "string") {
+    if (v.type == "enum" && typeof v.variations === "string") {
       return {
         ...v,
         variations: v.variations
@@ -278,12 +278,14 @@ const EditGuideView = ({ guide, type = "edit" }) => {
             value={authCode}
             onChange={(e) => setAuthCode(e.target.value)}
             label="Authorization Code"
+            data_testid="auth-code-input"
           />
         </div>
         <div className="flex items-center py-10 gap-4">
           <button
             type="submit"
             className="bg-dark-green py-2 px-4 text-white font-bold rounded-md cursor-pointer hover:bg-green-700 transition-colors outline-none"
+            data-testid="approve-guide-button"
           >
             {type == "edit" ? "Save Edit" : "Approve"}
           </button>

@@ -47,6 +47,7 @@ const NewStepEntry = ({ index, clear, editContent = "" }) => {
         ref={inputRef}
         required={false}
         autoFocus={true}
+        data_testid="new-step-input"
       />
       <div className="flex flex-wrap items-center gap-4 my-4">
         <p className="text-dark-grey font-bold">Insert variable:</p>
@@ -56,6 +57,7 @@ const NewStepEntry = ({ index, clear, editContent = "" }) => {
               key={variable.name}
               className="bg-zinc-200 text-dark-grey font-bold px-2 py-1 rounded-sm cursor-pointer hover:bg-zinc-300 transition-colors duration-300"
               onClick={() => insertVariable(variable.name)}
+              data-testid={`${variable.name}-variable`}
             >
               {variable.name}
             </div>
@@ -71,6 +73,7 @@ const NewStepEntry = ({ index, clear, editContent = "" }) => {
           onClick={() => {
             handleSaveStep(instruction, index);
           }}
+          data_testid="confirm-new-step-button"
         >
           {editContent ? "Update step" : "Add step"}
         </SmallButton>

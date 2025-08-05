@@ -9,6 +9,7 @@ const GuideVariable = ({
   variables,
   handleVariableUpdate,
   handleMultipleVariableUpdate,
+  handleBoolUpdate,
 }) => {
   if (["text", "number", "email"].includes(variable.type)) {
     return (
@@ -16,6 +17,7 @@ const GuideVariable = ({
         value={variables[variable.name]}
         setValue={handleVariableUpdate}
         {...variable}
+        data_testid={`variable-${variable.name}-input`}
       />
     );
   }
@@ -24,7 +26,11 @@ const GuideVariable = ({
     return (
       <>
         <div className="flex items-center gap-2 my-6">
-          <TickBox checked={variable} setValue={handleVariableUpdate} />
+          <TickBox
+            checked={variables[variable.name]}
+            toggle={() => handleBoolUpdate(variable.name)}
+            data_testid={`variable-${variable.name}-input`}
+          />
           <p className="text-sm text-gray-500">{variable.name}</p>
         </div>
         <p className="text-light-grey text-sm">{variable.description}</p>
@@ -42,6 +48,7 @@ const GuideVariable = ({
         errorMessage={variable.errorMessage}
         required={variable.required}
         autoFocus={variable.autoFocus}
+        data_testid={`variable-${variable.name}-input`}
       />
     );
   }
@@ -67,6 +74,7 @@ const GuideVariable = ({
           onChange={(e) => handleVariableUpdate(variable.name, e.target.value)}
           variations={variable.variations}
           description={variable.description}
+          data_testid={`variable-${variable.name}-input`}
         />
       );
     }

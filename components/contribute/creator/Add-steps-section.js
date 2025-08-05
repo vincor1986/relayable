@@ -61,6 +61,7 @@ const AddStepsSection = ({}) => {
         <div
           className="flex pl-18 py-6 gap-3 items-center cursor-pointer"
           onClick={() => setNewStep(true)}
+          data-testid="add-step-button"
         >
           <AddIcon />
           <p className="font-bold text-navy">Add a new step</p>

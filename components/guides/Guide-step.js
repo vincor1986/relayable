@@ -18,11 +18,15 @@ const GuideStep = ({ step, index, variables }) => {
         .replaceAll(VARIABLE_REGEX, (_, varName) => {
           const v = variables[varName];
           // check type of v to determine if it's a string or an array
-          const str = typeof v === "string";
+          const varType = typeof v;
 
-          return str
+          return varType === "string"
             ? `<span class="font-bold">${
                 v ? `${v}` : `&lt;${varName}&gt;`
+              }</span>`
+            : varType === "boolean"
+            ? `<span class="font-bold">${
+                v ? `${v.toString()}` : `&lt;${varName}&gt;`
               }</span>`
             : `<span class="font-bold">${
                 v.length && v.length > 0
@@ -40,12 +44,16 @@ const GuideStep = ({ step, index, variables }) => {
   }, [itemRef.current, JSON.stringify(variables)]);
 
   return (
-    <div className="py-2">
+    <div className="py-2" data-testid="guide-step">
       <div key={index} className="text-navy text-lg my-4">
         <p className="bg-blue/80 text-white px-2 py-1 rounded-lg font-bold uppercase text-xs mb-2 w-16 text-center">
           Step {index + 1}
         </p>
-        <p className="text-md" ref={itemRef}>
+        <p
+          className="text-md"
+          ref={itemRef}
+          data-testid="guide-step-instructions"
+        >
           {detail}
         </p>
       </div>

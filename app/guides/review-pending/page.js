@@ -19,6 +19,7 @@ const ReviewPendingGuidesPage = () => {
   const [pendingGuides, setPendingGuides] = useState([]);
   const [reviewGuides, setReviewGuides] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [initiated, setInitiated] = useState(false);
 
   const notificationCtx = useNotificationCtx();
   const { notifyUser } = notificationCtx;
@@ -33,6 +34,7 @@ const ReviewPendingGuidesPage = () => {
       }
 
       setLoading(false);
+      setInitiated(true);
     });
   }, []);
 
@@ -49,53 +51,57 @@ const ReviewPendingGuidesPage = () => {
   return (
     <section className="p-4">
       <SectionTitle>Review Pending Guides</SectionTitle>
-      <SectionHeading>PENDING GUIDES</SectionHeading>
-      {pendingGuides.length === 0 ? (
-        <p>No pending guides to review.</p>
-      ) : (
+      {initiated ? (
         <>
-          {activePendingVendors.map((vendor) => (
-            <div key={vendor.name} className="">
-              <VendorHeader vendor={vendor} />
-              <ul className="mt-2 md:grid md:grid-cols-3 md:gap-4">
-                {pendingGuides
-                  .filter((guide) => guide.vendor === vendor.name)
-                  .map((filteredGuide) => (
-                    <GuideBadge
-                      key={filteredGuide.id}
-                      guide={filteredGuide}
-                      href={`/guides/approve/${filteredGuide.vendorSlug}/${filteredGuide.slug}`}
-                    />
-                  ))}
-              </ul>
+          <SectionHeading>PENDING GUIDES</SectionHeading>
+          {pendingGuides.length === 0 ? (
+            <p>No pending guides to review.</p>
+          ) : (
+            <div data-testid="results-container">
+              {activePendingVendors.map((vendor) => (
+                <div key={vendor.name} className="">
+                  <VendorHeader vendor={vendor} />
+                  <ul className="mt-2 md:grid md:grid-cols-3 md:gap-4">
+                    {pendingGuides
+                      .filter((guide) => guide.vendor === vendor.name)
+                      .map((filteredGuide) => (
+                        <GuideBadge
+                          key={filteredGuide.id}
+                          guide={filteredGuide}
+                          href={`/guides/approve/${filteredGuide.vendorSlug}/${filteredGuide.slug}`}
+                        />
+                      ))}
+                  </ul>
+                </div>
+              ))}
             </div>
-          ))}
-        </>
-      )}
+          )}
 
-      <SectionHeading>REVIEW GUIDES</SectionHeading>
-      {reviewGuides.length === 0 ? (
-        <p>No published guides to review.</p>
-      ) : (
-        <>
-          {activeReviewVendors.map((vendor) => (
-            <div key={vendor.name} className="">
-              <VendorBadge vendor={vendor} updateVendor={() => null} />
-              <ul className="mt-2 md:grid md:grid-cols-3 md:gap-4">
-                {reviewGuides
-                  .filter((guide) => guide.vendor === vendor.name)
-                  .map((filteredGuide) => (
-                    <GuideBadge
-                      key={filteredGuide.id}
-                      guide={filteredGuide}
-                      href={`/guides/edit/${filteredGuide.vendorSlug}/${filteredGuide.slug}`}
-                    />
-                  ))}
-              </ul>
-            </div>
-          ))}
+          <SectionHeading>REVIEW GUIDES</SectionHeading>
+          {reviewGuides.length === 0 ? (
+            <p>No published guides to review.</p>
+          ) : (
+            <>
+              {activeReviewVendors.map((vendor) => (
+                <div key={vendor.name} className="">
+                  <VendorBadge vendor={vendor} updateVendor={() => null} />
+                  <ul className="mt-2 md:grid md:grid-cols-3 md:gap-4">
+                    {reviewGuides
+                      .filter((guide) => guide.vendor === vendor.name)
+                      .map((filteredGuide) => (
+                        <GuideBadge
+                          key={filteredGuide.id}
+                          guide={filteredGuide}
+                          href={`/guides/edit/${filteredGuide.vendorSlug}/${filteredGuide.slug}`}
+                        />
+                      ))}
+                  </ul>
+                </div>
+              ))}
+            </>
+          )}
         </>
-      )}
+      ) : null}
       <LoadingModal isLoading={loading} message="Loading pending guides..." />
     </section>
   );

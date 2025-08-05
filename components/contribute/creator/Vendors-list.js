@@ -64,6 +64,7 @@ const VendorsList = () => {
           placeholder="Start typing resource name..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          data_testid="vendor-search-input"
         />
 
         {filteredVendors.length ? (

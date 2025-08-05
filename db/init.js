@@ -1,11 +1,21 @@
 import { MongoClient } from "mongodb";
 
-const { MONGO_USER, MONGO_PASSWORD } = process.env;
+const {
+  MONGO_CONNECTION_PROTOCOL,
+  MONGO_USER,
+  MONGO_PASSWORD,
+  MONGO_CLUSTER_ADDRESS,
+} = process.env;
 
-const uri = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@cluster0.zggvo08.mongodb.net/`;
+let uri = `${MONGO_CONNECTION_PROTOCOL}://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_CLUSTER_ADDRESS}`;
 
 const initClient = () => {
-  if (!MONGO_USER || !MONGO_PASSWORD) {
+  if (
+    !MONGO_CONNECTION_PROTOCOL ||
+    !MONGO_USER ||
+    !MONGO_PASSWORD ||
+    !MONGO_CLUSTER_ADDRESS
+  ) {
     throw new Error("Missing MongoDB environment variables");
   }
 

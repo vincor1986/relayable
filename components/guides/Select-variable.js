@@ -8,6 +8,7 @@ const SelectVariable = ({
   variations = [],
   required = true,
   autoFocus = false,
+  data_testid = "",
 }) => {
   return (
     <div className="mb-4">
@@ -22,6 +23,7 @@ const SelectVariable = ({
           className="w-full px-4 py-2 border border-navy rounded-sm focus:outline-none"
           required={required}
           autoFocus={autoFocus}
+          data-testid={data_testid}
         >
           <option value="" disabled>
             Select {label.toLowerCase()}

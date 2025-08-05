@@ -14,7 +14,9 @@ const VendorBadge = ({ vendor, resetSelectedVendor }) => {
           className="max-h-12 max-w-12 rounded-sm"
         />
       </div>
-      <h3 className="font-bold">{vendor.name}</h3>
+      <h3 className="font-bold" data-testid={`vendor-${vendor.name}`}>
+        {vendor.name}
+      </h3>
       {resetSelectedVendor ? (
         <SmallButton
           className="absolute -right-4 bottom-0 translate-x-full"

@@ -1,4 +1,3 @@
-import SmallButton from "@/components/ui/SmallButton";
 import Image from "next/image";
 
 const VendorHeader = ({ vendor }) => {
@@ -6,6 +5,7 @@ const VendorHeader = ({ vendor }) => {
     <div
       id={vendor.name}
       className="pl-12 relative flex h-12 w-full mt-2 p-4 gap-4 items-center bg-navy text-white rounded-md transition-colors duration-300"
+      data-testid={`vendor-header-${vendor.name}`}
     >
       <div className="border-3 border-blue w-16 h-16 flex items-center justify-center bg-white rounded-md">
         <Image

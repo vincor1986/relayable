@@ -131,6 +131,7 @@ const AddVariablesSection = () => {
         <div
           className="flex pl-18 py-2 gap-3 items-center cursor-pointer"
           onClick={() => setShowVariableForm(true)}
+          data-testid="add-variable-button"
         >
           <AddIcon />
           <p className="font-bold text-navy">Add a new variable</p>

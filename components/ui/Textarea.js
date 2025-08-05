@@ -9,6 +9,7 @@ const Textarea = ({
   required = true,
   ref = null,
   autoFocus = false,
+  data_testid = "",
 }) => {
   return (
     <div className="mb-4">
@@ -26,6 +27,7 @@ const Textarea = ({
           required={required}
           ref={ref || undefined}
           autoFocus={autoFocus}
+          data-testid={data_testid}
         />
       </label>
       <p className="text-red-800">{errorMessage}</p>

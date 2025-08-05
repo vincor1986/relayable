@@ -21,6 +21,7 @@ const MultipleVariable = ({
                 checked={value.includes(option)}
                 value={option}
                 toggle={() => handleMultipleVariableUpdate(name, option)}
+                data_testid={`variable-${name}-${option}-checkbox`}
               />
               <p>{option}</p>
             </div>

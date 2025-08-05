@@ -2,11 +2,12 @@ import Image from "next/image";
 
 import tickImg from "@/public/images/icons/tick.png";
 
-const TickBox = ({ checked, toggle }) => {
+const TickBox = ({ checked, toggle, data_testid = "" }) => {
   return (
     <div
       className="relative w-6 h-6 border border-dark-grey rounded-sm cursor-pointer"
       onClick={toggle}
+      data-testid={data_testid}
     >
       <span></span>
       {checked ? (
