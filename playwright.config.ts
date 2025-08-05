@@ -20,8 +20,8 @@ export default defineConfig({
   timeout: 60 * 1000,
   expect: { timeout: 10000 },
   fullyParallel: false,
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  retries: 0,
+  workers: 1,
 
   use: {
     baseURL: 'http://localhost:3000',
@@ -31,7 +31,7 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
-  projects: process.env.CI ? browserProjects : browserProjects.slice(0, 1),
+  projects: process.env.CI && !process.env.SERVICE ? browserProjects : browserProjects.slice(0, 1),
 
   outputDir: 'test-results/',
 

@@ -52,6 +52,7 @@ jobs:
       MONGO_PASSWORD: example
       MONGO_CLUSTER_ADDRESS: 127.0.0.1:27017
       RELAYABLE_EMAIL: ${{ secrets.RELAYABLE_EMAIL }}
+      SERVICE: true
     services:
       mongodb:
         image: mongo
