@@ -90,7 +90,7 @@ jobs:
           path: test-results/
 
   test-guides-submission:
-    name: Test guide submission process
+    name: Test guide submissions
     runs-on: ubuntu-latest
     needs: check-merge
     timeout-minutes: 30
