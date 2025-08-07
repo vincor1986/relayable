@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { createPortal } from "react-dom";
 
 import BurgerIcon from "./Burger-icon";
 import BurgerMenu from "./Burger-menu";
@@ -34,11 +35,15 @@ const MobileHeader = () => {
       </Link>
       <Searchbar mobile={true} />
       <BurgerIcon isOpen={menuOpen} setIsOpen={setMenuOpen} />
-      {menuOpen ? (
-        <BurgerMenu
-          setClose={(e) => e.target.id === "close-ok" && setMenuOpen(false)}
-        />
-      ) : null}
+      {menuOpen
+        ? createPortal(
+            <BurgerMenu
+              setClose={(e) => e.target.id === "close-ok" && setMenuOpen(false)}
+              setMenuOpen={setMenuOpen}
+            />,
+            document.getElementById("mobile-menu")
+          )
+        : null}
     </div>
   );
 };

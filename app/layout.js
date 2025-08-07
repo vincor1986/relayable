@@ -20,6 +20,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={nunito.className}>
       <body className="relative min-h-[100vh] pb-[200px]">
+        <div
+          className="fixed h-full w-full top-0 right-0 translate-x-full z-40"
+          id="mobile-menu"
+        />
         <PageBanner />
         <MainHeader />
         <main className="mx-auto max-w-[1200px] overflow-hidden">

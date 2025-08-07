@@ -1,7 +1,10 @@
-const BurgerIcon = ({ isOpen, setIsOpen }) => {
+const BurgerIcon = ({ isOpen, setIsOpen, className }) => {
   return (
     <div
-      className="flex flex-col justify-center items-center cursor-pointer relative z-50"
+      className={
+        className ||
+        "relative flex flex-col justify-center items-center cursor-pointer z-60"
+      }
       onClick={() => setIsOpen((prev) => !prev)}
     >
       <div
