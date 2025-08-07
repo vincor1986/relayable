@@ -1,7 +1,13 @@
-name: E2E Test Workflow
-on: push
+name: E2E 'main' branch push tests
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: read
 jobs:
   test_search:
+    name: Perform search tests
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
@@ -43,6 +49,7 @@ jobs:
           path: test-results/
 
   test-guides-submission:
+    name: Test guide submission process
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:

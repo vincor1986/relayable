@@ -1,0 +1,161 @@
+name: Dev branch merge check and E2E tests
+on:
+  push:
+    branches:
+      - dev/**
+jobs:
+  check-merge:
+    name: Check if merge is clean
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup git user
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Fetch main branch
+        run: git fetch origin main
+
+      - name: Check if merge is clean
+        run: |
+          git checkout main
+          git pull origin main
+          if ! git merge --no-commit --no-ff $GITHUB_SHA; then
+          echo "Merge conflict detected!"
+          git diff --diff-filter=U
+          exit 1
+          fi
+
+  test_search:
+    name: Perform search tests
+    runs-on: ubuntu-latest
+    needs: check-merge
+    timeout-minutes: 30
+    env:
+      AUTH: ${{ secrets.AUTH }}
+      MONGO_CONNECTION_PROTOCOL: ${{ secrets.MONGO_CONNECTION_PROTOCOL }}
+      MONGO_USER: ${{ secrets.MONGO_USER }}
+      MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
+      MONGO_CLUSTER_ADDRESS: ${{ secrets.MONGO_CLUSTER_ADDRESS }}
+      RELAYABLE_EMAIL: ${{ secrets.RELAYABLE_EMAIL }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "21"
+
+      - name: Setup git user
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Fetch main branch
+        run: git fetch origin main
+
+      - name: Merge dev branch into main
+        run: |
+          git checkout main
+          git pull origin main
+          git merge --no-commit --no-ff $GITHUB_SHA
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run tests
+        id: run-tests
+        run: npm run test:e2e
+
+      - name: Upload Playwright test results
+        if: github.steps.run-tests.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Results-report
+          path: test-results/
+
+  test-guides-submission:
+    name: Test guide submission process
+    runs-on: ubuntu-latest
+    needs: check-merge
+    timeout-minutes: 30
+    env:
+      AUTH: ${{ secrets.AUTH }}
+      AUTH_CODE: ${{ secrets.AUTH_CODE }}
+      MONGO_CONNECTION_PROTOCOL: mongodb
+      MONGO_USER: root
+      MONGO_PASSWORD: example
+      MONGO_CLUSTER_ADDRESS: 127.0.0.1:27017
+      RELAYABLE_EMAIL: ${{ secrets.RELAYABLE_EMAIL }}
+      SINGLE_PROJECT: true
+    services:
+      mongodb:
+        image: mongo
+        ports:
+          - 27017:27017
+        env:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: example
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "21"
+
+      - name: Setup git user
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Fetch main branch
+        run: git fetch origin main
+
+      - name: Merge dev branch into main
+        run: |
+          git checkout main
+          git pull origin main
+          git merge --no-commit --no-ff $GITHUB_SHA
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Wait on MongoDB service
+        run: npx wait-on tcp:127.0.0.1:27017
+
+      - name: Run tests
+        id: run-tests
+        run: npm run test:e2e:service
+
+      - name: Upload Playwright test results
+        if: github.steps.run-tests.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Results-report
+          path: test-results/
