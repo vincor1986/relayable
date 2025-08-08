@@ -7,8 +7,6 @@ const generatePrompt = async (vendorName) => {
     return console.error("Error fetching guides:", error);
   }
 
-  console.log("Existing guides:", existingGuides);
-
   const guideList =
     existingGuides.length == 0 || !existingGuides
       ? "There are currently no guides for this vendor"
