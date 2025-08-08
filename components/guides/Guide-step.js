@@ -5,7 +5,7 @@ import { useState, useLayoutEffect, useRef } from "react";
 import isURL from "is-url";
 
 import formatListString from "@/util/formatListString";
-import { URL_REGEX, VARIABLE_REGEX } from "@/util/regex";
+import { URL_REGEX, VARIABLE_REGEX, CONDITIONAL_REGEX } from "@/util/regex";
 
 const GuideStep = ({ step, index, variables }) => {
   const [detail, _] = useState(step);
@@ -39,6 +39,11 @@ const GuideStep = ({ step, index, variables }) => {
 
           const formattedURL = url.startsWith("https") ? url : `https://${url}`;
           return `<a href="${formattedURL}" class="text-blue underline" target="_blank" rel="noopener noreferrer">${formattedURL}</a>`;
+        })
+        .replaceAll(CONDITIONAL_REGEX, "")
+        .trim()
+        .replace(/./, (match) => {
+          return match.toUpperCase();
         });
     }
   }, [itemRef.current, JSON.stringify(variables)]);

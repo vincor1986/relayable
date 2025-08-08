@@ -14,7 +14,7 @@ import logoSmall from "@/public/images/logo/logo-small.png";
 import shieldImg from "@/public/images/icons/trust.png";
 import copyImg from "@/public/images/icons/copy.png";
 
-import { URL_REGEX, VARIABLE_REGEX } from "@/util/regex";
+import { URL_REGEX, VARIABLE_REGEX, CONDITIONAL_REGEX } from "@/util/regex";
 import ALL_VENDORS from "@/data/vendors";
 import hRDate from "@/util/hRDate";
 
@@ -27,10 +27,10 @@ const formatVariableObject = (guide) => {
 
   let variables = {};
   for (const variable of guide.variables) {
-    if (variable.type !== "enum" && !variable.multipleValues) {
-      variables[variable.name] = "";
-    } else {
+    if (variable.type == "enum" && variable.multipleValues) {
       variables[variable.name] = [];
+    } else {
+      variables[variable.name] = "";
     }
   }
 
@@ -92,7 +92,7 @@ const GuideView = ({ guide }) => {
 
   const isFavourite = favourites.includes(guide.id);
 
-  const imageSrc = guide.author === "Relayable" ? logoSmall : shieldImg;
+  const imageSrc = guide.author.includes("Relayable") ? logoSmall : shieldImg;
   const vendor = ALL_VENDORS.find((v) => v.name === guide.vendor);
 
   const handleVariableUpdate = (name, value) => {

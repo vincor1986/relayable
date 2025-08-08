@@ -49,11 +49,13 @@ const EDIT_FILTER = {
 };
 
 export const submitGuide = async (formData) => {
-  const { vendor, title, author, authorEmail, description, steps } = formData;
+  const { vendor, title, category, author, authorEmail, description, steps } =
+    formData;
 
   if (
     !vendor ||
     !title ||
+    !category ||
     !author ||
     !authorEmail ||
     !description ||
@@ -271,7 +273,7 @@ export const getPendingGuides = async () => {
       .toArray();
 
     if (!pendingGuides.length && !approvedGuides.length) {
-      return [false, false, "No pending or approved guides found"];
+      return [[], [], null];
     }
 
     const formattedPending = pendingGuides.map(formatGuide);

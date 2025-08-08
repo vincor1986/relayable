@@ -31,9 +31,9 @@ const GuideVariable = ({
             toggle={() => handleBoolUpdate(variable.name)}
             data_testid={`variable-${variable.name}-input`}
           />
-          <p className="text-sm text-gray-500">{variable.name}</p>
+          <p className="text-sm text-gray-500">{variable.description}</p>
         </div>
-        <p className="text-light-grey text-sm">{variable.description}</p>
+        {/* <p className="text-light-grey text-sm">{variable.description}</p> */}
       </>
     );
   }
