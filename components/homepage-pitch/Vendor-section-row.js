@@ -7,14 +7,14 @@ const VendorSectionRow = ({ vendorArr, index }) => {
   const arr = [...vendorArr, ...vendorArr, ...vendorArr];
 
   return (
-    <div className={`flex flex-nowrap gap-4 ${className} mb-4 opacity-60`}>
+    <div className={`flex flex-nowrap gap-4 ${className} mb-4`}>
       {arr.map((vendor, index) => (
         <Image
           src={vendor.logo}
           alt={vendor.name}
           width={100}
           height={100}
-          className="h-16 w-16 object-contain"
+          className="h-16 w-16 object-contain grayscale-50"
           key={index}
         />
       ))}

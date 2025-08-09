@@ -15,3 +15,11 @@ export const whyRelayableQuicklinks = [
   { href: "/faq", text: "Frequently Asked Questions" },
   { href: "/guides/search", text: "Search Exisiting Guides" },
 ];
+
+export const legalQuicklinks = [
+  { href: "/legal/terms-of-use", text: "Terms of Use" },
+  { href: "/legal/privacy-policy", text: "Privacy Policy" },
+  { href: "/legal/cookie-policy", text: "Cookie Policy" },
+  { href: "/legal/disclaimer", text: "Disclaimer" },
+  { href: "/legal/dpa", text: "Data Processing Addendum" },
+];

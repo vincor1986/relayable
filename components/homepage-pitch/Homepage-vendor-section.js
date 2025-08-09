@@ -9,7 +9,7 @@ const vendorList = [...VENDOR_LIST, ...VENDOR_LIST];
 const ROWS = [];
 
 let currentIndex = 0;
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 9; i++) {
   const start = currentIndex;
   const end = currentIndex + 30;
   ROWS.push(vendorList.slice(start, end));
@@ -22,7 +22,7 @@ for (let i = 0; i < 10; i++) {
 
 const HomepageVendorSection = () => {
   return (
-    <div className="relative overflow-hidden h-[800px] mt-28 pt-8 border-t-2 border-b-2 border-navy select-none">
+    <div className="relative overflow-hidden h-[720px] mt-28 pt-8 border-t-2 border-b-2 border-navy select-none">
       <div className="absolute left-1/2 -translate-x-1/2 w-max mx-auto">
         {ROWS.map((row, index) => (
           <VendorSectionRow key={index} vendorArr={row} index={index} />

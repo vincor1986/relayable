@@ -28,10 +28,10 @@ const Footer = () => {
         <p className="text-sm text-gray-600">
           © 2025 Relayable. All rights reserved.
         </p>
-        <Link href="/legal-notice" className="text-sm text-navy">
-          Legal Notice
+        <Link href="/legal" className="text-sm text-navy">
+          Legal
         </Link>
-        <Link href="/privacy" className="text-sm text-navy">
+        <Link href="/legal/privacy-policy" className="text-sm text-navy">
           Privacy Policy
         </Link>
       </div>
