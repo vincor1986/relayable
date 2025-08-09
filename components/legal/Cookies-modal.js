@@ -26,7 +26,7 @@ const CookiesModal = () => {
   if (!isVisible) return <></>;
 
   return (
-    <div className="fixed right-4 bottom-4 p-4 border max-w-screen border-navy rounded-sm shadow-lg z-30 bg-white md:max-w-[400px]">
+    <div className="fixed left-1/2 -translate-x-1/2 w-full  bottom-4 p-4 border max-w-screen border-navy rounded-sm shadow-lg z-30 bg-white md:max-w-[400px] md:translate-x-0 md:left-auto md:right-4">
       <div className="w-full">
         <Image
           src={cookiesImg}
