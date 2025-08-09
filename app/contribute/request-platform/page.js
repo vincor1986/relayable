@@ -4,7 +4,6 @@ import { useState } from "react";
 
 import SectionTitle from "@/components/ui/Section-title";
 import TextInput from "@/components/ui/Text-input";
-import SmallButton from "@/components/ui/SmallButton";
 import Textarea from "@/components/ui/Textarea";
 
 const DEFAULT_STATE = {
@@ -29,16 +28,16 @@ const RequestVendorPage = () => {
 
   return (
     <section className="p-4">
-      <SectionTitle>Request a New Vendor</SectionTitle>
+      <SectionTitle>Request a New Platform</SectionTitle>
       <p className="p-4 mb-6">
-        If you'd like to create a new interactive guide but the vendor /
+        If you'd like to create a new interactive guide but the platform /
         resource you're looking for is not available, please complete the below
         form and your request will be reviewed. We will notify you of the result
         via email once your request has been processed.
       </p>
       <form onSubmit={handleSubmit} className="mx-auto max-w-[800px]">
         <TextInput
-          label="Vendor Name"
+          label="Platform Name"
           name="vendorName"
           value={formData.vendorName}
           onChange={handleUpdateState}

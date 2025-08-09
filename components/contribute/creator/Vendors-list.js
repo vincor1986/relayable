@@ -59,7 +59,7 @@ const VendorsList = () => {
     <div className="p-4">
       <div className="relative">
         <TextInput
-          label="Choose a Vendor / Resource"
+          label="Choose a Platform / Resource"
           name="query"
           placeholder="Start typing resource name..."
           value={query}
@@ -74,9 +74,9 @@ const VendorsList = () => {
         ) : null}
       </div>
       <p className="italic text-sm">
-        Can't find the vendor or resource you're looking for? Click{" "}
-        <TextLink href="/contribute/request-vendor">here</TextLink> to request a
-        new vendor.
+        Can't find the platform or resource you're looking for? Click{" "}
+        <TextLink href="/contribute/request-platform">here</TextLink> to request
+        a new platform.
       </p>
     </div>
   );

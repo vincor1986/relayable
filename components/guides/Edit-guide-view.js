@@ -204,7 +204,7 @@ const EditGuideView = ({ guide, type = "edit" }) => {
           name="vendor"
           value={formData.vendor}
           onChange={handleUpdateField}
-          label="Vendor"
+          label="Platform"
         />
         <TextInput
           name="title"

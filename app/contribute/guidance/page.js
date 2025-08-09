@@ -127,7 +127,7 @@ const ContributorGuidancePage = () => {
           <br />
           {rule("6. Enter named resources correctly")}
           {para(
-            `When entering named resources, please ensure you enter them between single quotes (e.g., 'My Account'). Also, please match the casing of the resource exactly as it appears in the vendor application. This will help users to identify the resources they need to interact with. Also, do your best to describe where to find the named resource on the page, (e.g., "Click 'Settings' in the navigation panel.").`
+            `When entering named resources, please ensure you enter them between single quotes (e.g., 'My Account'). Also, please match the casing of the resource exactly as it appears in the platform application. This will help users to identify the resources they need to interact with. Also, do your best to describe where to find the named resource on the page, (e.g., "Click 'Settings' in the navigation panel.").`
           )}
           {DONT(dont6)}
           {DO(do6)}

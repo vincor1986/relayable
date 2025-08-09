@@ -5,13 +5,16 @@ const TextInput = ({
   onChange,
   placeholder,
   errorMessage,
+  className = "",
+  inputClassName = "",
   type = "text",
   required = true,
   autoFocus = false,
   data_testid = "",
+  ref = null,
 }) => {
   return (
-    <div className="mb-4">
+    <div className={`mb-4 ${className}`}>
       <label htmlFor={name} className="block text-sm font-bold text-dark-grey">
         {label.toUpperCase()}{" "}
         {required ? <span className="text-blue">*</span> : null}
@@ -22,10 +25,11 @@ const TextInput = ({
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          className="w-full px-4 py-2 border border-navy rounded-sm focus:outline-none"
+          className={`w-full px-4 py-2 border border-navy rounded-sm focus:outline-none ${inputClassName}`}
           required={required}
           autoFocus={autoFocus}
           data-testid={data_testid}
+          ref={ref}
         />
         <p className="text-red-800">{errorMessage}</p>
       </label>

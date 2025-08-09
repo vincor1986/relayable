@@ -19,8 +19,9 @@
   --color-dark-grey: #4c4f4d;
   --color-dark-green: #297550;
   --animate-slide-in: slide-in 0.3s cubic-bezier(0.24, 0.44, 0.55, 1);
-  --drop-shadow-above: 0px 4px -4px rgb(0 0 0 / 0.15);
-  --animate-ping-reverse: ping 0.5s ease reverse
+  --animate-roll-left: roll-left 60s linear infinite;
+  --animate-roll-right: roll-right 60s linear infinite;
+  --animate-ping-reverse: ping 0.5s ease reverse;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,6 +44,24 @@ body {
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@keyframes roll-left {
+  0% {
+    transform: translateX(0%);
+  } 
+  100% {
+    transform: translateX(-33.3333%);
+  }
+}
+
+@keyframes roll-right {
+  0% {
+    transform: translateX(0%);
+  } 
+  100% {
+    transform: translateX(33.3333%);
   }
 }
 

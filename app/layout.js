@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         />
         <PageBanner />
         <MainHeader />
-        <main className="mx-auto max-w-[1200px] overflow-hidden">
+        <main className="relative mx-auto max-w-[1200px] overflow-x-hidden">
           <NotificationWrapper>{children}</NotificationWrapper>
         </main>
         <Footer />

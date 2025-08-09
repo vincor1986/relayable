@@ -91,7 +91,7 @@ const navLinks = [
       },
       {
         name: "FAQ",
-        href: "/frequently-asked-questions",
+        href: "/faq",
         description: "Find answers to commonly asked questions",
         icon: faqIcon,
       },
@@ -125,10 +125,10 @@ const navLinks = [
         icon: toolkitIcon,
       },
       {
-        name: "Browse by Resource or Vendor",
+        name: "Browse by Resource or Platform",
         href: "/guides/search",
         description:
-          "Browse or search our interactive guides by company, resource name or description",
+          "Browse or search our interactive guides by platform, resource name or description",
         icon: searchIcon,
       },
     ],

@@ -5,6 +5,7 @@ const SmallButton = ({
   children,
   disabled = false,
   data_testid = "",
+  submit = false,
 }) => {
   const color =
     type === "warning"
@@ -24,6 +25,7 @@ const SmallButton = ({
       onClick={onClick}
       disabled={disabled}
       data-testid={data_testid}
+      type={submit ? "submit" : "button"}
     >
       {children}
     </button>

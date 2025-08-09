@@ -72,7 +72,7 @@ const Search = () => {
           className="border border-zinc-300 h-12 w-full rounded-md p-2 px-4"
           onChange={(e) => setSearchQuery(e.target.value)}
           value={searchQuery}
-          placeholder="Search by title, vendor or description..."
+          placeholder="Search by title, platform or description..."
           type="text"
         />
       </div>
