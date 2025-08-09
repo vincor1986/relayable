@@ -5,6 +5,8 @@ import { Nunito } from "next/font/google";
 import MainHeader from "@/components/main-header/Main-header";
 import PageBanner from "@/components/main-header/Page-banner";
 import Footer from "@/components/footer/Footer";
+import CookiesModal from "@/components/legal/Cookies-modal";
+
 import NotificationWrapper from "@/components/ui/Notification-wrapper";
 
 const nunito = Nunito({
@@ -29,6 +31,7 @@ export default function RootLayout({ children }) {
         <main className="relative mx-auto max-w-[1200px] overflow-x-hidden">
           <NotificationWrapper>{children}</NotificationWrapper>
         </main>
+        <CookiesModal />
         <Footer />
       </body>
     </html>

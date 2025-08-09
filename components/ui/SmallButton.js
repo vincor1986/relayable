@@ -17,7 +17,7 @@ const SmallButton = ({
   return (
     <button
       className={
-        "flex items-center gap-4 px-4 py-2 text-white cursor-pointer  transition-colors duration-300 rounded-md " +
+        "flex items-center justify-center gap-4 px-4 py-2 text-white cursor-pointer  transition-colors duration-300 rounded-md " +
         className +
         " " +
         color
