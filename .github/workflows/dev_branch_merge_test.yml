@@ -43,6 +43,7 @@ jobs:
       MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
       MONGO_CLUSTER_ADDRESS: ${{ secrets.MONGO_CLUSTER_ADDRESS }}
       RELAYABLE_EMAIL: ${{ secrets.RELAYABLE_EMAIL }}
+      PORT: 3001
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -82,8 +83,8 @@ jobs:
 
       - name: Check port 3000 before tests
         run: |
-          npx wait-on tcp:3000 --timeout 5000
-          echo "Port 3000 is responding"
+          npx wait-on tcp:${{ env.PORT }} --timeout 5000
+          echo "Port 3001 is responding"
 
       - name: Run tests
         id: run-tests

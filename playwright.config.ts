@@ -36,8 +36,8 @@ export default defineConfig({
   outputDir: 'test-results/',
 
   webServer: {
-    command: !!process.env.CI ? 'npm run build && npm start' : 'npm run dev',
-    port: 3000,
+    command: !!process.env.CI ? `PORT=${process.env.PORT || 3000} npm run build && npm start` : `PORT=${process.env.PORT || 3000} npm run dev`,
+    port: Number(process.env.PORT) || 3000,
     timeout: 180 * 1000,
     reuseExistingServer: false,
   },
