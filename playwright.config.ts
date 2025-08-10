@@ -24,7 +24,7 @@ export default defineConfig({
   workers: !!process.env.SINGLE_PROJECT ? 1 : 3,
 
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL: `http://localhost:${process.env.PORT || 3000}`,
     headless: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
