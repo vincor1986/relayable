@@ -70,6 +70,10 @@ body {
   opacity: 0.3;
 }
 
+body {
+  color: #4c4f4d;
+}
+
 #burger-menu::-webkit-scrollbar {
     display: none;
 }

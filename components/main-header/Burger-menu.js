@@ -21,7 +21,7 @@ const BurgerMenu = ({ setClose, setMenuOpen }) => {
     >
       <div className="relative h-full w-full" id="close-ok">
         <div
-          className={`absolute right-0 top-0 w-[400px] h-full pt-20 p-4 pb-12 bg-navy text-white animate-slide-in z-20 overflow-y-scroll`}
+          className={`absolute right-0 top-0 w-[400px] max-w-4/5 h-full pt-20 p-4 pb-12 bg-navy text-white animate-slide-in z-20 overflow-y-scroll`}
           onClick={() => {}}
           autoFocus={true}
           id="burger-menu"
