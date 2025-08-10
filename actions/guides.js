@@ -85,7 +85,7 @@ export const submitGuide = async (formData) => {
       variations:
         typeof variable.variations === "object"
           ? variable.variations.map((variation) => xss(variation))
-          : [],
+          : xss(variable.variations),
     }));
   }
 
