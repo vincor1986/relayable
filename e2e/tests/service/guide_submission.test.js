@@ -36,10 +36,10 @@ test("Entered guide is uploaded and viewable on pending page", async ({
   await page.getByTestId("test_variable-variable").click();
   await page.getByTestId("confirm-new-step-button").click();
   await page.getByTestId("submit-new-guide-button").click();
+  await expect(page.getByTestId("notification-success")).toBeAttached();
 
   // Verify guide appears on pending review page
   await page.goto("/guides/review-pending");
-
   await expect(page.getByTestId("results-container")).toBeVisible();
   await expect(page.getByTestId("vendor-header-Heroku")).toBeAttached();
   await expect(page.getByTestId("guide-test-guide-title-2")).toBeAttached();
@@ -54,6 +54,7 @@ test("Guide can be approved and viewed on guide page", async ({ page }) => {
   // Approve guide
   await page.getByTestId("auth-code-input").fill(process.env.AUTH_CODE);
   await page.getByTestId("approve-guide-button").click();
+  await expect(page.getByTestId("notification-success")).toBeAttached();
 
   // Verify guide now has its own page
   await page.goto("/guides/heroku/test-guide-title-2");

@@ -5,7 +5,10 @@ import image404 from "@/public/images/graphics/sections/404.png";
 
 const NotFoundPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-100vh gap-8">
+    <div
+      className="flex flex-col items-center justify-center min-h-100vh gap-8"
+      data-testid="not-found-page"
+    >
       <Image
         src={image404}
         alt="Submarine with periscope above surface of water"
