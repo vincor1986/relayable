@@ -8,6 +8,7 @@ const EditStep = ({ step, index, handleEditStep }) => {
       value={step}
       onChange={(e) => handleEditStep(index, e.target.value)}
       rows={2}
+      data_testid="edit-step-input"
     />
   );
 };

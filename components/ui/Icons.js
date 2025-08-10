@@ -2,7 +2,7 @@ export const StarIcon = ({ ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    stroke="navy"
+    stroke="#285773"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -17,7 +17,7 @@ export const EyeIcon = ({ ...props }) => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="none"
-    stroke="navy"
+    stroke="#285773"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"

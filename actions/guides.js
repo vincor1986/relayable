@@ -1,12 +1,14 @@
 "use server";
 
 import slugify from "slugify";
+import xss from "xss";
 import { compare } from "bcryptjs";
+import { ObjectId } from "mongodb";
 
 import initClient from "@/db/init";
 import formatGuide from "@/util/formatGuide";
 
-import { ObjectId } from "mongodb";
+import sanitizer from "@/util/sanitizer";
 
 const SEARCH_FILTER = {
   projection: {
@@ -66,6 +68,27 @@ export const submitGuide = async (formData) => {
 
   const client = initClient();
 
+  let sanitizedVariables = [];
+  const sanitizedSteps = steps.map((step) => sanitizer(step));
+  const sanitizedDescription = xss(description);
+  const sanitizedAuthor = xss(author);
+  const sanitizedVendor = xss(vendor);
+  const sanitizedTitle = xss(title);
+  const sanitizedCategory = xss(category);
+  const sanitizedAuthorEmail = xss(authorEmail);
+
+  if (formData.variables) {
+    sanitizedVariables = formData.variables.map((variable) => ({
+      ...variable,
+      name: xss(variable.name),
+      description: xss(variable.description),
+      variations:
+        typeof variable.variations === "object"
+          ? variable.variations.map((variation) => xss(variation))
+          : [],
+    }));
+  }
+
   try {
     const db = client.db("guides");
     const collection = db.collection("pending");
@@ -74,7 +97,14 @@ export const submitGuide = async (formData) => {
     const vendorSlug = slugify(vendor, { lower: true, strict: true });
 
     await collection.insertOne({
-      ...formData,
+      vendor: sanitizedVendor,
+      title: sanitizedTitle,
+      author: sanitizedAuthor,
+      authorEmail: sanitizedAuthorEmail,
+      description: sanitizedDescription,
+      variables: sanitizedVariables.length ? sanitizedVariables : [],
+      steps: sanitizedSteps,
+      category: sanitizedCategory,
       slug,
       vendorSlug,
       approved: false,

@@ -262,7 +262,7 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         </div>
         <h2 className="mt-4 mb-2 font-bold text-navy text-lg">Steps:</h2>
         <hr className="border-2 border-navy/40 mb-8" />
-        <div className="flex-col  gap-4">
+        <div className="flex-col gap-4" data-testid="edit-steps-container">
           {formData.steps.map((step, index) => (
             <EditStep
               key={index}

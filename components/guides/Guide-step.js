@@ -6,6 +6,7 @@ import isURL from "is-url";
 
 import formatListString from "@/util/formatListString";
 import { URL_REGEX, VARIABLE_REGEX, CONDITIONAL_REGEX } from "@/util/regex";
+import StepCount from "../contribute/creator/Step-count";
 
 const GuideStep = ({ step, index, variables }) => {
   const [detail, _] = useState(step);
@@ -49,19 +50,15 @@ const GuideStep = ({ step, index, variables }) => {
   }, [itemRef.current, JSON.stringify(variables)]);
 
   return (
-    <div className="py-2" data-testid="guide-step">
-      <div key={index} className="text-navy text-lg my-4">
-        <p className="bg-blue/80 text-white px-2 py-1 rounded-lg font-bold uppercase text-xs mb-2 w-16 text-center">
-          Step {index + 1}
-        </p>
-        <p
-          className="text-md"
-          ref={itemRef}
-          data-testid="guide-step-instructions"
-        >
-          {detail}
-        </p>
-      </div>
+    <div className="relative border border-light-grey rounded-md my-6 shadow-md p-6">
+      <StepCount stepCount={index + 1} />
+      <p
+        className="text-dark-grey"
+        ref={itemRef}
+        data-testid="guide-step-instructions"
+      >
+        {detail}
+      </p>
     </div>
   );
 };

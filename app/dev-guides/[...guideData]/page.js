@@ -42,7 +42,7 @@ const DevGuidePage = async ({ params }) => {
       </h2>
       <p className="mb-8 text-navy font-bold italic">{guide.description}</p>
       <VendorBadge vendor={vendor} />
-      <div className="mt-2 mb-20 flex gap-2 items-center ">
+      <div className="mt-2 mb-12 flex gap-2 items-center ">
         <Image src={imageSrc} alt="profile image" className="w-8 h-8" />
         <p className="text-sm text-gray-500">By {guide.author}</p>
         <p className="mx-1 text-3xl text-gray-200">|</p>
@@ -50,6 +50,9 @@ const DevGuidePage = async ({ params }) => {
           Last updated: {hRDate(guide.lastUpdated)}
         </p>
       </div>
+      <p className="text-navy font-bold text-center mb-3">
+        You are view the static version of this user guide.
+      </p>
       <Link href={`/guides/${vendorSlug}/${titleSlug}`}>
         <SmallButton type="info" className="mx-auto max-w-[300px]">
           Click here for the interactive version

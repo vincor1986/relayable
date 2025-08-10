@@ -14,7 +14,7 @@ const VendorSectionRow = ({ vendorArr, index }) => {
           alt={vendor.name}
           width={100}
           height={100}
-          className="h-16 w-16 object-contain grayscale-50"
+          className="h-16 w-16 object-contain grayscale-30"
           key={index}
         />
       ))}
