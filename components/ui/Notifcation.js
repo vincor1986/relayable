@@ -20,6 +20,7 @@ const Notification = () => {
         "fixed flex items-center justify-center top-34 left-1/2 w-11/12 -translate-x-1/2 max-w-[800px] mx-auto p-4 z-80 rounded-md " +
         color
       }
+      data-testid={`notification-${type}`}
     >
       <p className="text-md font-bold text-white">{message}</p>
     </div>
