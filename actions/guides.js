@@ -170,6 +170,7 @@ export const approvePendingGuide = async (updatedGuide, authCode) => {
   const match = await compare(authCode, process.env.AUTH);
 
   if (!match) {
+    console.log("Invalid authorization code");
     return [false, "Invalid authorization code"];
   } else {
     const client = initClient();

@@ -50,7 +50,10 @@ const GuideStep = ({ step, index, variables }) => {
   }, [itemRef.current, JSON.stringify(variables)]);
 
   return (
-    <div className="relative border border-light-grey rounded-md my-6 shadow-md p-6">
+    <div
+      className="relative border border-light-grey rounded-md my-6 shadow-md p-6"
+      data-testid="guide-step"
+    >
       <StepCount stepCount={index + 1} />
       <p
         className="text-dark-grey"

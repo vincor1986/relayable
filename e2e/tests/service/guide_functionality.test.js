@@ -99,7 +99,7 @@ test("Guide functionality test", async ({ page }) => {
   await page.getByTestId("approve-guide-button").click();
 
   // Go to guide page and test functionality
-  expect(page.getByTestId("notification-success")).toBeAttached();
+  await expect(page.getByTestId("notification-success")).toBeAttached();
   await page.goto("/guides/algolia/test-guide-title");
 
   // Enter test values for variables
