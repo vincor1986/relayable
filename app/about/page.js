@@ -5,6 +5,12 @@ import SectionTitle from "@/components/ui/Section-title";
 import Logo from "@/public/images/logo/logo-small.png";
 import SectionHeading from "@/components/ui/Section-heading";
 
+export const metadata = {
+  title: "About Us | Relayable",
+  description:
+    "Learn more about Relayable, our mission, and how you can contribute.",
+};
+
 const AboutPage = () => {
   return (
     <section className="p-4">

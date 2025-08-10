@@ -20,7 +20,7 @@ const Footer = () => {
         <Link href="/contribute" className="text-sm text-navy">
           Contribute
         </Link>
-        <Link href="/contact-us" className="text-sm text-navy">
+        <Link href="/contact" className="text-sm text-navy">
           Contact us
         </Link>
       </div>

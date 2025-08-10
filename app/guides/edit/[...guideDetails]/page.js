@@ -5,6 +5,16 @@ import EditGuideView from "@/components/guides/Edit-guide-view";
 import RRBadge from "@/components/guides/RR-badge";
 import SectionHeading from "@/components/ui/Section-heading";
 
+export const generateMetadata = async ({ params }) => {
+  const { guideDetails } = await params;
+  const [vendorSlug, slug] = guideDetails;
+
+  return {
+    title: `Edit Guide - ${slug} - ${vendorSlug} | Relayable`,
+    description: `Edit the guide titled "${slug}" for ${vendorSlug}.`,
+  };
+};
+
 const EditGuidePage = async ({ params }) => {
   const { guideDetails } = await params;
   const [vendorSlug, slug] = guideDetails;

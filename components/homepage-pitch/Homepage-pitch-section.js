@@ -1,6 +1,8 @@
 import homepagePitchItems from "@/data/homepagePitchItems";
 import HomepagePitchItem from "./Homepage-pitch-item";
 import SectionTitle from "../ui/Section-title";
+import Link from "next/link";
+import SmallButton from "../ui/SmallButton";
 
 const HomepagePitchSection = () => {
   return (
@@ -17,6 +19,13 @@ const HomepagePitchSection = () => {
         All this means less awkwardness, less stress, and smoother projects — so
         you can focus on what you do best: building great websites.
       </p>
+      <div className="flex justify-center">
+        <Link href="/benefits">
+          <SmallButton type="info" className="mt-2">
+            Learn more about Relayable
+          </SmallButton>
+        </Link>
+      </div>
     </section>
   );
 };

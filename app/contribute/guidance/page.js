@@ -64,6 +64,12 @@ const DONT = (image) => {
   );
 };
 
+export const metadata = {
+  title: "Contributor Guidance | Relayable",
+  description:
+    "Guidelines and tips for contributing guides to Relayable, ensuring clarity and quality.",
+};
+
 const ContributorGuidancePage = () => {
   const quickLinks = contributeQuicklinks.filter(
     (link) => link.href !== "/contribute/guidance"

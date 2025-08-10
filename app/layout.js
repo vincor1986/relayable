@@ -16,6 +16,8 @@ const nunito = Nunito({
 
 export const metadata = {
   title: "Relayable",
+  description:
+    "Relayable is a community-driven platform providing comprehensive guides for developers to manage access to client systems securely and efficiently. Say goodbye to friction in access approvals.",
 };
 
 export default function RootLayout({ children }) {

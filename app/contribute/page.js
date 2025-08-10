@@ -4,6 +4,12 @@ import SectionTitle from "@/components/ui/Section-title";
 
 import { contributeQuicklinks as quicklinks } from "@/data/quicklinks";
 
+export const metadata = {
+  title: "Contribute | Relayable",
+  description:
+    "Learn how you can contribute to Relayable and share your knowledge.",
+};
+
 const ContributePage = () => {
   const qL = quicklinks.filter((link) => link.href !== "/contribute");
 

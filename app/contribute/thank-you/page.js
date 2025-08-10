@@ -4,6 +4,11 @@ import TextLink from "@/components/ui/Text-link";
 
 import thankYouImg from "@/public/images/graphics/sections/thankyou.png";
 
+export const metadata = {
+  title: "Thank You | Relayable",
+  description: "Thank you for your contribution to Relayable.",
+};
+
 const ThankYouPage = () => {
   return (
     <section className="relative flex flex-col items-center justify-center gap-8 min-h-[80vh] w-full">

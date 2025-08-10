@@ -7,6 +7,12 @@ import TrustSection from "@/components/why-relayable/Trust-section";
 
 import { whyRelayableQuicklinks } from "@/data/quicklinks";
 
+export const metadata = {
+  title: "Why Relayable? | Relayable",
+  description:
+    "Discover what Relayable can offer to you, your company and your clients.",
+};
+
 const BenefitsPage = () => {
   return (
     <section className="p-4">

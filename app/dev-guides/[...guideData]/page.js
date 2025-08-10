@@ -15,7 +15,7 @@ import ALL_VENDORS from "@/data/vendors";
 import shieldImg from "@/public/images/icons/trust.png";
 import logoSmall from "@/public/images/logo/logo-small.png";
 
-const DevGuidePage = async ({ params }) => {
+export const generateMetadata = async ({ params }) => {
   const { guideData } = await params;
   const [vendorSlug, titleSlug] = guideData;
 
@@ -25,7 +25,21 @@ const DevGuidePage = async ({ params }) => {
     return notFound();
   }
 
-  console.log("guide", guide);
+  return {
+    title: `${guide.title} - ${guide.vendor} | Relayable`,
+    description: guide.description,
+  };
+};
+
+const DevGuidePage = async ({ params }) => {
+  const { guideData } = await params;
+  const [vendorSlug, titleSlug] = guideData;
+
+  const [guide, error] = await getIndividualGuide(vendorSlug, titleSlug);
+
+  if (error) {
+    return notFound();
+  }
 
   const imageSrc = guide.author.includes("Relayable") ? logoSmall : shieldImg;
   const vendor = ALL_VENDORS.find((v) => v.name === guide.vendor);

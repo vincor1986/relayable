@@ -20,20 +20,14 @@ import searchIcon from "@/public/images/icons/search.png";
 
 const navLinks = [
   {
-    name: "Dashboard",
+    name: "Engage",
     href: "/dashboard",
-    description: "View and manage your account and projects",
+    description: "Learn and enagage with the Relayable community",
     sublinks: [
       {
-        name: "Projects",
-        href: "/dashboard/projects",
-        description: "Access, edit and manage your existing projects",
-        icon: projectsIcon,
-      },
-      {
-        name: "New project",
-        href: "/dashboard/new-project",
-        description: "Add a brand new project to work on",
+        name: "Contribute",
+        href: "/contribute",
+        description: "Add a new interactive guide to the Relayable platform",
         icon: newProjectIcon,
       },
       {
@@ -43,10 +37,10 @@ const navLinks = [
         icon: shortcutIcon,
       },
       {
-        name: "Settings",
-        href: "/dashboard/settings",
-        description: "Configure your account settings to your preferences",
-        icon: settingsIcon,
+        name: "FAQ",
+        href: "/faq",
+        description: "Find answers to commonly asked questions",
+        icon: faqIcon,
       },
     ],
   },
@@ -56,12 +50,6 @@ const navLinks = [
     description:
       "Discover what Relayable can offer to you, your company and your clients",
     sublinks: [
-      {
-        name: "Use Cases",
-        href: "/benefits/use-cases",
-        description: "Find out how Relayable can help with your project(s)",
-        icon: useCasesIcon,
-      },
       {
         name: "Time-saving Resources",
         href: "/benefits/#time-saving",
@@ -116,13 +104,6 @@ const navLinks = [
         description:
           "Our simple access-revocation guides will make removing developer access straight-forward and easy.",
         icon: revokeIcon,
-      },
-      {
-        name: "Developer Toolkit",
-        href: "/developer-toolkit",
-        description:
-          "A wide range of articles and resources focused on best access-related practices and attitudes",
-        icon: toolkitIcon,
       },
       {
         name: "Browse by Resource or Platform",

@@ -12,6 +12,11 @@ import TextLink from "@/components/ui/Text-link";
 
 const links = whyRelayableQuicklinks.filter((item) => item.href !== "/faq");
 
+export const metadata = {
+  title: "FAQ | Relayable",
+  description: "Frequently asked questions about Relayable and its features.",
+};
+
 const FAQPage = () => {
   return (
     <section className="p-4">

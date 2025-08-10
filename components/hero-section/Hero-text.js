@@ -11,7 +11,7 @@ const HeroText = () => {
         your clients can easily follow and trust. Save time on permissions so
         you can focus on delivering exceptional results.
       </h3>
-      <Link href="/guides">
+      <Link href="/guides/search">
         <button className="relative bg-amber-300 text-dark-blue py-2 px-4 rounded cursor-pointer outline-none hover:bg-amber-400 transition-colors duration-300">
           Get Started for Free
         </button>

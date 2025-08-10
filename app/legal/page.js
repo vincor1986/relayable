@@ -8,6 +8,12 @@ import scalesImg from "@/public/images/graphics/sections/legal.png";
 
 import { legalQuicklinks } from "@/data/quicklinks";
 
+export const metadata = {
+  title: "Legal Information | Relayable",
+  description:
+    "Find links and information about Relayable's legal policies, including terms of service, privacy policy, and more.",
+};
+
 const LegalPage = () => {
   return (
     <div className="p-4">
