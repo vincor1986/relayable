@@ -27,8 +27,8 @@ const routes = [
 test.describe("All routes should load without 404", () => {
   for (const route of routes) {
     test(`Route ${route} should not display 404`, async ({ page }) => {
-      await page.goto(route, { waitUntil: "networkidle" });
-      await page.waitForLoadState("domcontentloaded");
+      await page.goto(route, { waitUntil: "domcontentloaded" });
+
       const is404Visible = await page
         .getByTestId("not-found-page")
         .isVisible()
