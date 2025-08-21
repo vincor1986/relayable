@@ -1,4 +1,4 @@
-name: E2E 'main' branch push tests
+name: Main push test and deploy
 on:
   push:
     branches:
@@ -103,3 +103,12 @@ jobs:
         with:
           name: Results-report
           path: test-results/
+  deploy:
+    needs: ["read-only-tests", "test-guides-submission"]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Deploy to Vercel
+        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
