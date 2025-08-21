@@ -8,7 +8,7 @@ const ContributeHeaderSection = () => {
   return (
     <section className="my-6 mb-12">
       <div className="flex w-full justify-center items-center">
-        <Image src={guideImg} alt="How-to Guide" />
+        <Image src={guideImg} alt="How-to Guide" priority />
       </div>
       <div className="w-full text-center px-6 md:px-8">
         <h2 className="font-bold text-2xl text-navy">

@@ -84,7 +84,7 @@ const PrivacyPolicySection = () => {
       </LegalParagraph>
       <LegalHeading>Contact Us </LegalHeading>
       <LegalParagraph>
-        For privacy-related questions or requests, please email:
+        For privacy-related questions or requests, please email:{" "}
         <TextLink href="mailto:info@vincentcoraldean.com">
           info@vincentcoraldean.com
         </TextLink>

@@ -17,7 +17,12 @@ const ContactPage = () => {
         We'd love to hear from you!
       </h2>
       <div className="w-full flex justify-center">
-        <Image src={contactImg} alt="Contact" className="my-4 w-1/3 h-auto" />
+        <Image
+          src={contactImg}
+          alt="Contact"
+          className="my-4 w-1/3 h-auto"
+          priority
+        />
       </div>
       <p className="text-center text-dark-grey mb-8">
         Whether you have questions, feedback, or just want to say hello, feel
