@@ -104,6 +104,7 @@ jobs:
           name: Results-report
           path: test-results/
   deploy:
+    name: Deploy to Vercel (production)
     needs: ["read-only-tests", "test-guides-submission"]
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -111,4 +112,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Deploy to Vercel
-        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
