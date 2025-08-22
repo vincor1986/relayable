@@ -5,86 +5,1270 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-
 <url>
   <loc>https://www.relayable.dev/</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/guides/search</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/benefits</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/about</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/contribute</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/contact</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/legal</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/legal/privacy-policy</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://www.relayable.dev/guides/adobe-creative-cloud</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/airtable</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/akamai</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/algolia</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/asana</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/atlassian</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/auth0</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws-amplify</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws-s3</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/azure</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/bigcommerce</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/bitbucket</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/bluehost</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/calendly</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/canva</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/circleci</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/cloudflare</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/cloudinary</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/digitalocean</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/docker</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/fastmail</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/figma</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/firebase</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/gatsby</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/github</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/gitlab</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/godaddy</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-admin</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-analytics</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-cloud-platform</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-optimize</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-search-console</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-tag-manager</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/heroku</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/hostgator</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/hubspot</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/jenkins</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/mailchimp</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/microsoft-365</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/microsoft-azure-devops</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/microsoft-power-bi</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/mongodb-atlas</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/namecheap</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/netlify</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/oracle</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/prismic</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/sanityio</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/sendgrid</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/sendinblue</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/shopify</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/siteground</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/slack</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/squarespace</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/strapi</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/stripe</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/trello</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/twilio</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/vercel</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/webflow</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/wix</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/wordpress</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/wp-engine</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/zapier</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/zoho</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://www.relayable.dev/faq</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/contribute/creator</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/contribute/guidance</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/contribute/request-platform</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/legal/terms-of-use</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/legal/cookie-policy</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/legal/disclaimer</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.relayable.dev/legal/dpa</loc>
-  <lastmod>2025-08-10T17:34:30+00:00</lastmod>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
   <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/adobe-creative-cloud/add-a-user-and-assign-a-creative-cloud-license-in-adobe-admin-console</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/adobe-creative-cloud/grant-product-admin-access-to-specific-creative-cloud-products-in-adobe-admin-console</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/adobe-creative-cloud/grant-developer-role-access-in-adobe-admin-console-to-enable-adobe-developer-console-for-creative-cloud-apis</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/adobe-creative-cloud/revoke-a-users-creative-cloud-access-unassign-products-or-remove-user-in-adobe-admin-console</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/airtable/create-an-airtable-personal-access-token-pat-and-restrict-it-to-specific-workspaces-or-bases</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/akamai/create-and-share-an-akamai-api-client-for-developer-access</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/algolia/create-a-restricted-frontend-search-api-key-in-algolia</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/algolia/invite-a-developer-to-your-algolia-organization-or-specific-applications</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/algolia/import-a-csv-into-an-algolia-index-and-configure-basic-search-settings</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/algolia/create-sort-by-replica-indexes-for-an-algolia-index</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/asana/create-and-share-an-asana-personal-access-token-pat-for-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/atlassian/invite-a-developer-to-your-atlassian-cloud-and-grant-access-to-a-jira-project</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/atlassian/grant-a-developer-access-to-a-confluence-space-in-atlassian-cloud</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/atlassian/invite-a-developer-to-a-bitbucket-cloud-repository-in-your-atlassian-workspace</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/auth0/create-an-auth0-application-and-configure-allowed-urls-callback-logout-cors</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws/create-a-cross-account-iam-role-with-external-id-for-a-thirdparty-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws/enable-iam-access-to-billing-and-grant-billing-permissions-to-a-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws/invite-a-developer-via-aws-iam-identity-center-aws-sso-and-assign-permissions-to-aws-accounts</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws/create-an-iam-user-for-a-developer-console-andor-programmatic-access</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws/grant-an-external-aws-account-access-to-a-specific-s3-bucket-via-bucket-policy</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws/allow-a-developers-ip-address-in-an-aws-security-group-ec2rds</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws-amplify/connect-a-custom-domain-to-an-aws-amplify-app-route-53-or-external-dns</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws-amplify/add-or-update-environment-variables-and-secrets-for-an-aws-amplify-app</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws-amplify/grant-a-developer-least-privilege-access-to-a-specific-aws-amplify-app-via-iam</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws-amplify/enable-pull-request-preview-deployments-for-an-aws-amplify-app</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws-s3/grant-a-developer-limited-access-to-a-specific-s3-bucket-iam-user-custom-policy</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws-s3/enable-s3-bucket-versioning-and-add-a-lifecycle-rule-to-delete-old-versions</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/aws-s3/configure-cors-on-an-s3-bucket-for-your-website-or-web-app</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/azure/grant-a-developer-rbac-role-on-an-azure-resource-group-via-the-azure-portal</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/azure/create-an-azure-app-registration-and-generate-credentials-client-idsecret-or-certificate-for-a-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/azure/add-a-firewall-rule-to-an-azure-sql-server-to-allow-a-developers-ip-azure-portal</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/azure/generate-a-time-limited-sas-url-for-an-azure-storage-container-azure-portal</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/azure/allow-a-developers-ip-via-access-restrictions-on-an-azure-app-service-azure-portal</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/azure/grant-azure-rbac-data-access-to-a-specific-storage-container-azure-portal</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/bigcommerce/create-a-bigcommerce-api-account-v2v3-and-securely-share-credentials-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/bigcommerce/invite-a-developer-as-a-user-in-bigcommerce-and-assign-permissions</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/bigcommerce/connect-a-custom-domain-to-your-bigcommerce-store-and-enable-ssl</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/bitbucket/add-a-repository-access-key-ssh-deploy-key-in-bitbucket</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/bitbucket/invite-a-developer-to-a-bitbucket-repository-and-set-permissions</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/bluehost/create-and-share-a-new-ftp-account-in-bluehost-cpanel</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/bluehost/enable-and-share-sshsftp-access-for-a-developer-in-bluehost-cpanel</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/calendly/generate-and-share-a-calendly-personal-access-token-api-key-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/canva/connect-a-custom-domain-to-a-canva-website-dns-setup-guide</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/canva/invite-a-developer-to-your-canva-team-and-set-their-role</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/circleci/create-a-circleci-context-with-restricted-access-and-add-environment-variables</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/circleci/install-the-circleci-github-app-for-your-organization-and-grant-repository-access</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/circleci/add-an-ssh-key-to-a-circleci-project-for-accessing-private-git-repositories-or-submodules</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/cloudflare/create-a-leastprivilege-cloudflare-api-token-for-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/cloudflare/invite-a-developer-to-your-cloudflare-account-with-zone-scoped-least-privilege-access</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/cloudflare/add-or-update-a-dns-record-in-cloudflare-a-cname-txt-mx</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/cloudflare/add-your-domain-to-cloudflare-and-update-registrar-nameservers</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/cloudinary/invite-a-developer-to-your-cloudinary-account-and-assign-the-correct-role</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/cloudinary/create-an-unsigned-upload-preset-in-cloudinary-and-share-it-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/digitalocean/invite-a-developer-to-your-digitalocean-team-and-assign-a-role</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/digitalocean/create-a-database-user-and-allowlist-a-developer-ip-on-a-digitalocean-managed-database</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/digitalocean/create-a-scoped-personal-access-token-pat-on-digitalocean-and-share-it-securely-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/digitalocean/create-a-digitalocean-spaces-bucket-and-generate-a-limited-access-key-for-a-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/docker/grant-a-developer-access-to-a-private-docker-hub-repository-personal-or-organization</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/docker/create-and-share-a-docker-hub-personal-access-token-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/docker/connect-docker-hub-to-github-and-set-up-automated-builds-for-a-repository</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/fastmail/connect-a-custom-domain-to-fastmail-by-adding-dns-mx-spf-dkim-dmarc-records</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/fastmail/create-an-app-password-in-fastmail-for-developer-smtpimap-access</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/figma/create-and-securely-share-a-figma-personal-access-token-pat</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/figma/invite-a-developer-to-a-figma-team-project-or-file-with-optional-dev-mode-access</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/firebase/grant-a-developer-access-to-a-firebase-project-users-and-permissions</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/firebase/add-an-ios-app-to-a-firebase-project-and-send-the-googleservice-infoplist-to-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/firebase/add-an-android-app-to-a-firebase-project-and-send-the-google-servicesjson-to-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/gatsby/configure-environment-variables-for-a-gatsby-site-env-files-secure-sharing</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/gatsby/grant-a-developer-access-to-the-github-repository-for-your-gatsby-site</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/github/add-collaborator</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/github/remove-collaborator</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/github/add-a-deploy-key-to-a-github-repository</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/github/modify-a-collaborator-role</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/github/install-a-github-app-and-grant-it-access-to-specific-repositories</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/github/invite-a-member-to-your-github-organization-and-assign-teamsrepository-access</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/github/create-and-configure-a-repository-webhook-on-github</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/github/add-a-github-actions-secret-to-a-repository-or-environment</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/gitlab/invite-a-developer-to-a-gitlab-project-with-a-specific-role-and-expiration</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/gitlab/create-a-gitlab-project-access-token-with-specific-role-scopes-and-expiration</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/gitlab/add-a-developer-to-a-gitlab-group-with-a-specific-role-and-optional-expiration</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/gitlab/add-an-ssh-deploy-key-to-a-gitlab-project-read-only-or-write-access</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/godaddy/invite-a-developer-as-a-delegate-in-godaddy-grant-account-access</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/godaddy/update-godaddy-domain-nameservers-to-custom-dns-eg-cloudflare</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/godaddy/unlock-a-godaddy-domain-and-retrieve-the-authorization-code-epp-for-transfer-out</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-admin/allowlist-trust-a-thirdparty-oauth-app-in-google-admin-via-app-access-control</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-admin/grant-domainwide-delegation-to-a-service-account-in-google-admin</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-analytics/create-a-ga4-measurement-protocol-api-secret-and-share-it-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-analytics/grant-a-developer-access-to-your-google-analytics-4-ga4-property</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-analytics/create-a-ga4-web-data-stream-and-share-the-measurement-id-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-analytics/exclude-internal-traffic-by-ip-in-google-analytics-4-ga4-and-activate-the-data-filter</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-cloud-platform/create-a-service-account-assign-roles-and-generate-a-json-key-in-google-cloud-platform</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-cloud-platform/grant-a-user-iam-access-to-a-google-cloud-project</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-cloud-platform/grant-a-user-access-to-a-google-cloud-billing-account</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-cloud-platform/grant-access-to-a-specific-cloud-storage-bucket-bucket-level-iam</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-cloud-platform/grant-access-to-a-bigquery-dataset-dataset-level-iam</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-optimize/grant-a-developer-access-to-a-google-optimize-container</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-optimize/remove-google-optimize-container-snippet-and-antiflicker-from-your-website</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-search-console/verify-a-domain-property-in-google-search-console-via-dns-txt-record</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-search-console/grant-a-user-access-to-a-google-search-console-property</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-tag-manager/grant-a-developer-access-to-a-google-tag-manager-account-and-container</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-tag-manager/create-and-publish-a-ga4-configuration-tag-in-google-tag-manager</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/google-tag-manager/install-google-tag-manager-on-your-website-and-verify-the-installation</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/heroku/grant-a-developer-access-to-a-heroku-app-personal-or-team</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/heroku/add-a-custom-domain-to-a-heroku-app-and-configure-dns</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/hostgator/hostgator-create-a-restricted-ftpftps-account-for-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/hubspot/create-a-hubspot-private-app-and-share-the-access-token-securely</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/hubspot/invite-a-developer-to-your-hubspot-account-with-the-correct-permissions</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/hubspot/create-a-hubspot-form-and-share-the-embed-code-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/jenkins/add-an-ssh-key-credential-in-jenkins-and-share-the-credential-id-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/mailchimp/create-a-webhook-for-a-mailchimp-audience-to-send-subscriber-events-to-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/mailchimp/invite-your-developer-to-your-mailchimp-account-as-a-user</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/microsoft-365/invite-an-external-developer-as-a-guest-and-assign-admin-roles-in-microsoft-365</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/microsoft-365/register-an-app-in-microsoft-entra-id-and-grant-microsoft-graph-application-permissions-admin-consent</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/microsoft-365/create-a-new-microsoft-365-user-account-for-a-developer-assign-licenses-and-optionally-admin-roles</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/microsoft-azure-devops/grant-a-developer-access-to-an-azure-devops-project-with-optional-repo-permissions</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/microsoft-azure-devops/create-an-azure-resource-manager-service-connection-automatic-for-a-specific-subscription-or-resource-group</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/microsoft-power-bi/grant-a-service-principal-access-to-a-power-bi-workspace</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/mongodb-atlas/create-a-mongodb-atlas-database-user-and-allow-a-developers-ip-address</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/mongodb-atlas/add-a-developer-as-a-project-member-in-mongodb-atlas</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/namecheap/add-new-domain-manager</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/namecheap/remove-domain-manager</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/namecheap/update-domain-nameservers-to-custom-dns</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/netlify/create-and-share-a-netlify-build-hook-for-external-triggers-eg-cms</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/oracle/grant-a-developer-access-to-an-oci-compartment-create-user-group-and-policy</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/oracle/create-a-preauthenticated-request-par-for-oci-object-storage-and-share-the-link</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/prismic/set-up-a-prismic-webhook-to-trigger-builds-eg-vercelnetlify</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/prismic/invite-a-developer-to-your-prismic-repository-and-assign-the-correct-role</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/sanityio/add-a-cors-origin-to-a-sanity-project-for-website-and-local-development</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/sanityio/create-and-share-an-api-token-for-a-sanity-project-read-or-write</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/sendgrid/create-and-share-a-restricted-sendgrid-api-key-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/sendgrid/invite-a-teammate-to-your-sendgrid-account-with-limited-permissions</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/sendinblue/authenticate-a-sending-domain-in-sendinblue-spf-dkim-and-optional-trackingbounce-domains</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/sendinblue/create-and-securely-share-a-sendinblue-api-key-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/sendinblue/create-and-activate-a-transactional-email-template-in-sendinblue-and-share-the-template-id</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/shopify/approve-a-shopify-collaborator-access-request-for-your-store</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/shopify/create-a-shopify-custom-app-and-share-api-credentials-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/shopify/invite-your-developer-as-a-shopify-staff-member-with-limited-permissions</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/shopify/download-and-share-a-shopify-theme-zip-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/shopify/export-shopify-orders-csv-for-a-date-range-and-share-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/siteground/add-a-developers-ssh-key-for-sftpssh-access-to-a-siteground-site</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/slack/create-a-slack-incoming-webhook-and-share-the-webhook-url-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/slack/create-a-slack-app-install-it-to-your-workspace-and-share-the-required-credentials-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/squarespace/invite-a-developer-as-a-contributor-to-your-squarespace-site</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/squarespace/add-a-dns-record-to-your-squarespace-managed-domain</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/squarespace/install-a-code-injection-snippet-in-squarespace-header-footer-or-single-page</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/strapi/create-a-read-only-api-token-in-strapi-and-share-it-securely</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/stripe/set-up-a-stripe-webhook-endpoint-and-share-the-signing-secret-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/stripe/add-your-developer-as-a-stripe-team-member-and-assign-a-role</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/stripe/create-a-stripe-product-and-price-then-share-the-ids-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/stripe/retrieve-and-securely-share-your-stripe-api-keys-with-optional-restricted-key</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/trello/generate-and-share-a-trello-api-key-and-token-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/twilio/configure-a-twilio-phone-number-to-forward-incoming-sms-to-a-developer-webhook</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/twilio/create-a-twilio-api-key-for-a-developer-and-share-it-securely</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/vercel/invite-a-developer-to-your-vercel-team-and-grant-project-level-access</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/vercel/connect-a-custom-domain-to-a-vercel-project-and-configure-dns</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/vercel/add-environment-variables-to-a-vercel-project-production-preview-and-development</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/webflow/connect-a-custom-domain-to-a-webflow-project-and-configure-dns-at-your-registrar</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/webflow/invite-a-developer-as-a-guest-to-your-webflow-workspace-and-grant-project-access</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/wix/invite-a-developer-as-a-collaborator-to-your-wix-site-with-optional-velo-dev-mode</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/wix/add-a-txt-dns-record-in-wix-to-verify-domain-ownership-for-a-third-party-service</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/wix/transfer-a-wix-site-to-another-wix-account-including-premium-plan-domains-and-mailboxes</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/wordpress/add-a-developer-user-in-wordpress-single-site-or-multisite</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/wordpress/create-and-share-a-wordpress-application-password-for-developer-api-access</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/wordpress/collect-and-share-the-wordpress-site-health-report-status-and-info</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/wordpress/safely-diagnose-plugintheme-conflicts-with-wordpress-troubleshooting-mode-no-impact-to-visitors</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/wp-engine/create-and-share-an-sftp-user-for-a-wp-engine-environment</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/wp-engine/add-a-developers-ssh-key-to-enable-git-push-on-a-wp-engine-environment</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/zapier/invite-a-developer-to-your-zapier-team-and-share-specific-zaps-and-app-connections</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/zapier/create-a-zapier-webhooks-catch-hook-url-secure-it-with-a-shared-secret-and-share-it-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/zapier/accept-a-private-zapier-app-invite-connect-your-account-and-share-the-connection-with-your-developer</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.relayable.dev/guides/zoho/invite-a-developer-to-zoho-crm-and-assign-the-correct-profile-and-role</loc>
+  <lastmod>2025-08-22T16:28:29+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 
