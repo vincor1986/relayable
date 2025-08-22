@@ -25,6 +25,7 @@ const BurgerMenu = ({ setClose, setMenuOpen }) => {
           onClick={() => {}}
           autoFocus={true}
           id="burger-menu"
+          aria-expanded={true}
         >
           <BurgerIcon
             isOpen={true}

@@ -8,6 +8,10 @@ const TickBox = ({ checked, toggle, data_testid = "" }) => {
       className="relative w-6 h-6 border border-dark-grey rounded-sm cursor-pointer"
       onClick={toggle}
       data-testid={data_testid}
+      role="checkbox"
+      tabIndex="0"
+      aria-checked={checked}
+      onKeyDown={(e) => e.key === "Enter" && toggle()}
     >
       <span></span>
       {checked ? (

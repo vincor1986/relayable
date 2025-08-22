@@ -1,11 +1,14 @@
-const BurgerIcon = ({ isOpen, setIsOpen, className }) => {
+const BurgerIcon = ({ isOpen, setIsOpen, className, ref }) => {
   return (
-    <div
+    <button
       className={
         className ||
         "relative flex flex-col justify-center items-center cursor-pointer z-60"
       }
       onClick={() => setIsOpen((prev) => !prev)}
+      aria-label="Open mobile menu"
+      aria-controls="burger-menu"
+      ref={ref}
     >
       <div
         className={`relative w-10 h-1 bg-navy transition-all duration-400 ${
@@ -22,7 +25,7 @@ const BurgerIcon = ({ isOpen, setIsOpen, className }) => {
           isOpen ? "-top-3 -rotate-45 origin-center bg-white" : null
         }`}
       ></div>
-    </div>
+    </button>
   );
 };
 

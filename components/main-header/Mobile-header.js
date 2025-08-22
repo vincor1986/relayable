@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 
@@ -16,7 +16,14 @@ import smallLogo from "@/public/images/logo/logo-small.png";
 const MobileHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const iconRef = useRef(null);
+
   const pathname = usePathname();
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    iconRef.current.focus();
+  };
 
   useEffect(() => {
     setMenuOpen(false);
@@ -34,11 +41,11 @@ const MobileHeader = () => {
         />
       </Link>
       <Searchbar mobile={true} />
-      <BurgerIcon isOpen={menuOpen} setIsOpen={setMenuOpen} />
+      <BurgerIcon isOpen={menuOpen} setIsOpen={setMenuOpen} ref={iconRef} />
       {menuOpen
         ? createPortal(
             <BurgerMenu
-              setClose={(e) => e.target.id === "close-ok" && setMenuOpen(false)}
+              setClose={(e) => e.target.id === "close-ok" && closeMenu()}
               setMenuOpen={setMenuOpen}
             />,
             document.getElementById("mobile-menu")

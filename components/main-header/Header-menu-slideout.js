@@ -13,6 +13,8 @@ const HeaderMenuSlideout = ({ activeItem }) => {
       className={`fixed top-[100px] left-0 w-[100vw] bg-zinc-100 text-navy transition-height duration-600 z-20 ${
         activeItem ? "p-4 pt-8 max-h-[700px]" : "max-h-0 overflow-hidden"
       }`}
+      id="main-menu"
+      aria-expanded={activeItem ? "true" : "false"}
     >
       {activeItem ? (
         <div className="m-auto max-w-[1000px]">
@@ -21,6 +23,7 @@ const HeaderMenuSlideout = ({ activeItem }) => {
             <Link
               className="flex cursor-pointer hover:text-blue-400 transition-all duration-300"
               href={activeItem.href}
+              autoFocus={activeItem}
             >
               <p>Go to {activeItem.name}</p>
               <Image

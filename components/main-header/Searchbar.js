@@ -27,6 +27,7 @@ const Searchbar = ({ mobile = true }) => {
         className="w-full h-12 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         onChange={(e) => setQuery(e.target.value)}
         value={query}
+        onKeyDown={(e) => e.key === "Enter" && submitSearch()}
       />
       <button
         className="flex items-center justify-center w-16 h-10  text-white rounded-md cursor-pointer hover:bg-blue-100 transition-colors duration-300"

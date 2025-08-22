@@ -109,9 +109,12 @@ const NewVariableForm = ({
         >
           Save
         </SmallButton>
-        <p className="text-red-800 text-md cursor-pointer" onClick={clearForm}>
+        <button
+          className="text-red-800 text-md cursor-pointer"
+          onClick={clearForm}
+        >
           Clear
-        </p>
+        </button>
       </div>
       <ErrorMessage error={errors.variableEntry} />
     </div>

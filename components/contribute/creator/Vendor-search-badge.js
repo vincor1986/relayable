@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const VendorSearchBadge = ({ vendor, updateVendor }) => {
   return (
-    <div
+    <button
       key={vendor.name}
       id={vendor.name}
       data-testid={`${vendor.name}-badge`}
@@ -17,7 +17,7 @@ const VendorSearchBadge = ({ vendor, updateVendor }) => {
         />
       </div>
       <h3 className="font-bold">{vendor.name}</h3>
-    </div>
+    </button>
   );
 };
 

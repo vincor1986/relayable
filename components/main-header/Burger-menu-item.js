@@ -5,7 +5,7 @@ import BurgerMenuSublink from "./Burger-menu-sublink";
 
 const BurgerMenuItem = ({ item, isOpen, setIsOpen }) => {
   return (
-    <>
+    <button className="text-left" autoFocus={item.name === "Engage"}>
       <div
         className="flex justify-between items-center my-6 cursor-pointer hover:text-blue-300 transition-all duration-500"
         onClick={() => setIsOpen(item.name)}
@@ -28,6 +28,8 @@ const BurgerMenuItem = ({ item, isOpen, setIsOpen }) => {
         className={`bg-white overflow-hidden transition-all transition-800 ${
           !isOpen ? "max-h-0" : "max-h-[700px]"
         }`}
+        aria-expanded={isOpen}
+        autoFocus={isOpen}
       >
         {item.sublinks.map((sublink, index, arr) => (
           <div key={sublink.name}>
@@ -36,7 +38,7 @@ const BurgerMenuItem = ({ item, isOpen, setIsOpen }) => {
           </div>
         ))}
       </div>
-    </>
+    </button>
   );
 };
 

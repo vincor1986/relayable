@@ -109,7 +109,7 @@ const CreatorForm = () => {
           be notified of the outcome via email.
         </p>
         <button
-          className="p-4 rounded-sm bg-dark-green text-white outline-none cursor-pointer hover:bg-green-600 transition-colors duration-300 mt-8 w-full md:w-60"
+          className="p-4 rounded-sm bg-dark-green text-white outline-none cursor-pointer focus:bg-green-600 hover:bg-green-600 transition-colors duration-300 mt-8 w-full md:w-60"
           type="submit"
           data-testid="submit-new-guide-button"
         >

@@ -53,14 +53,15 @@ const NewStepEntry = ({ index, clear, editContent = "" }) => {
         <p className="text-dark-grey font-bold">Insert variable:</p>
         {variables.length ? (
           variables.map((variable) => (
-            <div
+            <button
               key={variable.name}
               className="bg-zinc-200 text-dark-grey font-bold px-2 py-1 rounded-sm cursor-pointer hover:bg-zinc-300 transition-colors duration-300"
               onClick={() => insertVariable(variable.name)}
               data-testid={`${variable.name}-variable`}
+              type="button"
             >
               {variable.name}
-            </div>
+            </button>
           ))
         ) : (
           <p className="text-grey">No variables have been saved</p>
