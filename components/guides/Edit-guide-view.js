@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 import { useRouter } from "next/navigation";
 
@@ -95,15 +95,15 @@ const EditGuideView = ({ guide, type = "edit" }) => {
     }
   };
 
-  const handleUpdateField = (e) => {
+  const handleUpdateField = useCallback((e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
-  };
+  });
 
-  const updateVariableField = (index, field, value) => {
+  const updateVariableField = useCallback((index, field, value) => {
     setFormData((prevData) => {
       const updatedVariable = { ...prevData.variables[index], [field]: value };
       const updatedVariables = [...prevData.variables];
@@ -113,9 +113,9 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         variables: updatedVariables,
       };
     });
-  };
+  });
 
-  const handleRemoveVariable = (index) => {
+  const handleRemoveVariable = useCallback((index) => {
     setFormData((prevData) => {
       const updatedVariables = prevData.variables.filter((_, i) => i !== index);
       return {
@@ -123,9 +123,9 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         variables: updatedVariables,
       };
     });
-  };
+  });
 
-  const toggleRequired = (index) => {
+  const toggleRequired = useCallback((index) => {
     setFormData((prevData) => {
       const updatedVariable = {
         ...prevData.variables[index],
@@ -138,9 +138,9 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         variables: updatedVariables,
       };
     });
-  };
+  });
 
-  const toggleMultiple = (index) => {
+  const toggleMultiple = useCallback((index) => {
     setFormData((prevData) => {
       const updatedVariable = {
         ...prevData.variables[index],
@@ -153,9 +153,9 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         variables: updatedVariables,
       };
     });
-  };
+  });
 
-  const handleEditStep = (index, value) => {
+  const handleEditStep = useCallback((index, value) => {
     setFormData((prevData) => {
       const updatedSteps = [...prevData.steps];
       updatedSteps[index] = value;
@@ -164,14 +164,14 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         steps: updatedSteps,
       };
     });
-  };
+  });
 
-  const handleAddVariable = () => {
+  const handleAddVariable = useCallback(() => {
     setFormData((prevData) => ({
       ...prevData,
       variables: [...prevData.variables, DEFAULT_VARIABLE],
     }));
-  };
+  });
 
   const handleReject = async () => {
     switch (type) {

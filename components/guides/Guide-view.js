@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 
 import VendorBadge from "../ui/Vendor-badge";
@@ -62,8 +62,12 @@ const GuideView = ({ guide }) => {
   const [variables, setVariables] = useState(formatVariableObject(guide));
   const [steps, _] = useState(formatSteps(guide.steps));
 
-  const mandatoryVariables = guide.variables.filter((v) => v.required);
-  const optionalVariables = guide.variables.filter((v) => !v.required);
+  const mandatoryVariables = useMemo(() =>
+    guide.variables.filter((v) => v.required)
+  );
+  const optionalVariables = useMemo(() =>
+    guide.variables.filter((v) => !v.required)
+  );
 
   const optionalVarArray = useMemo(
     () =>
@@ -90,41 +94,56 @@ const GuideView = ({ guide }) => {
   const { favourites, toggleFavourite } = useFavourites();
   const router = useRouter();
 
-  const isFavourite = favourites.includes(guide.id);
+  const isFavourite = useMemo(
+    () => favourites.includes(guide.id),
+    [favourites]
+  );
 
-  const imageSrc = guide.author.includes("Relayable") ? logoSmall : shieldImg;
-  const vendor = ALL_VENDORS.find((v) => v.name === guide.vendor);
+  const imageSrc = useMemo(() =>
+    guide.author.includes("Relayable") ? logoSmall : shieldImg
+  );
 
-  const handleVariableUpdate = (name, value) => {
+  const vendor = useMemo(() =>
+    ALL_VENDORS.find((v) => v.name === guide.vendor)
+  );
+
+  const handleVariableUpdate = useCallback((name, value) => {
     setVariables((prev) => ({
       ...prev,
       [name]: value,
     }));
-  };
+  });
 
-  const handleBoolUpdate = (name) => {
+  const handleBoolUpdate = useCallback((name) => {
     setVariables((prev) => ({
       ...prev,
       [name]: !prev[name],
     }));
-  };
-
-  const handleMultipleVariableUpdate = (name, value) => {
-    const present = variables[name].includes(value);
-    setVariables((prev) => ({
-      ...prev,
-      [name]: present
-        ? prev[name].filter((v) => v !== value)
-        : [...prev[name], value],
-    }));
-  };
-
-  const copyValid = Object.values(mandatoryVariables).every(({ name }) => {
-    const v = variables[name];
-    return typeof v === "string" ? v.trim() !== "" : v.length > 0;
   });
 
-  const handleCopyToClipboard = () => {
+  const handleMultipleVariableUpdate = useCallback(
+    (name, value) => {
+      const present = variables[name].includes(value);
+      setVariables((prev) => ({
+        ...prev,
+        [name]: present
+          ? prev[name].filter((v) => v !== value)
+          : [...prev[name], value],
+      }));
+    },
+    [variables]
+  );
+
+  const copyValid = useMemo(
+    () =>
+      Object.values(mandatoryVariables).every(({ name }) => {
+        const v = variables[name];
+        return typeof v === "string" ? v.trim() !== "" : v.length > 0;
+      }),
+    [variables, mandatoryVariables]
+  );
+
+  const handleCopyToClipboard = useCallback(() => {
     const textSteps = formatStepsClipboard(guideSteps);
 
     const copyText = textSteps
@@ -137,9 +156,12 @@ const GuideView = ({ guide }) => {
         return formattedURL;
       });
     navigator.clipboard.writeText(copyText);
-  };
+  }, [guideSteps, variables]);
 
-  const favText = isFavourite ? "Remove from shortcuts" : "Add to shortcuts";
+  const favText = useMemo(
+    () => (isFavourite ? "Remove from shortcuts" : "Add to shortcuts"),
+    [isFavourite]
+  );
 
   return (
     <section className="relative p-4">
