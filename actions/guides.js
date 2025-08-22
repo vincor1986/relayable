@@ -1,5 +1,7 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
+
 import slugify from "slugify";
 import xss from "xss";
 import { compare } from "bcryptjs";
@@ -155,6 +157,8 @@ export const approvePendingGuide = async (updatedGuide, authCode) => {
           _id: mongoId,
           lastUpdated: new Date().toISOString(),
         });
+
+        revalidatePath("/dev-guides", "page");
       } else {
         return [false, "Guide not found in pending collection"];
       }

@@ -1,7 +1,8 @@
+import { notFound } from "next/navigation";
+
 import SearchResultSection from "@/components/guides/SearchResultList";
 import SectionTitle from "@/components/ui/Section-title";
-import { BASE_URL } from "@/util/URL";
-import { notFound } from "next/navigation";
+import { fetchAllGuides } from "@/actions/guides";
 
 export const metadata = {
   title: "Developer Access Guides | Relayable",
@@ -9,14 +10,12 @@ export const metadata = {
     "Find access guides for over 100 platforms and resources, with detailed explanations of any variables required.",
 };
 
+export const revalidate = 600;
+
 const DevGuidesOverview = async () => {
-  const response = await fetch(BASE_URL + "/api/all-guides", {
-    next: { revalidate: 600 },
-  });
+  const [guides, error] = await fetchAllGuides("approved");
 
-  const { data: guides } = await response.json();
-
-  if (!guides || guides.length === 0) {
+  if (error || !guides || guides.length === 0) {
     notFound();
   }
 
