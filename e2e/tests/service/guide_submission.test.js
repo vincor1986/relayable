@@ -40,7 +40,7 @@ test("Entered guide is uploaded and viewable on pending page", async ({
 
   // Verify guide appears on pending review page
   await page.goto("/guides/review-pending");
-  await expect(page.getByTestId("results-container")).toBeVisible();
+  await expect(page.getByTestId("results-container").first()).toBeVisible();
   await expect(page.getByTestId("vendor-header-Heroku")).toBeAttached();
   await expect(page.getByTestId("guide-test-guide-title-2")).toBeAttached();
 });
@@ -48,7 +48,7 @@ test("Entered guide is uploaded and viewable on pending page", async ({
 test("Guide can be approved and viewed on guide page", async ({ page }) => {
   // Navigate to pending guides and enter review mode
   await page.goto("/guides/review-pending");
-  await expect(page.getByTestId("results-container")).toBeVisible();
+  await expect(page.getByTestId("results-container").first()).toBeVisible();
   await page.getByTestId("guide-test-guide-title-2").click();
 
   // Approve guide

@@ -53,7 +53,7 @@ test("XSS prevention test", async ({ page }) => {
   // confirm guide and navigate to review page
   await page.getByTestId("submit-new-guide-button").click();
   await page.goto("/guides/review-pending");
-  await expect(page.getByTestId("results-container")).toBeAttached();
+  await expect(page.getByTestId("results-container").first()).toBeAttached();
   await page.getByTestId("guide-xss-test").click();
 
   // Check that xss script has been sanitized

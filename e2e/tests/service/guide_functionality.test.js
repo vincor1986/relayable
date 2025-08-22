@@ -92,7 +92,7 @@ test("Guide functionality test", async ({ page }) => {
   // confirm guide and navigate to review page
   await page.getByTestId("submit-new-guide-button").click();
   await page.goto("/guides/review-pending");
-  await expect(page.getByTestId("results-container")).toBeVisible();
+  await expect(page.getByTestId("results-container").first()).toBeVisible();
   await page.getByTestId("guide-test-guide-title").click();
 
   await page.getByTestId("auth-code-input").fill(process.env.AUTH_CODE);
