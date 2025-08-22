@@ -80,7 +80,7 @@ const PrivacyPolicySection = () => {
       <LegalHeading>Changes to This Policy</LegalHeading>
       <LegalParagraph>
         We may update this Privacy Policy from time to time. Any changes will be
-        posted on this page with an updated "Last updated" date.{" "}
+        posted on this page with an updated &quot;Last updated&quot; date.{" "}
       </LegalParagraph>
       <LegalHeading>Contact Us </LegalHeading>
       <LegalParagraph>

@@ -2,7 +2,6 @@ import Image from "next/image";
 
 import SectionHeading from "../ui/Section-heading";
 import LegalBulletList from "./Legal-bullet-list";
-import LegalHeading from "./Legal-heading";
 import LegalParagraph from "./Legal-paragraph";
 import LegalSubnote from "./Legal-subnote";
 import TextLink from "../ui/Text-link";
@@ -30,16 +29,16 @@ const CookiesSection = () => {
       </LegalParagraph>
       <LegalBulletList
         items={[
-          <p>
+          <p key="0">
             We do <strong>not</strong> use cookies for advertising, tracking, or
             analytics purposes.
           </p>,
-          <p>
+          <p key="1">
             Any cookies that may be set are used solely to maintain core site
             operations and improve your browsing experience.
           </p>,
-          <p> We do not store personal information in cookies.</p>,
-          <p>
+          <p key="2"> We do not store personal information in cookies.</p>,
+          <p key="3">
             We may also use <strong>local storage</strong> within your browser
             to save certain settings or preferences. This data remains on your
             device and is not shared with us or third parties.

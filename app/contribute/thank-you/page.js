@@ -19,7 +19,7 @@ const ThankYouPage = () => {
         className="max-w-[80vw] max-h-[30vh]"
       />
       <p className="text-center text-navy text-lg max-w-[80vw] md:max-w-[800px]">
-        Thank you so much for your contribution. We'll look closely at your
+        Thank you so much for your contribution. We&apos;ll look closely at your
         submission and let you know if we can add it to our library.
       </p>
       <p className="text-center text-navy text-lg max-w-[80vw] md:max-w-[800px]">

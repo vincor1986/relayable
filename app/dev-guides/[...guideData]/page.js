@@ -65,13 +65,29 @@ const DevGuidePage = async ({ params }) => {
         </p>
       </div>
       <p className="text-navy font-bold text-center mb-3">
-        You are view the static version of this user guide.
+        You are viewing the static version of this user guide.
       </p>
       <Link href={`/guides/${vendorSlug}/${titleSlug}`}>
         <SmallButton type="info" className="mx-auto max-w-[300px]">
           Click here for the interactive version
         </SmallButton>
       </Link>
+      <SectionHeading>Variable definitions</SectionHeading>
+      <div className="flex flex-col gap-2 p-4">
+        {guide.variables.map((variable, index) => (
+          <div
+            key={`variable-${index}`}
+            className="mb-2 lg:grid lg:grid-cols-6"
+          >
+            <p className="text-bold text-lg text-navy wrap-break-word lg:col-span-2">
+              {variable.name}
+            </p>
+            <p className="text-gray-500 lg:col-span-4">
+              {variable.description}
+            </p>
+          </div>
+        ))}
+      </div>
       <SectionHeading>Step-by-step instructions</SectionHeading>
       <div className="mx-auto flex-col max-w-[1000px] pt-6">
         {guide.steps.map((step, index) => (

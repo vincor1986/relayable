@@ -31,10 +31,10 @@ const AboutPage = () => {
       </p>
       <p className="text-navy text-center w-full mb-4">
         Created in 2025, Relayable addresses the difficulties for professional
-        and freelance developers in managing access to their clients' systems.
-        We understand the challenges of ensuring secure and efficient access to
-        these systems, and we strive to provide the tools and resources needed
-        to navigate these complexities.
+        and freelance developers in managing access to their clients&apos;
+        systems. We understand the challenges of ensuring secure and efficient
+        access to these systems, and we strive to provide the tools and
+        resources needed to navigate these complexities.
       </p>
       <p className="text-navy text-center w-full mb-4">
         Our platform is built on the principles of collaboration and knowledge

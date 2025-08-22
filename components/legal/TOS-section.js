@@ -31,7 +31,7 @@ const TOSSection = () => {
       </LegalParagraph>
       <LegalBulletList
         items={[
-          <p>
+          <p key="0">
             While we make every effort to ensure the accuracy and currency of
             our guides (including AI-generated or community-submitted and
             approved guides),{" "}
@@ -41,11 +41,11 @@ const TOSSection = () => {
             </strong>
             .
           </p>,
-          <p>
+          <p key="1">
             You use the guides <strong>at your own risk</strong> and should
             verify important details independently before acting on them.
           </p>,
-          <p>
+          <p key="2">
             We are <strong>not liable</strong> for any loss, damage, or issues
             resulting from reliance on the information provided on
             Relayable.dev.
@@ -67,20 +67,20 @@ const TOSSection = () => {
       <LegalHeading>4. Intellectual Property</LegalHeading>
       <LegalBulletList
         items={[
-          <p>
+          <p key="0">
             All content on Relayable.dev — whether created by us, AI-generated
             under our direction, or submitted by users — is owned by
             Relayable.dev.
           </p>,
 
-          <p>
+          <p key="1">
             The <strong>Relayable</strong> name, the{" "}
             <strong>Relayable.dev</strong> domain, associated branding,
             concepts, and services are the intellectual property of{" "}
             <strong>Vincent Coraldean</strong>.
           </p>,
 
-          <p>
+          <p key="2">
             You may not use our name, branding, or other intellectual property
             in a way that could cause confusion, imply endorsement, or compete
             with our service without our written permission.
@@ -96,19 +96,19 @@ const TOSSection = () => {
       <LegalHeading>6. Data and Privacy</LegalHeading>
       <LegalBulletList
         items={[
-          <p>
+          <p key="0">
             The only personal data we collect server-side is your{" "}
             <strong>email address</strong> (e.g., when signing up for the
             mailing list or submitting a guide).
           </p>,
 
-          <p>
+          <p key="1">
             Any other personal or sensitive data used with the site will be
             processed <strong>client-side only</strong> and will not be stored
             by us.
           </p>,
 
-          <p>
+          <p key="2">
             Our <TextLink href="/legal/privacy-policy">Privacy Policy</TextLink>{" "}
             explains how we handle your data.
           </p>,

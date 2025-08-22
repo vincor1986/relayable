@@ -74,7 +74,7 @@ const VendorsList = () => {
         ) : null}
       </div>
       <p className="italic text-sm">
-        Can't find the platform or resource you're looking for? Click{" "}
+        Can&apos;t find the platform or resource you&apos;re looking for? Click{" "}
         <TextLink href="/contribute/request-platform">here</TextLink> to request
         a new platform.
       </p>

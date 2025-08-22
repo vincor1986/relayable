@@ -27,8 +27,8 @@ const FAQPage = () => {
           <div className="p-4 flex items-center gap-2">
             <p className="text-navy italic">
               Here are some commonly pondered questions about Relayable. If you
-              have a question that you can't find the answer to, please feel
-              free to reach out to us{" "}
+              have a question that you can&apos;t find the answer to, please
+              feel free to reach out to us{" "}
               <TextLink href="mailto:info@vincentcoraldean.com">here</TextLink>.
             </p>
 

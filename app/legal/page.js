@@ -25,7 +25,8 @@ const LegalPage = () => {
       />
       <p>
         This page outlines the legal information and policies related to our
-        services. If there's something you can't find, please email us at{" "}
+        services. If there&apos;s something you can&apos;t find, please email us
+        at{" "}
         <TextLink href="mailto:info@vincentcoraldean.com">
           info@vincentcoraldean.com
         </TextLink>

@@ -27,7 +27,7 @@ const ViewGuidePage = ({ params }) => {
       }
       setLoading(false);
     });
-  }, [vendorSlug, slug]);
+  }, [vendorSlug, slug, notifyUser]);
 
   if (!loadedGuide && !loading) {
     return notFound();

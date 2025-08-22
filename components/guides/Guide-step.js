@@ -47,7 +47,7 @@ const GuideStep = ({ step, index, variables }) => {
           return match.toUpperCase();
         });
     }
-  }, [itemRef.current, JSON.stringify(variables)]);
+  }, [detail, variables]);
 
   return (
     <div

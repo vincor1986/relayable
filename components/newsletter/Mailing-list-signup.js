@@ -71,7 +71,7 @@ const MailingListSignup = () => {
         ) : subscribed ? (
           <div className="flex justify-center px-2 py-3 rounded-sm bg-green-800 font-bold text-white">
             <p className="text-center">
-              Thank you for subscribing! We'll add you to our mailing list
+              Thank you for subscribing! We&apos;ll add you to our mailing list
             </p>
           </div>
         ) : (

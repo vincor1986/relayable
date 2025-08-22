@@ -1,11 +1,8 @@
 // Dashboard Icons
-import projectsIcon from "@/public/images/icons/projects.png";
 import newProjectIcon from "@/public/images/icons/new-project.png";
 import shortcutIcon from "@/public/images/icons/shortcuts.png";
-import settingsIcon from "@/public/images/icons/settings.png";
 
 // Why Relayable Icons
-import useCasesIcon from "@/public/images/icons/use-cases.png";
 import timeIcon from "@/public/images/icons/time-saving.png";
 import trackingIcon from "@/public/images/icons/track.png";
 import trustIcon from "@/public/images/icons/trust.png";
@@ -15,7 +12,6 @@ import faqIcon from "@/public/images/icons/faq.png";
 // How-To Guides Icons
 import grantIcon from "@/public/images/icons/grant.png";
 import revokeIcon from "@/public/images/icons/revoke.png";
-import toolkitIcon from "@/public/images/icons/toolkit.png";
 import searchIcon from "@/public/images/icons/search.png";
 
 const navLinks = [
@@ -107,7 +103,7 @@ const navLinks = [
       },
       {
         name: "Browse by Resource or Platform",
-        href: "/guides/search",
+        href: "/guides",
         description:
           "Browse or search our interactive guides by platform, resource name or description",
         icon: searchIcon,

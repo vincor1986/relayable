@@ -5,10 +5,8 @@ import { useSearchParams } from "next/navigation";
 
 import { queryGuides } from "@/actions/guides";
 
-import ALL_VENDORS from "@/data/vendors";
-import GuideBadge from "@/components/guides/Guide-badge";
-import VendorHeader from "@/components/ui/Vendor-header";
 import LoadingModal from "@/components/ui/Loading-modal";
+import SearchResultSection from "./SearchResultList";
 
 const Search = () => {
   const searchParams = useSearchParams();
@@ -48,11 +46,6 @@ const Search = () => {
     return () => clearTimeout(timer);
   }, [searchQuery]);
 
-  const activeVendors = useMemo(() => {
-    const vendorNames = new Set(results.map((guide) => guide.vendor));
-    return ALL_VENDORS.filter((vendor) => vendorNames.has(vendor.name));
-  }, [results]);
-
   const resultCount = <span className="font-bold">{results.length}</span>;
   const sTElement = <span className="font-bold">{searchedTerm}</span>;
 
@@ -87,24 +80,7 @@ const Search = () => {
         </p>
       ) : null}
       {initiated && results.length > 0 ? (
-        <>
-          {activeVendors.map((vendor) => (
-            <div key={vendor.name} className="mb-8">
-              <VendorHeader vendor={vendor} updateVendor={() => null} />
-              <ul className="mt-2 md:grid md:grid-cols-3 md:gap-4">
-                {results
-                  .filter((guide) => guide.vendor === vendor.name)
-                  .map((filteredGuide) => (
-                    <GuideBadge
-                      key={filteredGuide.id}
-                      guide={filteredGuide}
-                      href={`/guides/${filteredGuide.vendorSlug}/${filteredGuide.slug}`}
-                    />
-                  ))}
-              </ul>
-            </div>
-          ))}
-        </>
+        <SearchResultSection guides={results} hrefStart="/guides" />
       ) : null}
       <LoadingModal isLoading={loading} message="Searching guides..." />
     </>

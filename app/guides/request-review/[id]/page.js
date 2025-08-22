@@ -36,7 +36,7 @@ const RequestReviewPage = ({ params }) => {
       }
       setLoading(false);
     });
-  }, [id]);
+  }, [id, notifyUser]);
 
   if (loading) {
     return <LoadingModal isLoading={loading} message="Loading guide..." />;

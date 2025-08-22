@@ -34,17 +34,17 @@ const DisclaimerSection = () => {
       />
       <LegalHeading>2. Use at Your Own Risk</LegalHeading>
       <LegalParagraph>
-        All information on this site is provided <strong>"as is"</strong>{" "}
-        without warranty of any kind — express or implied. You acknowledge and
-        agree that:
+        All information on this site is provided{" "}
+        <strong>&quot;as is&&quot;</strong> without warranty of any kind —
+        express or implied. You acknowledge and agree that:
       </LegalParagraph>
       <LegalBulletList
         items={[
-          <p>
+          <p key="0">
             <strong>You assume full responsibility</strong> for any actions
             taken based on the information provided on Relayable.dev.
           </p>,
-          <p>
+          <p key="1">
             We are <strong>not liable</strong> for any direct, indirect,
             incidental, consequential, or special damages, including loss of
             profits, data, or business opportunities, arising from your use of

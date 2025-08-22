@@ -30,10 +30,10 @@ const RequestVendorPage = () => {
     <section className="p-4">
       <SectionTitle>Request a New Platform</SectionTitle>
       <p className="p-4 mb-6">
-        If you'd like to create a new interactive guide but the platform /
-        resource you're looking for is not available, please complete the below
-        form and your request will be reviewed. We will notify you of the result
-        via email once your request has been processed.
+        If you&apos;d like to create a new interactive guide but the platform /
+        resource you&apos;re looking for is not available, please complete the
+        below form and your request will be reviewed. We will notify you of the
+        result via email once your request has been processed.
       </p>
       <form onSubmit={handleSubmit} className="mx-auto max-w-[800px]">
         <TextInput

@@ -14,7 +14,7 @@ const ContactPage = () => {
     <section className="p-4 flex-col items-center">
       <SectionTitle>Get In Touch</SectionTitle>
       <h2 className="mt-16 text-navy font-bold text-xl text-center">
-        We'd love to hear from you!
+        We&apos;d love to hear from you!
       </h2>
       <div className="w-full flex justify-center">
         <Image
@@ -26,7 +26,7 @@ const ContactPage = () => {
       </div>
       <p className="text-center text-dark-grey mb-8">
         Whether you have questions, feedback, or just want to say hello, feel
-        free to reach out. We're here to help!
+        free to reach out. We&apos;re here to help!
       </p>
       <p className="text-center text-dark-grey mb-8">
         You can contact us via email at{" "}

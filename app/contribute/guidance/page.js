@@ -56,7 +56,7 @@ const DONT = (image) => {
   return (
     <div className="relative flex my-6 mt-8 pt-4 items-center border-2 border-red-800 rounded-sm">
       <div className="absolute flex gap-2 items-center top-0 left-8 px-4 -translate-y-1/2 bg-white">
-        <h4 className="uppercase font-bold text-2xl">Don't</h4>
+        <h4 className="uppercase font-bold text-2xl">Don&apos;t</h4>
         <Image src={crossImg} alt="Tick icon" className="w-6 h-6" />
       </div>
       <Image src={image} alt="Do" className="mx-auto" />

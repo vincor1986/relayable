@@ -12,7 +12,7 @@ import useCreatorCtx from "@/store/useCreatorCtx";
 
 import { VARIABLE_REGEX, URL_REGEX } from "@/util/regex";
 
-const SavedStep = ({ detail, stepCount, index, handleEditStep }) => {
+const SavedStep = ({ detail, stepCount, handleEditStep }) => {
   const itemRef = useRef(null);
 
   const ctx = useCreatorCtx();
@@ -33,7 +33,7 @@ const SavedStep = ({ detail, stepCount, index, handleEditStep }) => {
           return `<a href="${formattedURL}" class="text-blue underline" target="_blank" rel="noopener noreferrer">${formattedURL}</a>`;
         });
     }
-  }, [itemRef.current]);
+  }, [detail]);
 
   return (
     <div className="relative border border-light-grey rounded-md my-6 shadow-md p-6">

@@ -55,11 +55,11 @@ const DPASection = () => {
       </LegalParagraph>
       <LegalBulletList
         items={[
-          <p>
+          <p key="a">
             <strong>Consent</strong> &ndash; when you voluntarily sign up to the
             mailing list or submit a form.
           </p>,
-          <p>
+          <p key="b">
             <strong>Legitimate Interest</strong> &ndash; to respond to your
             enquiries or submissions.
           </p>,
@@ -68,14 +68,14 @@ const DPASection = () => {
       <LegalHeading>4. Data Storage & Retention</LegalHeading>
       <LegalBulletList
         items={[
-          <p>
+          <p key="0">
             Email addresses are stored securely in our systems and retained
             until you request deletion.
           </p>,
 
-          <p>There are currently no automatic deletion processes.</p>,
+          <p key="1">There are currently no automatic deletion processes.</p>,
 
-          <p>
+          <p key="2">
             You may request a copy or deletion of your data at any time by
             emailing:{" "}
             <TextLink href="mailto:info@vincentcoraldean.com">

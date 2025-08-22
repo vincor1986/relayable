@@ -10,45 +10,7 @@ import formatGuide from "@/util/formatGuide";
 
 import sanitizer from "@/util/sanitizer";
 
-const SEARCH_FILTER = {
-  projection: {
-    _id: true,
-    id: true,
-    vendorSlug: true,
-    title: true,
-    vendor: true,
-    slug: true,
-    description: true,
-    author: true,
-    category: true,
-  },
-};
-
-const FULL_GUIDE_FILTER = {
-  projection: {
-    _id: true,
-    id: true,
-    vendor: true,
-    title: true,
-    slug: true,
-    vendorSlug: true,
-    author: true,
-    description: true,
-    variables: true,
-    steps: true,
-    lastUpdated: true,
-    submittedAt: true,
-    category: true,
-  },
-};
-
-const EDIT_FILTER = {
-  projection: {
-    ...FULL_GUIDE_FILTER.projection,
-    reviewRequests: true,
-    approved: true,
-  },
-};
+import { SEARCH_FILTER, FULL_GUIDE_FILTER } from "@/util/dbFilters";
 
 export const submitGuide = async (formData) => {
   const { vendor, title, category, author, authorEmail, description, steps } =
