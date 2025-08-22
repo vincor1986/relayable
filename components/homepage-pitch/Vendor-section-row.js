@@ -1,23 +1,18 @@
 import Image from "next/image";
 
-const VendorSectionRow = ({ vendorArr, index }) => {
+const VendorSectionRow = ({ image, index }) => {
   const className =
     index % 2 === 0 ? "animate-roll-left" : "animate-roll-right";
 
-  const arr = [...vendorArr, ...vendorArr, ...vendorArr];
-
   return (
-    <div className={`flex flex-nowrap gap-4 ${className} mb-4`}>
-      {arr.map((vendor, index) => (
-        <Image
-          src={vendor.logo}
-          alt={vendor.name}
-          width={100}
-          height={100}
-          className="h-16 w-16 object-contain grayscale-30"
-          key={index}
-        />
-      ))}
+    <div className={`${className} mb-4`}>
+      <Image
+        src={image}
+        alt={`vendor row ${index}`}
+        className="vendor-image w-auto grayscale-20 opacity-90"
+        width={14368}
+        height={128}
+      />
     </div>
   );
 };

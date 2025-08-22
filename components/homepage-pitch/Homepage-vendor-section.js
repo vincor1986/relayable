@@ -1,31 +1,25 @@
 import Link from "next/link";
-import ALL_VENDORS from "../../data/vendors";
+
 import SmallButton from "../ui/SmallButton";
 import VendorSectionRow from "./Vendor-section-row";
 
-const VENDOR_LIST = ALL_VENDORS.sort((a, b) => a.name.length - b.name.length);
-const vendorList = [...VENDOR_LIST, ...VENDOR_LIST];
+import row0 from "@/public/images/vendor-section/row-0.png";
+import row1 from "@/public/images/vendor-section/row-1.png";
+import row2 from "@/public/images/vendor-section/row-2.png";
+import row3 from "@/public/images/vendor-section/row-3.png";
+import row4 from "@/public/images/vendor-section/row-4.png";
+import row5 from "@/public/images/vendor-section/row-5.png";
+import row6 from "@/public/images/vendor-section/row-6.png";
+import row7 from "@/public/images/vendor-section/row-7.png";
 
-const ROWS = [];
-
-let currentIndex = 0;
-for (let i = 0; i < 9; i++) {
-  const start = currentIndex;
-  const end = currentIndex + 30;
-  ROWS.push(vendorList.slice(start, end));
-  currentIndex = end;
-
-  if (currentIndex >= vendorList.length - 30) {
-    currentIndex -= vendorList.length;
-  }
-}
+const ROWS = [row0, row1, row2, row3, row4, row5, row6, row7];
 
 const HomepageVendorSection = () => {
   return (
-    <div className="relative overflow-hidden h-[720px] mt-28 pt-8 border-t-2 border-b-2 border-navy select-none">
+    <div className="relative overflow-hidden h-[450px] my-28 pt-8 border-t-2 border-b-2 border-navy select-none">
       <div className="absolute left-1/2 -translate-x-1/2 w-max mx-auto">
         {ROWS.map((row, index) => (
-          <VendorSectionRow key={index} vendorArr={row} index={index} />
+          <VendorSectionRow key={index} image={row} index={index} />
         ))}
         <div className="absolute w-screen top-0 left-1/2 -translate-x-1/2 h-full md:max-w-[1200px]">
           <div className="relative h-[800px] w-screen md:max-w-[1200px]">
