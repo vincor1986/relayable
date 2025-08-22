@@ -3,6 +3,7 @@ User-agent: *
 
 Disallow: 
 Disallow: /cgi-bin/
-Disallow: /guides/review-pending
+Disallow: /guides/review-pending/
+Disallow: /contribute/thank-you/
 
 Sitemap: https://relayable.dev/sitemap.xml
