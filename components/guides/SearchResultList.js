@@ -24,7 +24,11 @@ const SearchResultSection = ({ guides, hrefStart }) => {
                     <GuideBadge
                       key={filteredGuide.id}
                       guide={filteredGuide}
-                      href={`${hrefStart}/${filteredGuide.vendorSlug}/${filteredGuide.slug}`}
+                      href={
+                        hrefStart === "/ai"
+                          ? `${hrefStart}/${filteredGuide.id}`
+                          : `${hrefStart}/${filteredGuide.vendorSlug}/${filteredGuide.slug}`
+                      }
                     />
                   ))}
               </ul>

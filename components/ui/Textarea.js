@@ -10,9 +10,10 @@ const Textarea = ({
   ref = null,
   autoFocus = false,
   data_testid = "",
+  className = "",
 }) => {
   return (
-    <div className="mb-4">
+    <div className={"mb-4 " + className}>
       <label htmlFor={name} className="block text-sm font-bold text-dark-grey">
         {label.toUpperCase()}{" "}
         {required ? <span className="text-blue">*</span> : null}

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import logoSmall from "@/public/images/logo/logo-small.png";
+import loadingImg from "@/public/images/icons/loading.png";
 
 const LoadingModal = ({ isLoading, message = "Loading..." }) => {
   if (!isLoading) return null;
@@ -9,7 +9,7 @@ const LoadingModal = ({ isLoading, message = "Loading..." }) => {
     <div className="fixed top-0 left-0 min-h-screen w-full inset-0 flex items-center justify-center bg-black/80">
       <div className="p-4 rounded shadow-md">
         <Image
-          src={logoSmall}
+          src={loadingImg}
           alt="Loading..."
           width={50}
           className="h-auto animate-spin timing-600 mx-auto mb-4"

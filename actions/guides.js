@@ -14,7 +14,7 @@ import sanitizer from "@/util/sanitizer";
 
 import { SEARCH_FILTER, FULL_GUIDE_FILTER } from "@/util/dbFilters";
 
-export const submitGuide = async (formData) => {
+export const submitGuide = async (formData, ai = false) => {
   const { vendor, title, category, author, authorEmail, description, steps } =
     formData;
 
@@ -60,7 +60,7 @@ export const submitGuide = async (formData) => {
     const slug = slugify(title, { lower: true, strict: true });
     const vendorSlug = slugify(vendor, { lower: true, strict: true });
 
-    await collection.insertOne({
+    const newGuide = {
       vendor: sanitizedVendor,
       title: sanitizedTitle,
       author: sanitizedAuthor,
@@ -72,10 +72,28 @@ export const submitGuide = async (formData) => {
       slug,
       vendorSlug,
       approved: false,
-    });
+    };
+
+    const res = await collection.insertOne(newGuide);
+
+    if (ai) {
+      newGuide._id = new ObjectId();
+
+      const collectionAI = db.collection("ai");
+      const response = await collectionAI.insertOne(newGuide);
+      client.close();
+
+      const id = response.insertedId.toString();
+
+      if (response.acknowledged) {
+        return [id, null];
+      } else {
+        return [false, "Could not create AI Guide"];
+      }
+    }
 
     client.close();
-    return [true, null];
+    return [res.acknowledged, null];
   } catch (error) {
     console.error("Error submitting guide:", error);
 
@@ -171,12 +189,12 @@ export const approvePendingGuide = async (updatedGuide, authCode) => {
   }
 };
 
-export const getGuideById = async (id) => {
+export const getGuideById = async (id, type = "approved") => {
   const client = initClient();
 
   try {
     const db = client.db("guides");
-    const collection = db.collection("approved");
+    const collection = db.collection(type);
 
     const guide = await collection.findOne(
       { _id: new ObjectId(id) },
@@ -199,13 +217,23 @@ export const getGuideById = async (id) => {
 export const getGuidesByIds = async (idsArr) => {
   const client = initClient();
 
+  const ids = idsArr.map((id) => new ObjectId(id));
+
   try {
     const db = client.db("guides");
-    const collection = db.collection("approved");
+    const collectionA = db.collection("approved");
 
-    const guides = await collection
-      .find({ id: { $in: idsArr } }, SEARCH_FILTER)
+    const guidesA = await collectionA
+      .find({ _id: { $in: ids } }, SEARCH_FILTER)
       .toArray();
+
+    const collectionAI = db.collection("ai");
+
+    const guidesAI = await collectionAI
+      .find({ _id: { $in: ids } }, SEARCH_FILTER)
+      .toArray();
+
+    const guides = [...guidesA, ...guidesAI];
 
     if (!guides || guides.length === 0) {
       return [false, "No guides found for the provided IDs"];
@@ -388,5 +416,33 @@ export const queryGuides = async (queryStr) => {
     console.error("Error querying guides:", error);
     client.close();
     return [false, "Failed to query guides"];
+  }
+};
+
+export const getAIGeneratedGuides = async (idsArr) => {
+  const client = initClient();
+
+  try {
+    const db = client.db("guides");
+    const collection = db.collection("ai");
+
+    const ids = idsArr.map((id) => new ObjectId(id));
+
+    const guides = await collection
+      .find({ _id: { $in: ids } }, SEARCH_FILTER)
+      .toArray();
+
+    if (!guides || guides.length === 0) {
+      return [false, false];
+    }
+
+    const results = guides.map(formatGuide);
+
+    client.close();
+    return [results, null];
+  } catch (error) {
+    console.error("Error fetching guides by IDs:", error);
+    client.close();
+    return [false, "Failed to fetch guides - " + error.message];
   }
 };
