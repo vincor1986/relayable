@@ -37,11 +37,11 @@ const AIOverviewPage = () => {
 
   return (
     <section className="p-4">
-      <SectionTitle>Your AI Generated Guides</SectionTitle>
+      <SectionTitle>Your AI-Generated Guides</SectionTitle>
       <SectionHeading>Generate a new guide</SectionHeading>
       <p className="w-full font-navy text-center">
         Create a new interactive guide using Relayable AI{" "}
-        <TextLink href="/ai-generated/create">here</TextLink>
+        <TextLink href="/ai/create">here</TextLink>
       </p>
       <SectionHeading>Your existing AI guides</SectionHeading>
       {loading ? (

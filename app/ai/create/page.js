@@ -81,7 +81,7 @@ const AICreatePage = () => {
 
   return (
     <section className="min-h-screen p-4">
-      <SectionTitle>Create a new AI generated guide</SectionTitle>
+      <SectionTitle>Create a New AI-Generated Guide</SectionTitle>
       <h3>
         Complete the below form, submit your request and Relayable AI will
         generate your requested interactive guide.
