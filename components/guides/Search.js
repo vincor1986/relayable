@@ -7,6 +7,7 @@ import { queryGuides } from "@/actions/guides";
 
 import LoadingModal from "@/components/ui/Loading-modal";
 import SearchResultSection from "./SearchResultList";
+import TextLink from "../ui/Text-link";
 
 const Search = () => {
   const searchParams = useSearchParams();
@@ -68,6 +69,11 @@ const Search = () => {
           placeholder="Search by title, platform or description..."
           type="text"
         />
+        <p className="mt-6 text-center">
+          Can&apos;t find the guide you&apos;re looking for? Use{" "}
+          <TextLink href="/ai/create">Relayable AI</TextLink> to generate an
+          interactive guide specific to your needs.
+        </p>
       </div>
       {initiated && (
         <div data-testid="search-summary" className="my-8">

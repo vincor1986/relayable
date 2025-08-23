@@ -19,6 +19,8 @@ const AIOverviewPage = () => {
   const { guideIds } = useAIGenerated();
 
   useEffect(() => {
+    if (guideIds === undefined) return;
+
     getAIGeneratedGuides(guideIds).then(([guides, error]) => {
       if (error) {
         notifyUser(

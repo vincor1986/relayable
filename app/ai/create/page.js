@@ -66,8 +66,7 @@ const AICreatePage = () => {
     } else {
       addAIGuide(id);
       notifyUser("success", "Guide generated successfully!");
-      setGenerating(false);
-      router.push(`/ai`);
+      router.push(`/ai/${id}`);
     }
   };
 

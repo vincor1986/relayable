@@ -1,6 +1,7 @@
 // Dashboard Icons
 import newProjectIcon from "@/public/images/icons/new-project.png";
 import shortcutIcon from "@/public/images/icons/shortcuts.png";
+import proTier from "@/public/images/icons/pro-tier.png";
 
 // Why Relayable Icons
 import timeIcon from "@/public/images/icons/time-saving.png";
@@ -25,6 +26,12 @@ const navLinks = [
         href: "/contribute",
         description: "Add a new interactive guide to the Relayable platform",
         icon: newProjectIcon,
+      },
+      {
+        name: "AI-Generated Guides",
+        href: "/ai",
+        description: "View your existing AI-generated guides",
+        icon: proTier,
       },
       {
         name: "Shortcuts",

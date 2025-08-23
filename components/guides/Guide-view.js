@@ -62,11 +62,14 @@ const GuideView = ({ guide }) => {
   const [variables, setVariables] = useState(formatVariableObject(guide));
   const [steps, _] = useState(formatSteps(guide.steps));
 
-  const mandatoryVariables = useMemo(() =>
-    guide.variables.filter((v) => v.required)
+  const mandatoryVariables = useMemo(
+    () => guide.variables.filter((v) => v.required),
+    [guide.variables]
   );
-  const optionalVariables = useMemo(() =>
-    guide.variables.filter((v) => !v.required)
+
+  const optionalVariables = useMemo(
+    () => guide.variables.filter((v) => !v.required),
+    [guide.variables]
   );
 
   const optionalVarArray = useMemo(
@@ -96,15 +99,17 @@ const GuideView = ({ guide }) => {
 
   const isFavourite = useMemo(
     () => favourites.includes(guide.id),
-    [favourites]
+    [favourites, guide.id]
   );
 
-  const imageSrc = useMemo(() =>
-    guide.author.includes("Relayable") ? logoSmall : shieldImg
+  const imageSrc = useMemo(
+    () => (guide.author.includes("Relayable") ? logoSmall : shieldImg),
+    [guide.author]
   );
 
-  const vendor = useMemo(() =>
-    ALL_VENDORS.find((v) => v.name === guide.vendor)
+  const vendor = useMemo(
+    () => ALL_VENDORS.find((v) => v.name === guide.vendor),
+    [guide.vendor]
   );
 
   const handleVariableUpdate = useCallback((name, value) => {
@@ -112,14 +117,14 @@ const GuideView = ({ guide }) => {
       ...prev,
       [name]: value,
     }));
-  });
+  }, []);
 
   const handleBoolUpdate = useCallback((name) => {
     setVariables((prev) => ({
       ...prev,
       [name]: !prev[name],
     }));
-  });
+  }, []);
 
   const handleMultipleVariableUpdate = useCallback(
     (name, value) => {

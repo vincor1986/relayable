@@ -101,7 +101,7 @@ const EditGuideView = ({ guide, type = "edit" }) => {
       ...prevData,
       [name]: value,
     }));
-  });
+  }, []);
 
   const updateVariableField = useCallback((index, field, value) => {
     setFormData((prevData) => {
@@ -113,7 +113,7 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         variables: updatedVariables,
       };
     });
-  });
+  }, []);
 
   const handleRemoveVariable = useCallback((index) => {
     setFormData((prevData) => {
@@ -123,7 +123,7 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         variables: updatedVariables,
       };
     });
-  });
+  }, []);
 
   const toggleRequired = useCallback((index) => {
     setFormData((prevData) => {
@@ -138,7 +138,7 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         variables: updatedVariables,
       };
     });
-  });
+  }, []);
 
   const toggleMultiple = useCallback((index) => {
     setFormData((prevData) => {
@@ -153,7 +153,7 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         variables: updatedVariables,
       };
     });
-  });
+  }, []);
 
   const handleEditStep = useCallback((index, value) => {
     setFormData((prevData) => {
@@ -164,14 +164,14 @@ const EditGuideView = ({ guide, type = "edit" }) => {
         steps: updatedSteps,
       };
     });
-  });
+  }, []);
 
   const handleAddVariable = useCallback(() => {
     setFormData((prevData) => ({
       ...prevData,
       variables: [...prevData.variables, DEFAULT_VARIABLE],
     }));
-  });
+  }, []);
 
   const handleReject = async () => {
     switch (type) {
