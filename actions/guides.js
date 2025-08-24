@@ -176,7 +176,8 @@ export const approvePendingGuide = async (updatedGuide, authCode) => {
           lastUpdated: new Date().toISOString(),
         });
 
-        revalidatePath("/dev-guides", "page");
+        revalidatePath("/dev-guides", "layout");
+        revalidatePath("/guides", "layout");
       } else {
         return [false, "Guide not found in pending collection"];
       }
