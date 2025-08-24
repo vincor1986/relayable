@@ -2,7 +2,7 @@ export const contributeQuicklinks = [
   { href: "/contribute", text: "Contribute Overview" },
   { href: "/contribute/creator", text: "Creator Tool" },
   { href: "/contribute/guidance", text: "Contributor Guidelines" },
-  { href: "guides/search", text: "Search Exisiting Guides" },
+  { href: "/guides/search", text: "Search Exisiting Guides" },
   { href: "/contribute/request-platform", text: "Request a new platform" },
   { href: "/", text: "Home" },
 ];
