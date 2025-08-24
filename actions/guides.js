@@ -78,6 +78,7 @@ export const submitGuide = async (formData, ai = false) => {
 
     if (ai) {
       newGuide._id = new ObjectId();
+      newGuide.ai_gen = true;
 
       const collectionAI = db.collection("ai");
       const response = await collectionAI.insertOne(newGuide);

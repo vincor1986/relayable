@@ -9,6 +9,7 @@ export const SEARCH_FILTER = {
     description: true,
     author: true,
     category: true,
+    ai_gen: true,
   },
 };
 
@@ -27,6 +28,7 @@ export const FULL_GUIDE_FILTER = {
     lastUpdated: true,
     submittedAt: true,
     category: true,
+    ai_gen: true,
   },
 };
 

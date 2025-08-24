@@ -25,8 +25,8 @@ const SearchResultSection = ({ guides, hrefStart }) => {
                       key={filteredGuide.id}
                       guide={filteredGuide}
                       href={
-                        hrefStart === "/ai"
-                          ? `${hrefStart}/${filteredGuide.id}`
+                        filteredGuide.ai_gen === true
+                          ? `/ai/${filteredGuide.id}`
                           : `${hrefStart}/${filteredGuide.vendorSlug}/${filteredGuide.slug}`
                       }
                     />

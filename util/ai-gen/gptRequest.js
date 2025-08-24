@@ -26,7 +26,6 @@ const gptRequest = async (prompt, vendorName) => {
       const guide = JSON.parse(toolCall.function.arguments);
       guide.vendor = vendorName;
       guide.author = "Relayable AI";
-      guide.ai_gen = true;
       guide.authorEmail = process.env.RELAYABLE_EMAIL;
 
       return guide;

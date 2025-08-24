@@ -11,6 +11,8 @@ import { getGuidesByIds } from "@/actions/guides";
 
 import ALL_VENDORS from "@/data/vendors";
 import VendorHeader from "@/components/ui/Vendor-header";
+import TextLink from "@/components/ui/Text-link";
+import SearchResultSection from "@/components/guides/SearchResultList";
 
 const ShortcutsPage = () => {
   const [guides, setGuides] = useState([]);
@@ -47,27 +49,16 @@ const ShortcutsPage = () => {
     <section className="p-4">
       <SectionTitle>Saved Shortcuts</SectionTitle>
       {guides.length === 0 ? (
-        <p className="mt-12 text-center">No shortcuts have been marked.</p>
+        <>
+          <p className="mt-12 text-center">No shortcuts have been marked.</p>
+          <p className="mt-12 text-center">
+            <TextLink href="/guides/search">Search our guides</TextLink> to find
+            the right one(s) for your project.
+          </p>
+        </>
       ) : null}
       {guides.length > 0 && (
-        <>
-          {activeVendors.map((vendor) => (
-            <div key={vendor.name} className="mb-12">
-              <VendorHeader vendor={vendor} updateVendor={() => null} />
-              <ul className="mt-2 md:grid md:grid-cols-3 md:gap-4">
-                {guides
-                  .filter((guide) => guide.vendor === vendor.name)
-                  .map((filteredGuide) => (
-                    <GuideBadge
-                      key={filteredGuide.id}
-                      guide={filteredGuide}
-                      href={`/guides/${filteredGuide.vendorSlug}/${filteredGuide.slug}`}
-                    />
-                  ))}
-              </ul>
-            </div>
-          ))}
-        </>
+        <SearchResultSection guides={guides} hrefStart="/guides" />
       )}
       <LoadingModal isLoading={loading} message="Loading shortcuts..." />
     </section>
