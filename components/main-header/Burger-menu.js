@@ -1,23 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 import BurgerMenuItem from "./Burger-menu-item";
 
 import navLinks from "@/data/navLinks";
 import BurgerIcon from "./Burger-icon";
 
-const BurgerMenu = ({ setClose, setMenuOpen }) => {
+const BurgerMenu = ({ setClose, setMenuOpen, isOpen }) => {
   const [selectedItem, setSelectedItem] = useState(null);
+  const linkRef = useRef(null);
 
-  const handleItemSelect = (itemName) => {
+  useEffect(() => {
+    isOpen && linkRef.current && linkRef.current.focus();
+  }, [isOpen]);
+
+  const handleItemSelect = useCallback((itemName) => {
     setSelectedItem((prev) => (prev === itemName ? null : itemName));
-  };
+  }, []);
 
   return (
     <div
       className={`fixed w-full h-full top-0 left-0 -translate-x-full bg-black/80 z-40 cursor-pointer`}
       onClick={setClose}
+      onKeyDown={(e) => e.key === "Escape" && setClose()}
     >
       <div className="relative h-full w-full" id="close-ok">
         <div
@@ -26,6 +32,8 @@ const BurgerMenu = ({ setClose, setMenuOpen }) => {
           autoFocus={true}
           id="burger-menu"
           aria-expanded={true}
+          role="navigation"
+          role-label="Burger Menu"
         >
           <BurgerIcon
             isOpen={true}
@@ -34,12 +42,13 @@ const BurgerMenu = ({ setClose, setMenuOpen }) => {
           />
           <h2 className="text-xl ">MENU</h2>
           <hr className="my-4 border-white" />
-          {navLinks.map((item) => (
+          {navLinks.map((item, index) => (
             <BurgerMenuItem
               key={item.name}
               item={item}
               isOpen={selectedItem === item.name}
               setIsOpen={handleItemSelect}
+              ref={index === 0 ? linkRef : null}
             />
           ))}
         </div>

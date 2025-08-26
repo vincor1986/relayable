@@ -6,11 +6,11 @@ const HeroText = () => {
       <h1 className="font-bold  text-2xl md:text-4xl text-navy ">
         Say goodbye to friction in access approvals
       </h1>
-      <h3 className="text-lg text-dark-grey">
+      <h2 className="text-lg text-dark-grey">
         Simplify complex access requests with clear, step-by-step checklists
         your clients can easily follow and trust. Save time on permissions so
         you can focus on delivering exceptional results.
-      </h3>
+      </h2>
       <div className="flex gap-4">
         <Link href="/guides/search">
           <button className="relative bg-amber-300 text-dark-blue py-2 px-4 rounded cursor-pointer outline-none hover:bg-amber-400 transition-colors duration-300">

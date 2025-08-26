@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, use } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import HeaderMenuItem from "./Header-menu-item";

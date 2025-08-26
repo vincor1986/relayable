@@ -22,7 +22,7 @@ const MobileHeader = () => {
 
   const closeMenu = () => {
     setMenuOpen(false);
-    iconRef.current.focus();
+    iconRef.current && iconRef.current.focus();
   };
 
   useEffect(() => {
@@ -45,8 +45,11 @@ const MobileHeader = () => {
       {menuOpen
         ? createPortal(
             <BurgerMenu
-              setClose={(e) => e.target.id === "close-ok" && closeMenu()}
+              setClose={(e) =>
+                !e || e.target.id === "close-ok" ? closeMenu() : null
+              }
               setMenuOpen={setMenuOpen}
+              isOpen={menuOpen}
             />,
             document.getElementById("mobile-menu")
           )

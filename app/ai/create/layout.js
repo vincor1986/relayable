@@ -1,3 +1,5 @@
+import { ReCaptchaProvider } from "next-recaptcha-v3";
+
 export const metadata = {
   title: "Create New AI Guide | Relayable",
   description:
@@ -5,7 +7,13 @@ export const metadata = {
 };
 
 const AICreateLayout = ({ children }) => {
-  return <>{children}</>;
+  return (
+    <ReCaptchaProvider
+      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+    >
+      {children}
+    </ReCaptchaProvider>
+  );
 };
 
 export default AICreateLayout;

@@ -12,6 +12,7 @@ const TextInput = ({
   autoFocus = false,
   data_testid = "",
   ref = null,
+  autoComplete = "off",
 }) => {
   return (
     <div className={`mb-4 ${className}`}>
@@ -30,6 +31,7 @@ const TextInput = ({
           autoFocus={autoFocus}
           data-testid={data_testid}
           ref={ref}
+          autoComplete={autoComplete}
         />
         <p className="text-red-800">{errorMessage}</p>
       </label>

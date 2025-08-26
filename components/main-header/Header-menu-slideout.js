@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 import rightArrow from "@/public/images/icons/arrow-right-full.png";
 
@@ -8,13 +11,22 @@ const {
 } = require("./Header-menu-sublink-item");
 
 const HeaderMenuSlideout = ({ activeItem }) => {
+  const linkRef = useRef(null);
+
+  useEffect(() => {
+    if (activeItem) {
+      linkRef.current.focus();
+    }
+  }, [activeItem]);
+
   return (
     <div
       className={`fixed top-[100px] left-0 w-[100vw] bg-zinc-100 text-navy transition-height duration-600 z-20 ${
         activeItem ? "p-4 pt-8 max-h-[700px]" : "max-h-0 overflow-hidden"
       }`}
       id="main-menu"
-      aria-expanded={activeItem ? "true" : "false"}
+      aria-expanded={activeItem ? true : false}
+      role="navigation"
     >
       {activeItem ? (
         <div className="m-auto max-w-[1000px]">
@@ -23,7 +35,7 @@ const HeaderMenuSlideout = ({ activeItem }) => {
             <Link
               className="flex cursor-pointer hover:text-blue-400 transition-all duration-300"
               href={activeItem.href}
-              autoFocus={activeItem}
+              ref={linkRef}
             >
               <p>Go to {activeItem.name}</p>
               <Image

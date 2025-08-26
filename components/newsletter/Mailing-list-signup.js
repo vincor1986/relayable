@@ -63,6 +63,7 @@ const MailingListSignup = () => {
           }}
           label=""
           required={false}
+          autoComplete="email"
         />
         {showError ? (
           <div className="flex justify-center px-2 py-3 rounded-sm bg-red-800 text-white font-bold">

@@ -6,8 +6,9 @@ const BurgerIcon = ({ isOpen, setIsOpen, className, ref }) => {
         "relative flex flex-col justify-center items-center cursor-pointer z-60"
       }
       onClick={() => setIsOpen((prev) => !prev)}
-      aria-label="Open mobile menu"
-      aria-controls="burger-menu"
+      aria-controls="main-menu"
+      aria-expanded={isOpen}
+      aria-label="Main menu"
       ref={ref}
     >
       <div

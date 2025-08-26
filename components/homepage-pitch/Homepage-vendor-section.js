@@ -32,7 +32,7 @@ const HomepageVendorSection = () => {
             Interactive access guides for 100+ platforms
           </h2>
           <Link href="/guides/search">
-            <SmallButton type="info" className="mt-4">
+            <SmallButton type="info" className="mt-6">
               Find the one you need
             </SmallButton>
           </Link>

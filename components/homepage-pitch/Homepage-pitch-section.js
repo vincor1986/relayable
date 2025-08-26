@@ -21,7 +21,7 @@ const HomepagePitchSection = () => {
       </p>
       <div className="flex justify-center">
         <Link href="/benefits">
-          <SmallButton type="info" className="mt-2">
+          <SmallButton type="info" className="mt-6">
             Learn more about Relayable
           </SmallButton>
         </Link>

@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 
 import arrowIcon from "@/public/images/icons/arrow-right-white.png";
@@ -5,11 +8,12 @@ import BurgerMenuSublink from "./Burger-menu-sublink";
 
 const BurgerMenuItem = ({ item, isOpen, setIsOpen }) => {
   return (
-    <button className="text-left" autoFocus={item.name === "Engage"}>
-      <div
-        className="flex justify-between items-center my-6 cursor-pointer hover:text-blue-300 transition-all duration-500"
-        onClick={() => setIsOpen(item.name)}
-      >
+    <button
+      className="text-left"
+      autoFocus={item.name === "Engage"}
+      onClick={() => setIsOpen(item.name)}
+    >
+      <div className="flex justify-between items-center my-6 cursor-pointer hover:text-blue-300 transition-all duration-500">
         <div>
           <h4 className={`text-lg ${isOpen ? "text-amber-300" : null}`}>
             {item.name}
@@ -31,12 +35,21 @@ const BurgerMenuItem = ({ item, isOpen, setIsOpen }) => {
         aria-expanded={isOpen}
         autoFocus={isOpen}
       >
-        {item.sublinks.map((sublink, index, arr) => (
-          <div key={sublink.name}>
-            <BurgerMenuSublink {...sublink} />
-            {index < arr.length - 1 ? <hr className="border-gray-300" /> : null}
-          </div>
-        ))}
+        {isOpen
+          ? item.sublinks.map((sublink, index, arr) => (
+              <div
+                key={sublink.name}
+                aria-expanded={true}
+                role="navigation"
+                role-label="burger-sub-menu"
+              >
+                <BurgerMenuSublink {...sublink} index={index} />
+                {index < arr.length - 1 ? (
+                  <hr className="border-gray-300" />
+                ) : null}
+              </div>
+            ))
+          : null}
       </div>
     </button>
   );

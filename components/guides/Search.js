@@ -68,6 +68,7 @@ const Search = () => {
           value={searchQuery}
           placeholder="Search by title, platform or description..."
           type="text"
+          name="search"
         />
         <p className="mt-6 text-center">
           Can&apos;t find the guide you&apos;re looking for? Use{" "}
